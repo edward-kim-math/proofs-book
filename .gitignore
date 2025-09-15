@@ -1,0 +1,41 @@
+# LaTeX auxiliary files
+*.aux
+*.log
+*.toc
+*.out
+*.dvi
+*.ps
+*.pdf # Consider ignoring if generated, or include if it's the final output you want to track
+*.bbl
+*.blg
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+*.nav
+*.snm
+*.vrb
+*.gz
+*.xdv
+*.ilg
+*.ind
+*.ist
+*.glg
+*.glo
+*.gls
+*.acn
+*.acr
+*.alg
+*.lof
+*.lot
+*.maf
+*.mtc
+*.mtc1
+
+# Editor and OS specific files
+.DS_Store # macOS specific
+*~ # Emacs/Vim temporary files
+#*# # Emacs temporary files
+.#* # Emacs lock files
+.bak # Backup files
+.swp # Vim swap files
+Thumbs.db # Windows specific
