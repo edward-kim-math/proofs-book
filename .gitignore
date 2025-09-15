@@ -30,6 +30,7 @@
 *.maf
 *.mtc
 *.mtc1
+*.idx
 
 # Editor and OS specific files
 .DS_Store # macOS specific

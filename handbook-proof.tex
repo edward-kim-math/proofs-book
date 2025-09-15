@@ -3064,41 +3064,41 @@ Notice that to prove $p \to q$ by contradiction, we end up assuming $\neg q$. We
 
 As an example, let us visit the game of Minesweeper. A typical cell (those found in the middle of the Minesweeper board) is surrounded by 8 other cells. (The cells on the edge are surrounded by only five other cells, while the four corner cells are surrounded by only three other cells.) The ``raised'' cells are unknowns. The more ``indented'' cells are known. (Indented cells without a number are zeros: none of the 8 surrounding cells are mines.) The cells which have a red triangular flag are marked by the game player (usually by right-clicking) to indicate that these are mines.
 
-To carefully understand, let us consider the example in Figure~\ref{figure:minesweeper1}. The cell labeled 2 to the right of Cell Y should have two mines. The cell to the upper right (with a 2), the cell to the right (with a 1), the cell to the lower right (blank, so a zero), and the cell below (the 1 to the right of Z) have all been cleared. The cell above the 2 is already marked as a mine. While that spot is ``technically not known", the person playing felt confident enough to mark that spot a mine. In addition, Cell X, Cell Y, and Cell Z are unknowns. For an example of the language of proof that can be used, let us consider the same example. The cell labeled 2 to the right of Cell Y should have two mines. Since there is already one marked mine, among the three cells Cell X, Cell Y, and Cell Z, exactly one of these is a mine.
+To carefully understand, let us consider the example in Figure~\ref{figure:minesweeper01}. The cell labeled 2 to the right of Cell Y should have two mines. The cell to the upper right (with a 2), the cell to the right (with a 1), the cell to the lower right (blank, so a zero), and the cell below (the 1 to the right of Z) have all been cleared. The cell above the 2 is already marked as a mine. While that spot is ``technically not known", the person playing felt confident enough to mark that spot a mine. In addition, Cell X, Cell Y, and Cell Z are unknowns. For an example of the language of proof that can be used, let us consider the same example. The cell labeled 2 to the right of Cell Y should have two mines. Since there is already one marked mine, among the three cells Cell X, Cell Y, and Cell Z, exactly one of these is a mine.
 
 \begin{figure}[hbt]
 \begin{center}
-\includegraphics[width=0.78\textwidth]{minesweeper-labeled}
+\includegraphics[width=0.78\textwidth]{minesweeper01}
 \end{center}
-\caption{A player who is ``stuck'' in Minesweeper}\label{figure:minesweeper1}
+\caption{A player who is ``stuck'' in Minesweeper}\label{figure:minesweeper01}
 \end{figure}
 
-The game of Minesweeper gives us a fun way to examine proving $p \rightarrow q$ by contradiction. How would one prove the statement ``If the Minesweeper configuration is as given in Figure~\ref{figure:minesweeper1}, then Cell I is safe'' by contradiction? Following Method~\ref{method:pimpliesq-contradiction}, we should first assume we have the mine configuration given in Figure~\ref{figure:minesweeper1}. Then, to prove that Cell I is safe by contradiction, we assume that Cell I is not safe -- in other words, we assume that Cell I is a mine.
+The game of Minesweeper gives us a fun way to examine proving $p \rightarrow q$ by contradiction. How would one prove the statement ``If the Minesweeper configuration is as given in Figure~\ref{figure:minesweeper01}, then Cell I is safe'' by contradiction? Following Method~\ref{method:pimpliesq-contradiction}, we should first assume we have the mine configuration given in Figure~\ref{figure:minesweeper01}. Then, to prove that Cell I is safe by contradiction, we assume that Cell I is not safe -- in other words, we assume that Cell I is a mine.
 \begin{theorem}
-If the Minesweeper configuration is as given in Figure~\ref{figure:minesweeper1}, then Cell I is safe.
+If the Minesweeper configuration is as given in Figure~\ref{figure:minesweeper01}, then Cell I is safe.
 \end{theorem}
 \begin{proof}
-Suppose we have the given mine configuration from Figure~\ref{figure:minesweeper1}. To obtain a contradiction, suppose that Cell I is a mine. Then the 3 to the left of H has all of its mines so, Cell H and Cell G are both safe. Then the 3 to the left of G has one discovered mine, and one possible mine at F, leaving only at most two neighboring mines to a cell labeled with 3, a contradiction.
+Suppose we have the given mine configuration from Figure~\ref{figure:minesweeper01}. To obtain a contradiction, suppose that Cell I is a mine. Then the 3 to the left of H has all of its mines so, Cell H and Cell G are both safe. Then the 3 to the left of G has one discovered mine, and one possible mine at F, leaving only at most two neighboring mines to a cell labeled with 3, a contradiction.
 \end{proof}
 In the previous proof, the contradiction obtained is that both ``F has only two neighboring mines'' and ``F has exactly three neighboring mines'' cannot both be true.
 
 %NEXTEDITION: include every possible minesweeper proof that I can think of
 
-\begin{theorem}\label{theorem:minesweeper1-V-safe-contradiction}
-If the Minesweeper configuration is as given in Figure~\ref{figure:minesweeper1}, then Cell V is safe.
+\begin{theorem}\label{theorem:minesweeper01-V-safe-contradiction}
+If the Minesweeper configuration is as given in Figure~\ref{figure:minesweeper01}, then Cell V is safe.
 \end{theorem}
 \begin{proof}
-Suppose we have the given mine configuration from Figure~\ref{figure:minesweeper1}. In order to obtain a contradiction, assume that Cell V is a mine. Then because the cell labeled 1 to the right of U already has its 1 mine at V, the cells T and U must be safe. Then, the cell labeled 3 to the right of Cell T only has the two-previously discovered mines, and since the T and U are not mines, the 3 is not satisfied, a contradiction.
+Suppose we have the given mine configuration from Figure~\ref{figure:minesweeper01}. In order to obtain a contradiction, assume that Cell V is a mine. Then because the cell labeled 1 to the right of U already has its 1 mine at V, the cells T and U must be safe. Then, the cell labeled 3 to the right of Cell T only has the two-previously discovered mines, and since the T and U are not mines, the 3 is not satisfied, a contradiction.
 \end{proof}
 
 \begin{exercise}
-Prove by contradiction: If the Minesweeper configuration is as given in Figure~\ref{figure:minesweeper2}, then Cell B is safe.
+Prove by contradiction: If the Minesweeper configuration is as given in Figure~\ref{figure:minesweeper02}, then Cell B is safe.
 \end{exercise}
 \begin{figure}[hbt]
 \begin{center}
-\includegraphics[width=0.78\textwidth]{minesweeper-gameB-labeled}
+\includegraphics[width=0.78\textwidth]{minesweeper02}
 \end{center}
-\caption{A player who is ``stuck'' in Minesweeper}\label{figure:minesweeper2}
+\caption{A player who is ``stuck'' in Minesweeper}\label{figure:minesweeper02}
 \end{figure}
 
 When proving $p \to q$ by contradiction, you first assume $p$, and then because you want to prove $q$ by contradiction, you assume $\neg q$. There are three ways that proving $p \to q$ may end:
@@ -3130,10 +3130,10 @@ For a proof in four cases ($k=4$), we must identify four propositions $h_1,h_2,h
 
 Let us consider the following example:
 \begin{theorem}
-If the Minesweeper configuration is as given in Figure~\ref{figure:minesweeper1}, then Cell N is safe.
+If the Minesweeper configuration is as given in Figure~\ref{figure:minesweeper01}, then Cell N is safe.
 \end{theorem}
 \begin{proof}
-Assume we have the given mine configuration from Figure~\ref{figure:minesweeper1}.
+Assume we have the given mine configuration from Figure~\ref{figure:minesweeper01}.
 Because of the 3 below K, of the three cells J, K, and L, exactly two must be mines. That is, either J and K are mines with L safe, or J and L are mines with K safe, or K and L are mines with J safe. We break into three cases:
 \begin{itemize}
 \item If Cell J and Cell K are mines and Cell L is safe, then Cell M must be a mine so that the $2$ below Cell L has its second mine. Then the $1$ below Cell M has all its mines discovered, so Cell M is safe and Cell N is safe.
@@ -3142,7 +3142,7 @@ Because of the 3 below K, of the three cells J, K, and L, exactly two must be mi
 \end{itemize}
 No matter which of the three cases occur, we can see that Cell N is safe.
 \end{proof}
-In this example, $k=3$. Note that ``we have the given mine configuration from Figure~\ref{figure:minesweeper1}'' is $p$, following the notation from earlier. Let us identify the three situations:
+In this example, $k=3$. Note that ``we have the given mine configuration from Figure~\ref{figure:minesweeper01}'' is $p$, following the notation from earlier. Let us identify the three situations:
 \begin{itemize}
 \item $h_1$ is ``J and K are mines with L safe''
 \item $h_2$ is ``J and L are mines with K safe''
@@ -3152,12 +3152,12 @@ and our proof of $p \rightarrow (h_1 \vee h_2 \vee h_3)$ is embedded in the shor
 
 The idea of proof by cases is to branch out from the situation of $p$ and look at one of a number ($h_1,\dots,h_k$) situations, at least one of which \emph{must} hold. Then, assuming each of these situations, we either determine that the situation was actually impossible (as we had in our second case above) or that we reach the conclusion that $q$ is true (as we did in cases one and three above).
 
-Let us revisit Theorem~\ref{theorem:minesweeper1-V-safe-contradiction}, which we earlier proved by contradiction, and now provide a proof of the same theorem by cases. In this proof by cases, the proof of the first case is an embedded proof by cases.
+Let us revisit Theorem~\ref{theorem:minesweeper01-V-safe-contradiction}, which we earlier proved by contradiction, and now provide a proof of the same theorem by cases. In this proof by cases, the proof of the first case is an embedded proof by cases.
 \begin{theorem}
-If the Minesweeper configuration is as given in Figure~\ref{figure:minesweeper1}, then Cell V is safe.
+If the Minesweeper configuration is as given in Figure~\ref{figure:minesweeper01}, then Cell V is safe.
 \end{theorem}
 \begin{proof}
-Suppose we have the given mine configuration from Figure~\ref{figure:minesweeper1}.
+Suppose we have the given mine configuration from Figure~\ref{figure:minesweeper01}.
 Because of the $1$ in row $1$ column $2$, either Cell P is a mine or Cell Q is a mine. We proceed by cases.
 \begin{itemize}
 \item In the first case, P is a mine. So Q is safe. Since P is a mine, the 2 in $(2,2)$ has all necessary mines, so R is safe. Then exactly one of S or T is a mine, due to the 2 in $(3,2)$. We proceed in two subcases:
@@ -3170,7 +3170,7 @@ In both subcases V is safe.
 \end{itemize}
 In both cases, V is safe.
 \end{proof}
-Let us analyze the structure of this proof and see how it fits our framework. Following our notation from earlier, we have an initial hypothesis $p$ that ``we have the given mine configuration from Figure~\ref{figure:minesweeper1}'' and then identified two propositions, where $h_1$ was ``Cell P is a mine'' and $h_2$ was ``Cell Q is a mine.'' Our proof of $p \rightarrow (h_1 \vee h_2)$ is given in the sentence ``Because of the $1$ in row $1$ column $2$, either Cell P is a mine or Cell Q is a mine.''
+Let us analyze the structure of this proof and see how it fits our framework. Following our notation from earlier, we have an initial hypothesis $p$ that ``we have the given mine configuration from Figure~\ref{figure:minesweeper01}'' and then identified two propositions, where $h_1$ was ``Cell P is a mine'' and $h_2$ was ``Cell Q is a mine.'' Our proof of $p \rightarrow (h_1 \vee h_2)$ is given in the sentence ``Because of the $1$ in row $1$ column $2$, either Cell P is a mine or Cell Q is a mine.''
 
 After the sentence ``We proceed by cases'' in the proof above, the proof presented a proof of $h_1 \rightarrow q$ and a proof of $h_2 \rightarrow q$, where $q$ was ``Cell V is safe.'' We postpone the discussion of the proof of $h_1 \rightarrow q$ momentarily. The proof of $h_2 \rightarrow q$ was the text that started with ``In the second case, Q is a mine, ...'' and ended with ``Since the 1 to the right of U has all its mines, V is safe.''
 
@@ -3186,11 +3186,11 @@ If you have $k$ cases, beyond the proof of $p \rightarrow (h_1 \vee \dots \vee h
 \end{bwarning}
 
 \begin{exercise}
-Prove by cases: If the Minesweeper configuration is as given in Figure~\ref{figure:minesweeper2}, then Cell V is a mine. (While it is possible to provide a proof by contradiction, it would  be good to practice proof by cases. As a hint, start where Cell P, Cell Q, and Cell R are, and create the three cases. Note that one of the cases will be impossible, but there will still be the remaining cases to consider.)
+Prove by cases: If the Minesweeper configuration is as given in Figure~\ref{figure:minesweeper02}, then Cell V is a mine. (While it is possible to provide a proof by contradiction, it would  be good to practice proof by cases. As a hint, start where Cell P, Cell Q, and Cell R are, and create the three cases. Note that one of the cases will be impossible, but there will still be the remaining cases to consider.)
 \end{exercise}
 
 \begin{exercise}
-Prove: If the Minesweeper configuration is as given in Figure~\ref{figure:minesweeper2}, then Cell F is a mine.
+Prove: If the Minesweeper configuration is as given in Figure~\ref{figure:minesweeper02}, then Cell F is a mine.
 \end{exercise}
 
 We started this chapter by discussing how one uses a conjunction, but did not discuss using a disjunction. Often, using a disjunction fits the pattern of a proof by cases. Some details are provided in the next section.
