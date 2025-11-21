@@ -661,24 +661,30 @@ $y$ & $1$ & $1$ & $2$ & $2$ & $3$ & $3$ & $\dots$ \\
 
 \chapter{Propositions}\label{chapter:propositions}
 
-This chapter is about knowing what the statements mean. In the next chapter, we learn how to prove each kind of statement. Prior to proving statements, we must understand the types of statements which we will need to prove by clarifying the typical grammar used in mathematical statements, and how the statements should be read. The process described in this chapter is very formulaic: you are used to applying formulas where the variables are numbers (or functions). Just as algebra involves a precise manipulation of numbers (and variables which can have numeric values), logic is a precise manipulation of propositions (and variables which can have truth values). Throughout the first several sections of this chapter, the ``variables'' which you will substitute are propositions.
+This chapter is about understanding what propositions mean, and especially understanding the meaning of new propositions that are built out of old propositions.
+In the next chapter, we learn how to prove each kind of proposition we introduce here. 
+Prior to proving propositions, 
+we must understand the types of propositions which we will need to prove by clarifying the typical grammar used in propositions, and how the propositions should be read. The process described in this chapter is very formulaic: you are used to applying formulas where the variables are numbers (or functions). Just as algebra involves a precise manipulation of numbers (and variables which can have numeric values), logic is a precise manipulation of propositions (and variables which can have truth values). Throughout the first several sections of this chapter, the ``variables'' which you will substitute are propositions.
 
-You have seen examples of these statements before. For example, from calculus consider:
+You have seen examples of these prpositions before. For example, from calculus consider:
 \begin{theorem}[Mean Value Theorem]
 If $f$ is a function that is continuous on $[a,b]$ and $f$ is differentiable on $(a,b)$, then there exists $c \in (a,b)$ such that
 \[ f'(c) = \frac{f(b)-f(a)}{b-a}.\]
 \end{theorem}
 An example you saw even earlier than this (though not typically stated this formally) is from algebra:
 \begin{theorem}[Distributive Law]
-The equation $a(b+c) = ab+ac$ is true for all $a,b,c \in \mathbb{R}$.
+For all $a,b,c \in \mathbb{R}$, the equation $a(b+c) = ab+ac$ holds.
 \end{theorem}
 You have likely seen the Distributive Law without all of the extra ``for all'' language, yet this is the type of text we will focus on in this chapter.
 
-Before moving forward, we pause to discuss the difference between a definition and a theorem. In mathematics, a definition introduces a reader to a new mathematical concept, while a theorem is a statement of a fact which can be proved. Compare the definition we gave of a proposition with the words of the Mean Value Theorem. The definition of a proposition introduces a new idea (what a proposition is), while the text of the Mean Value Theorem stating a guarantee about the slope of a tangent line at $x=c$.
+Before moving forward, we pause to discuss the difference between a definition and a theorem. In mathematics, a definition introduces a reader to a new mathematical concept, while a theorem is a factual statement which can be proved. Compare the definition we gave of a proposition with the words of the Mean Value Theorem. The definition of a proposition introduces a new idea (what a proposition is), while the text of the Mean Value Theorem states a guarantee about the slope of a tangent line at $x=c$.
 
 \section{Logical operations}\label{section:logical-operations}
 
-Just like addition is an operation which allows us to take two integers such as $2$ and $5$ and make meaning of $2+5$, which is defined to be another integer, we have logical operations\index{logical operations} (also called logical connectives\index{logical connectives}) which allow us to take propositions and combine them in some meaningful way to obtain a new proposition. Recall from Definition~\ref{definition:proposition} that a proposition is a declarative sentence that is true or false, but cannot be both. Therefore, if $p$ is a proposition and $p$ is not true, then $p$ must be false.
+Just like addition is an operation which allows us to take two integers such as $2$ and $5$ and make meaning of $2+5$, which is defined to be another integer, we have logical operations\index{logical operations} which allow us to take propositions and combine them in some meaningful way to obtain a new proposition. Recall from Definition~\ref{definition:proposition} that a proposition is a declarative sentence that is true or false, but cannot be both. Therefore, if $p$ is a proposition and $p$ is not true, then $p$ must be false.
+
+\subsection{Negation}
+
 \begin{bdefinition}{Negation}{negation}
 Let $p$ be a proposition. The \defn{negation}\index{negation} of $p$, denoted $\neg p$, is the proposition that is false when $p$ is true, and is true when $p$ is false. In other words, $\neg p$ has the opposite truth value of $p$. The negation of $p$ is read aloud ``not\index{not} $p$.''
 \end{bdefinition}
@@ -696,6 +702,8 @@ $F$ & $T$
 \begin{example}\label{example:props-abcd}
 Let us define $a$ to be the proposition ``February has 31 days,'' define $b$ to be ``Canada is in North America,'' define $c$ to be ``Canada is in Asia,'' and let $d$ be ``Tasmania is an island.'' Since $a$ is false, $\neg a$ is true. Since $b$ is true, $\neg b$ is false. We will use the propositions $a$, $b$, $c$, and $d$ as examples to illustrate examples throughout this section.
 \end{example}
+
+\subsection{Conjunction}
 
 \begin{bdefinition}{Conjunction}{conjunction}
 Let $p$ and $q$ both be propositions. The \defn{conjunction}\index{conjunction} of $p$ and $q$, denoted $p \wedge q$, is the proposition that is true when both $p$ and $q$ are true, and is false otherwise. The conjunction of $p$ and $q$ is read aloud ``$p$ and\index{and} $q$.''
@@ -731,10 +739,36 @@ The conjunction of the false proposition ``Pizza is a vehicle'' and the true pro
 The conjunction of the proposition ``Pizza is a vehicle'' and the proposition ``Cats are plants'' is the proposition ``Pizza is a vehicle and cats are plants,'' which is false.
 \end{example}
 
+We have several other logical operations to introduce, but before doing so, the definition of conjunction that we introduced may be one of the first kinds of propositions that pose a unique kind of challenge when you are asked to recite a definition on a quiz. So, let us give several nearly correct definitions of conjunction, and then comment on how to fix each almost-correct definition:
+\begin{itemize}
+
+\item Given propositions $p$ and $q$, we define $p \wedge q$ to be the proposition that is true when $p$ and $q$ are both true, and false otherwise. This is said ``$p$ and $q$.''
+\begin{itemize} \item {\bf Comment:} In this text, the new terminology (conjunction) is not introduced. The new word should be inserted at minimum one time somewhere amongst the sentences. One option would be to change the last sentence to say: This is called the conjunction, and is said ``$p$ and $q$.''
+\end{itemize}
+
+\item Let $p$ and $q$ both be propositions. The conjunction is written $p \wedge q$ and is true when $p$ and $q$ are both true, and false otherwise. This is read ``$p$ and $q$.''
+\begin{itemize} \item {\bf Comment:} This text never mentions that a conjunction is a proposition. The second sentence could be modified by writing:
+The conjunction is written $p \wedge q$ and is the proposition that is true when $p$ and $q$ are both true, and false otherwise.
+\end{itemize}
+
+\item The conjunction of $p$ and $q$ is the proposition that is true when $p$ and $q$ are both true, and false in all remaining situations, and is said ``$p$ and $q$.''
+\begin{itemize} \item {\bf Comment:} This text does not mention that $p$ is a proposition and that $q$ is a proposition. One way to fix this would be by keeping the senteces that we already have, 
+    but inserting one of the following texts in front of all the sentences already written:
+    \begin{itemize}
+        \item Let $p$ be a proposition. Let $q$ be a proposition.
+        \item Let $p$ and $q$ both be propositions.
+        \item Suppose we have a proposition $p$, and we have a proposition $q$.
+    \end{itemize}
+    \end{itemize}
+
+\end{itemize}
+
+\subsection{Disjunction (and symmetric difference)}
+
 \begin{bdefinition}{Disjunction}{disjunction}
 Let $p$ and $q$ both be propositions. The \defn{disjunction}\index{disjunction} of $p$ and $q$, denoted $p \vee q$, is the proposition that is false when both $p$ and $q$ are false, and is true otherwise. The disjunction of $p$ and $q$ is read ``$p$ or\index{or} $q$.''
 \end{bdefinition}
-Following Habit~\ref{habit:part-of-speech}, the disjunction is a noun (due to the second use of the word proposition). The word \fbox{and} in this definition is in the colloquial sense. The word \fbox{or} illustrates the precise mathematical use of the word. We summarize the disjunction in a truth table\index{truth table}:
+Following Habit~\ref{habit:part-of-speech}, the disjunction is a noun (due to the second use of the word proposition). The word \fbox{and} in this definition is in the non-technical everyday English sense of the word ``and.'' The word \fbox{or} illustrates the precise mathematical use of the word. We summarize the disjunction in a truth table\index{truth table}:
 \begin{center}
 \begin{tabular}{c|c||c}
 $p$ & $q$ & $p \vee q$ \\\hline
@@ -749,7 +783,7 @@ $F$ & $F$ & $F$
 With $a$, $b$, $c$, and $d$ as defined in Example~\ref{example:props-abcd}, $b \vee c$ is true, while $a \vee c$ is false.
 \end{example}
 
-For $p \vee q$ to be true, we only need a minimum of one of $p$ or $q$ to be true: if both $p$ is true and $q$ is true, then $p \vee q$ is true. Sometimes, the word \fbox{or} is used in English in a more exclusive way. For instance, when asked about taking ``the red pill or the blue pill,'' Morpheus is not intending to give Neo the option to take both. This other kind of use of the word \fbox{or} is the symmetric difference:
+For $p \vee q$ to be true, we only need a minimum of one of $p$ or $q$ to be true: if both $p$ is true and $q$ is true, then $p \vee q$ is true. Sometimes, the word \fbox{or} is used in English in a more exclusive way. For instance, when at a car dearleship, a customer that says ``I'll take the red car or the yellow car'' is probably not intending to buy both. This other kind of \fbox{or} is the symmetric difference:
 \begin{bdefinition}{Symmetric difference}{symmetric-difference}
 Let $p$ and $q$ both be propositions. The \defn{symmetric difference}\index{symmetric difference}, denoted $p \oplus q$, is the proposition that is true when exactly one of $p$ and $q$ is true, and is false otherwise.
 \end{bdefinition}
@@ -789,6 +823,8 @@ It is helpful to be systematic in this way. Notice that we have the four situati
 \end{example}
 How many situations would there be with four basic propositions? What would be an order which ensures that the rows are presented systematically?
 
+\subsection{Implication}
+
 \begin{bdefinition}{Implication}{implication}
 Let $p$ and $q$ both be propositions. The \defn{implication}\index{implication} from $p$ to $q$, denoted $p \rightarrow q$, is the proposition that is false when $p$ is true and $q$ is false, and is true otherwise. The implication from $p$ to $q$ is read ``if\index{if} $p$, then\index{then} $q$.''
 \vskip6pt
@@ -818,6 +854,31 @@ The implication $p \to q$ should be read ``if $p$ then $q$'' but is sometimes in
 \begin{example}
 The implication ``If Canada is in Asia, then February has 31 days'' is true (based on the last row of the truth table), while ``If Canada is in North America, then February has 31 days'' is false.
 \end{example}
+
+\begin{example}
+Let's examine the implication ``If cats are plants, then dogs fly.''
+This is an implication: it is text in the form ``if $p$ then $q$''.
+Note that the $p$ text is ``cats are plants'' which is false, and that the $q$ text is ``dogs fly'' which is also false.
+So what about the truth value of the proposition ``if $p$ then $q$'' which is denoted $p \to q$?
+We go to the truth table that was just presented, and look for the row in which there is an $F$ in the $p$ column and an $F$ in the $q$ column.
+The row that has this happens to the the final row. In that final row, we look up the truth value of $p \to q$ in the final column, and see a $T$ there in the final row.
+Thus, by examining that $T$, the proposition  ``If cats are plants, then dogs fly'' is true.
+\end{example}
+This example tends to really bother people.
+I suspect this is because people want to think ``How can two falses make a true?''
+But in the end, we're just mechanically following what the truth table tells us about $p \to q$, and the truth table is meant to summarize the text of the definition, so ultimately, we're basing this off of the definition of implication.
+
+Again, it may seem bothersome, but we have to stick with the definition of implication as it is universally accepted.
+If you want to change where the $T$s and $F$s are located for the final column, you can do this, but you'd have to name your logical operation something \emph{other} than implication and speak it using something \emph{other} than ``if ... then ...''
+(To try to convince you further that what we have is okay, consider an operation from arithmetic and algebra: a negative times a negative is a positive. That's just how the multiplication operation works.)
+
+\begin{example}
+Let's determine the truth value of ``If $125$ people were on the Eiffel Tower at midnight on New Years Day in 1950, then kanagroos are marsupials.'' The $p$ text is: $125$ people were on the Eiffel Tower at midnight on we Years Day in 1950.
+It is not likely we can know for certain whether this was true or false. However, look at the $q$ text: kangaroos are marsupials. We know that $q$ is true.
+Now, going back to the truth table, in both rows where $q$ is true, we see that $p \to q$ is true.
+Therefore, we have successfully determined that ``If $125$ people were on the Eiffel Tower at midnight on New Years Day in 1950, then kanagroos are marsupials'' is true, in spite of the fact that we don't know the truth value of ``$125$ people were on the Eiffel Tower at midnight on New Years Day in 1950.''
+\end{example}
+
 
 If we swap the hypothesis and conclusion of the previous implication, we get the implication ``If February has 31 days, then Canada is in North America,'' which is true. This illustrates the implication is ``one-sided,'' also evidenced by the column for $p \rightarrow q$ in the truth table having three $T$s and only one $F$. So $p \rightarrow q$ and $q \rightarrow p$ are different propositions. Starting from the implication $p \rightarrow q$, the new implication $q \rightarrow p$ obtained by swapping the premise and the conclusion has a name:
 \begin{bdefinition}{Converse}{converse}
@@ -863,7 +924,7 @@ $F$ & $F$ & $T$ & $T$
 \end{center}
 the last two columns are identical, so $p \rightarrow q$ is saying the same thing as $\neg q \rightarrow \neg p$, though the words used may be different. Just as $x(y+z)$ always has the same numerical value as $xy+xz$ in algebra, the truth values of $p \rightarrow q$ and of $\neg q \rightarrow \neg p$ will always be the same, an idea we will explore more thoroughly in Section~\ref{section:propositional-equivalence}.
 
-There is one final logical connective we discuss:
+There is one final logical operation we discuss:
 \begin{bdefinition}{Biconditional}{biconditional}
 Given proposition $p$ and proposition $q$, the \defn{biconditional}\index{biconditional} of $p$ and $q$ is the proposition that is true when $p$ and $q$ have the same truth value, and is false otherwise. The biconditional is denoted $p \leftrightarrow q$ and is spoken ``$p$ if and only if\index{if and only if} $q$.''
 \end{bdefinition}
@@ -915,7 +976,7 @@ If $p$ is the proposition ``JJ ate peas'', $q$ is the proposition ``JJ ate pasta
 \end{exercise}
 
 \begin{exercise}
-Let $p$ be the proposition ``It is below freezing''. Let $q$ be the proposition ``It is snowing''. Write the propositions below symbolically using $p$ and $q$ and logical connectives.
+Let $p$ be the proposition ``It is below freezing''. Let $q$ be the proposition ``It is snowing''. Write the propositions below symbolically using $p$ and $q$ and logical operations.
 \begin{itemize}
 \item It is below freezing and snowing.
 \item It is below freezing but not snowing.
