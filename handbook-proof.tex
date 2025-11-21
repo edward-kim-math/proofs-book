@@ -425,7 +425,7 @@ Let $T = \{1,4,\smiley\}$. Then $4 \in T$ and $\smiley \in T$, while $2 \not\in 
 
 A set is not the same as an element. What's the difference between a set and an element? As an analogy, think about the difference between a city and a resident. A city is comprised of many residents. Similarly, a set is comprised of elements. The difference between a set and an element is like a club and its members. If AJ Smith belonged to the Chess Club, you wouldn't say that AJ \emph{is} the Chess Club: you'd say that AJ is a \emph{member of} the Chess Club.
 
-On one extreme, take a city like Seattle, which has over one million residents. If AJ is a resident of Seattle, you wouldn't say that AJ \emph{is} Seattle: instead, you'd say that AJ \emph{belongs to} Seattle. For the other extreme, consider the set $C = \{r\}$. Then $C$ is a set, while $r$ is an element of the set $C$. In this example, there is only one element that belongs to $C$. Yet, we cannot say $r=C$. We can say $r \in C$.
+On one extreme, take a city like Seattle, which has over one million residents. If AJ is a resident of Seattle, you wouldn't say that AJ \emph{is} Seattle: instead, you'd say that AJ \emph{belongs to} Seattle. For the other extreme, consider the set $C = \{r\}$. Then $C$ is a set, while $r$ is an element of the set $C$. In this example, there is only one element that belongs to $C$. Yet, we cannot write $r=C$ when we need to write $r \in C$ instead.
 
 Some sets which occur are so common that we will introduce them here and use them throughout the handbook. The set of integers\index{integers} is denoted by $\mathbb{Z}$. An integer is any real number whose expansion past the decimal point is all zeroes.
 \begin{example}
@@ -441,7 +441,7 @@ The set of all real numbers (or the set of reals\index{reals}) is denoted $\math
 \begin{example}
 So, $3 \in \mathbb{R}$ and $\pi \in \mathbb{R}$ and $\sqrt{\pi} \in \mathbb{R}$, but $\sqrt{-1} \not\in \mathbb{R}$.
 \end{example}
-The set of all complex numbers (or the set of complexes\index{complexes}) is denoted $\mathbb{C}$. A complex number is the sum of a real number with a real number times the imaginary unit $i=\sqrt{-1}$.
+The set of all complex numbers (or the set of complexes\index{complexes}) is denoted $\mathbb{C}$. A complex number is the sum of a real number with a real number times the imaginary unit $i$, where $i=\sqrt{-1}$.
 \begin{example}
 Thus $3 + 4i \in \mathbb{C}$ and $e^{\pi} - 5i \in \mathbb{C}$.
 \end{example}
@@ -450,7 +450,7 @@ In this handbook, we will avoid saying natural number\index{natural number}\inde
 
 To say a bit more about this, those who say that the set of natural numbers is $\mathbb{N} = \{1,2,3,\dots\}$ are likely to call $\{0,1,2,3,\dots\}$ the set of whole numbers\index{whole}\index{whole numbers}, while those who say that the set of natural numbers is $\mathbb{N} = \{0,1,2,3,\dots\}$ are likely to call $\{1,2,3,\dots\}$ the set of positive integers. Various authors will define sets such as $\mathbb{Z}_+$ and $\mathbb{Z}_0$ to include or possibly exclude the number $0$. Again, refer to how the author defines these sets in a particular book.
 
-For better or worse, we will rectify the inconsistency in this text by providing unambiguous notation which is clear from context, even if it is a bit stuffier to write this way: using $\mathbb{Z} = \{\dots,-2,-1,0,1,2,\dots\}$ as the inspiration of our notation, we will write $\mathbb{Z}_{>0}$ to mean the set $\{1,2,3,\dots\}$, and we will write $\mathbb{Z}_{\geq 0}$ to mean the set $\{0,1,2,3,\dots\}$. While writing $\mathbb{N}$ is quicker than writing either $\mathbb{Z}_{>0}$ or $\mathbb{Z}_{\geq 0}$, our notation has the benefit of being rapidly clear.
+For better or worse, we will rectify the inconsistency in this text by providing unambiguous notation which is clear from context, even if it is a bit stuffier to write this way: using $\mathbb{Z} = \{\dots,-2,-1,0,1,2,\dots\}$ as the inspiration of our notation, we will write $\mathbb{Z}_{>0}$ to mean the set $\{1,2,3,\dots\}$, and we will write $\mathbb{Z}_{\geq 0}$ to mean the set $\{0,1,2,3,\dots\}$. While writing $\mathbb{N}$ is quicker than writing either $\mathbb{Z}_{>0}$ or $\mathbb{Z}_{\geq 0}$, our notation has the benefit of being clear and unambiguous.
 
 Some of the early discussions in this handbook are easier if we use $\mathbb{H}$ to denote the set of all humans. Since I, the author of this text, am a human, I am a member of the set $\mathbb{H}$. Since you, dear reader, are also a human, you are also a member of the set $\mathbb{H}$. An important lesson here is that not all sets have the property that the elements are numbers. The set $\mathbb{H}$ is a set of people. In light of this, it is good practice to follow this habit:
 \begin{bhabit}{What types of objects are elements of a set?}{set-of-what}
@@ -462,10 +462,10 @@ Whenever you have determined you have a set, determine what kind of objects belo
 
 On the other hand, if you know that $S$ is a set, refer to the set $S$ as $S$ alone. In this case, avoid saying ``set of $S$.'' (The phrase ``set of $S$'' sounds like a set of sets.) 
 
-Let's recall interval notation. Recall that writing $[3,7)$ means we want all real numbers between $3$ and $7$, though we are including $3$ but excluding $7$. Well, $[3,7)$ is a set. More specifically, in keeping true to Habit~\ref{habit:set-of-what}, notice that $[3,7)$ is a set of numbers, or more specifically, a set of real numbers.
+Let's recall interval notation. Recall that writing $[3,7)$ means we want all real numbers between $3$ and $7$, though we are including $3$ but excluding $7$. Well, $[3,7)$ is a set. More specifically, in keeping true to Habit~\ref{habit:set-of-what}, notice that $[3,7)$ is a set of numbers, or more specifically, a set of real numbers. Note that $\pi \in [3,7)$.
 
 \begin{bhabit}{Handwriting and typing for sets}{}
-For the sets $\mathbb{Z}, \mathbb{Q}, \mathbb{R}, \mathbb{C}$, and such, do not write $Z,Q,R,C$, and such as a replacement, whether in handwritten work or in typewritten work. This may seem like an odd request, but it's a good habit to form now, since there are proofs where both $R$ and $\mathbb{R}$ appear. When typing in \LaTeX{}, type~\verb+\mathbb{Z}+ in math mode after including the \verb+amsfonts+ package to get $\mathbb{Z}$.
+For the sets $\mathbb{Z}, \mathbb{Q}, \mathbb{R}$, and $\mathbb{C}$ respectively, do not write $Z,Q,R$, and $C$ respectively as substitutions, whether in handwritten work or in typewritten work. This may seem like an odd request, but it's a good habit to form now, since there are proofs where both $R$ and $\mathbb{R}$ appear. When typing in \LaTeX{}, type~\verb+\mathbb{Z}+ in math mode after including the \verb+amsfonts+ package to get $\mathbb{Z}$.
 \end{bhabit}
 
 \section{Connection to the past}
@@ -480,7 +480,8 @@ For example, let $f$ be the sine function from trigonometry. (So $f(\frac\pi4)=\
 \begin{bdefinition}{}{consistent}
 An equation is \defn{consistent}\index{consistent} if it has a solution.
 \end{bdefinition}
-Did you apply Habit~\ref{habit:part-of-speech}? If that was not your first thought after reading the definition, then get in the habit of doing so: the word \underline{consistent} defined here is an adjective. Challenge yourself to pay attention to the part of speech in each new definition.
+Here's  afriendly reminder to apply Habit~\ref{habit:part-of-speech}.
+That is, because we just came across a new definition, let's get in the habit of determining the part of speech of the new word: the word \underline{consistent} defined here is an adjective. Challenge yourself to pay attention to the part of speech in each new definition.
 
 \begin{example}
 The equation $3+x^2=28$ is consistent because $x=-5$ is a solution.
@@ -492,8 +493,10 @@ The equation $x+5=x$ is inconsistent because it has no solution.
 What about the function $f$, the sine function? Is $f$ consistent? Recall Warning~\ref{warning:adjective-grammar}, that we must be mindful of noun an adjective will modify. The definition of consistent shows that this adjective is \emph{only} to be used on equations. However, $f$ is \emph{not} an equation, so it makes no sense to even \emph{ask} if $f$ is consistent or not!
 
 Each adjective defined in mathematics only applies to a specific type of noun, which will be mentioned in the definition. This is very different from how adjectives are used in English: while it is natural to say ``windy road,'' it isn't grammatically incorrect (or devoid of meaning) to say ``windy speech.'' While you can say ``that speech was windy'' and have some meaning (albeit awkward), you cannot say ``the function $f$ is consistent.''
+Similarly, yellow is a color, and speech is a noun, but we wouldn't be making any sense by saying ``yellow speech.''
+Spoken everyday language still allows for this kind of thing (and is much more flexible about which adjectives can pair up with which nouns), but mathematical terminology is extremely strict about adjectives: an adjective should only be attached to the noun it was first introduced with.
 
-Challenge yourself to pay attention to which noun an adjective will modify. This is an extremely important issue that students often overlook. While this may be a new mental task for you, it isn't \emph{entirely} new either: in calculus, you learned about taking the derivative. But whether you realized it then or not, you took derivatives of \emph{functions}. You did not, for example, take derivatives of geometric objects (even though these are mathematical). Would you be puzzled if somebody asked you, ``How do you take the derivative of a tetrahedron?'' Your instructor is similarly puzzled whenever you write a sentence and apply an adjective on an inappropriate noun.
+Challenge yourself to pay attention to which noun an adjective will modify. This is an extremely important issue that students often overlook. While this may be a new mental task for you, it isn't \emph{entirely} new either: in calculus, you learned about taking the derivative. But whether you realized it then or not, you took derivatives of \emph{functions}. You did not, for example, take derivatives of geometric objects (even though these are mathematical). Would you be puzzled if somebody asked you, ``How do you take the derivative of a tetrahedron?'' It really doesn't make sense whenever we write a sentence where we have applied an adjective on an inappropriate noun.
 
 \section{Fun logic puzzles that don't seem relevant, but they are!}
 
@@ -598,47 +601,56 @@ In what order would you serve the people to ensure that everyone gets a sandwich
 \end{exercise}
 
 \begin{exercise}
-For the table below, construct a formula for $r$ that, given a value of $s$, returns the value of $r$. The formula should express $r$ in terms of $s$.
+For the table below, construct a formula for $y$ that, given a value of $x$, gives the value of $y$. The formula should express $y$ in terms of $x$.
 \vskip1pt
 \begin{tabular}{c||c|c|c|c|c|c}
-$s$ & $1$ & $2$ & $3$ & $4$ & $5$ & $6$ \\ \hline
-$r$ & $1$ & $4$ & $6$ & $8$ & $10$ & $12$ \\ 
+$x$ & $1$ & $2$ & $3$ & $4$ & $5$ & $6$ \\ \hline
+$y$ & $1$ & $4$ & $6$ & $8$ & $10$ & $12$ \\ 
 \end{tabular}
 \end{exercise}
 
 \begin{exercise}
-For the table below, construct a formula for $r$ that, given a value of $s$, returns the value of $r$. The formula should express $r$ in terms of $s$.
+For the table below, construct a formula for $y$ that, given a value of $x$, gives the value of $y$. The formula should express $y$ in terms of $x$.
 \vskip1pt
 \begin{tabular}{c||c|c|c|c|c|c}
-$s$ & $2$ & $4$ & $6$ & $8$ & $10$ & $12$ \\ \hline
-$r$ & $1$ & $2$ & $3$ & $4$ & $5$ & $6$ \\ 
+$x$ & $2$ & $4$ & $6$ & $8$ & $10$ & $12$ \\ \hline
+$y$ & $1$ & $2$ & $3$ & $4$ & $5$ & $6$ \\ 
 \end{tabular}
 \end{exercise}
 
 \begin{exercise}
-For the table below, construct a formula for $r$ that, given a value of $s$, returns the value of $r$. The formula should express $r$ in terms of $s$.
+For the table below, construct a formula for $y$ that, given a value of $x$, gives the value of $y$. The formula should express $y$ in terms of $x$.
 \vskip1pt
 \begin{tabular}{c||c|c|c|c|c|c}
-$s$ & $3$ & $6$ & $9$ & $12$ & $15$ & $18$ \\ \hline
-$r$ & $1$ & $2$ & $3$ & $4$ & $5$ & $6$ \\ 
+$x$ & $3$ & $6$ & $9$ & $12$ & $15$ & $18$ \\ \hline
+$y$ & $1$ & $2$ & $3$ & $4$ & $5$ & $6$ \\ 
 \end{tabular}
 \end{exercise}
 
 \begin{exercise}
-For the table below, construct a formula for $r$ that, given a value of $s$, returns the value of $r$. The formula should express $r$ in terms of $s$.
+For the table below, construct a formula for $y$ that, given a value of $x$, gives the value of $y$. The formula should express $y$ in terms of $x$.
 \vskip1pt
 \begin{tabular}{c||c|c|c|c|c|c}
-$s$ & $4$ & $7$ & $10$ & $13$ & $16$ & $19$ \\ \hline
-$r$ & $1$ & $2$ & $3$ & $4$ & $5$ & $6$ \\ 
+$x$ & $4$ & $7$ & $10$ & $13$ & $16$ & $19$ \\ \hline
+$y$ & $1$ & $2$ & $3$ & $4$ & $5$ & $6$ \\ 
 \end{tabular}
 \end{exercise}
 
 \begin{exercise}
-For the table below, construct a formula for $r$ that, given a value of $s$, returns the value of $r$. The formula should express $r$ in terms of $s$.
+For the table below, construct a formula for $y$ that, given a value of $x$, gives the value of $y$. The formula should express $y$ in terms of $x$.
 \vskip1pt
 \begin{tabular}{c||c|c|c|c|c|c}
-$s$ & $2$ & $5$ & $8$ & $11$ & $14$ & $17$ \\ \hline
-$r$ & $1$ & $2$ & $3$ & $4$ & $5$ & $6$ \\ 
+$x$ & $2$ & $5$ & $8$ & $11$ & $14$ & $17$ \\ \hline
+$y$ & $1$ & $2$ & $3$ & $4$ & $5$ & $6$ \\ 
+\end{tabular}
+\end{exercise}
+
+\begin{exercise}
+For the table below, construct a formula for $y$ that, given a value of $x$, gives the value of $y$. The formula should express $y$ in terms of $x$. The forumla will need to be piece-wise and non-recursive (that is, non self-referential)
+\vskip1pt
+\begin{tabular}{c||c|c|c|c|c|c|c}
+$x$ & $1$ & $2$ & $3$ & $4$ & $5$ & $6$ & $\dots$\\ \hline
+$y$ & $1$ & $1$ & $2$ & $2$ & $3$ & $3$ & $\dots$ \\ 
 \end{tabular}
 \end{exercise}
 
