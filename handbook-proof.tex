@@ -375,10 +375,47 @@ When encountering a new definition, if the new term being defined is a noun, det
 \end{bhabit}
 A set is not a proposition, and a proposition is not a set.
 
-One notation for sets is a comma-separated list of elements surrounded by curly braces.
+One way to define a specific set is in words. The typical language for this will be ``Let [a new letter] be the set of all [...]''
+\begin{example}
+Let $F$ be the set of all fruits. In this case, the elements of the set $F$ are all fruits. So, apple, banana, orange, dragon fruit, and pear are all elements of the set $F$. 
+
+Thus, we can write $\text{apple} \in F$, $\text{banana} \in F$, $\text{orange} \in F$, $\text{dragon fruit} \in F$, and $\text{pear} \in F$. However, car, truck, bus, and bicycle are not elements of the set $F$. Thus, we can write $\text{car} \not\in F$, $\text{truck} \not\in F$, $\text{bus} \not\in F$, and $\text{bicycle} \not\in F$. 
+\end{example}
+Before moving on to another example, us talk about words that we can say for $x \in F$, where here $x$ represents an unknown thing.
+We could say ``$x$ is in the set $F$'' and while this is accurate, this doesn't bring up what we know about $F$.
+We could say ``$x$ is in the set of all fruits'' and this is also technically accurate, since $F$ is the set of all fruits,
+but what this version lacks is plain language. It is much clearer if we write ``$x$ is a fruit.'' Is this the right grammar?
+Let's go back and look: we wrote $\text{apple} \in F$ in our example, and by taking $x \in F$ to be ``$x$ is a fruit'' in words
+means that $\text{apple} \in F$ translates to ``apple is a fruit.'' That works!
+
+\begin{example}
+Let $U$ be the set of all car brands. Then for example $\text{Ford} \in U$ and $\text{Nintendo} \not\in U$.
+Translating $z \in U$ in plain English, we'd write ``$z$ is a car brand.''
+For example, $\text{Ford} \in U$ translates to ``Ford is a car brand.''
+\end{example}
+
+\begin{example}
+Let $W$ be the set of all countries. Then $\text{Canada} \in W$ and $\text{California} \not\in W$.
+To say $m \in W$ in plain English, we'd write ``$m$ is a country.''
+\end{example}
+
+\begin{exercise}
+Define a set called $S$. Write the set you define in a complete sentence following the format of: Let $S$ be the set of all\dots
+
+Then, write in plain English what $n \in S$ means, and write in plain English what $m \not \in S$ means.
+\end{exercise}
+
+Besides defining sets using words, there are several ways to define sets using notation. One of the ways of writing notation to define sets is a comma-separated list of elements surrounded by curly braces.
 \begin{example}
 Let us consider a set where the only elements are apple, banana, orange, dragon fruit, and pear. These five fruits can be the five elements of a set, and that set can be described in standard mathematical notation by writing $\{\text{apple, banana, orange, dragon fruit, pear}\}$.
 \end{example}
+The difference between this example (a set with just fix specific fruits) and our earlier example labeled with $F$ is that $F$ has \emph{all} the fruits, while the set we defined here has just \emph{some} of the fruits.
+
+\begin{example}
+Let $J = \{Chevy, Toyota, Subaru\}$. Then $\text{Chevy} \in J$. In fact, from our set $U$ earlier which was the set of all car brands, $\text{Chevy} \in U$ as well.
+While $\text{Fiat} \in U$, we have $\text{Fiat} \not \in J$, since $J$ only has three car brands.
+\end{example}
+
 \begin{example}
 For instance, $\{2,4,6,8\}$ is a set. For convenience, we may name this set by writing $S = \{2,4,6,8\}$. However, $\{2,4,6,8\}$ is a set whether it is named or not.
 \end{example}
