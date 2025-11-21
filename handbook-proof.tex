@@ -907,6 +907,13 @@ Throughout mathematics courses, after theorems which are implications are presen
 \begin{example}
 From calculus, if $f$ is differentiable at $c$, then $f$ is continuous at $c$. However, the converse is not necessarily true: a function $f$ can be continuous at $c$ without being differentiable at $c$.
 \end{example}
+The fact that the implication ``if $f$ is differentiable, then $f$ is continous'' is true is presented in calculus. What it means is that if we are in the situation that $f$ is differentiable, then we know for sure that $f$ is continuous. Here's another example of this, based on everyday life:
+\begin{example}
+The implication ``If it is snowing, then it is cold'' is a true implication. That is to say, when it's snowing, it has to be cold. We just can't have snow in a non-cold situation.
+
+However, the converse is the implication ``If it is cold, then it is snowing.'' That implication is not true. It can be cold, but that doesn't \emph{force} snow.
+\end{example}
+This example is really convincing that an implication $p \to q$ and its converse $q \to p$ are generally different: in the example we gave, one implication was true, while the converse was false.
 
 Starting with the implication $p \to q$, there is another implication which needs to be defined:
 \begin{bdefinition}{Contrapositive}{contrapositive}
@@ -924,6 +931,8 @@ $F$ & $F$ & $T$ & $T$
 \end{center}
 the last two columns are identical, so $p \rightarrow q$ is saying the same thing as $\neg q \rightarrow \neg p$, though the words used may be different. Just as $x(y+z)$ always has the same numerical value as $xy+xz$ in algebra, the truth values of $p \rightarrow q$ and of $\neg q \rightarrow \neg p$ will always be the same, an idea we will explore more thoroughly in Section~\ref{section:propositional-equivalence}.
 
+\subsection{Biconditional}
+
 There is one final logical operation we discuss:
 \begin{bdefinition}{Biconditional}{biconditional}
 Given proposition $p$ and proposition $q$, the \defn{biconditional}\index{biconditional} of $p$ and $q$ is the proposition that is true when $p$ and $q$ have the same truth value, and is false otherwise. The biconditional is denoted $p \leftrightarrow q$ and is spoken ``$p$ if and only if\index{if and only if} $q$.''
@@ -939,6 +948,8 @@ $F$ & $F$ & $T$
 \end{tabular}
 \end{center}
 To connect ideas, note that the negation of $p \leftrightarrow q$ would have the same truth value as $p \oplus q$ in all situations. The idea that the proposition $\neg (p \leftrightarrow q)$ and the proposition $p \oplus q$ always have the same truth value is another example of propositional equivalence, which previews Section~\ref{section:propositional-equivalence}.
+
+\subsection{Additional exercises}
 
 \begin{exercise}
 Construct a complete truth table for $(p \wedge q) \vee r$\quad\quad\href{https://www.sharelatex.com/project/59b5ce3ae3f68865abb45367}{{\color{red}[key]}}
