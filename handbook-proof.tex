@@ -1,6 +1,9 @@
 %NEXTEDITION <-- uncomment marker
 % https://texdoc.org/serve/tcolorbox.pdf/0
 
+% Table of data for "for all" and "there exists" problems
+% Incorporate RELEVANT material from workbook
+
 \documentclass{book}
 
 \usepackage[margin=1.0in]{geometry}
@@ -127,7 +130,7 @@
 % Copyright page
 
 \noindent
-Copyright \textcopyright{} 2023-2026 by Edward D. Kim
+Copyright \textcopyright{} 2026 by Edward D. Kim
 
 \vskip24pt\noindent
 All rights reserved. No part of this publication may be reproduced, distributed, or transmitted in any form or by any means, including photocopying, recording, or other electronic or mechanical methods, without the prior written permission of the publisher, except in the case of brief quotations embodied in critical reviews and certain other noncommercial uses permitted by copyright law. For permission requests, write to the publisher, addressed ``Attention: Permissions Coordinator,'' at the address below. The author authorizes this text for the following teaching/learning use after providing notification by e-mail or postal mail as listed below: this monograph may be printed/reprinted and posted online for the exclusive use of instructors and students in an academic institution of higher learning for the sole purpose of using this as a classroom textbook, or as a textbook supplement.
@@ -149,8 +152,7 @@ Printed in the United States of America
 \vskip24pt\noindent
 %Publisher's Cataloging-in-Publication data\\
 Kim, Edward D.\\
-Handbook of Mathematical Proof\\
-4th Edition (preprint), Month Year
+Handbook of Mathematical Proof
 %p. cm.
 %ISBN 978-0-9000000-0-0
 %1. The main category of the book —History —Other category. 2. Another subject category —From one perspective. 3. More categories —And their modifiers. I. Johnson, Ben. II. Title.
@@ -202,7 +204,7 @@ While the preferred method of using this handbook is to read from cover to cover
 
 Some students will have passed a course on how to do proofs and find themselves in a topology, real analysis, or abstract algebra class and feel like they still don't understand proofs yet. These students will find the constant use of references by number helpful. Other students need a brief primer on proof because they're finding themselves in a linear algebra class where some small proofs are required, but they have no training. These students will also find the heavy use of referencing useful.
 
-For day-to-day proofs, mathematicians do not think about induction from the formal statement of the Principle of Mathematical Induction. So, this formal statement is left out. A section of this handbook covers how mathematicians think about the pigeonhole principle in actual proofs. While a certain level of formality is needed, there is a strong tendency to explain mathematics in the way mathematicians \emph{truly} think about mathematics: stuffiness has been removed where possible.
+For day-to-day proofs, mathematicians do not think about induction from the formal statement of the Principle of Mathematical Induction. So, this formal statement is left out. A section of this handbook covers how mathematicians think about the Pigeonhole Principle in actual proofs. While a certain level of formality is needed, there is a strong tendency to explain mathematics in the way mathematicians \emph{truly} think about mathematics: stuffiness has been removed where possible.
 
 %The goal of this handbook is to cover the core of mathematical proof. This meant leaving out Russel's Paradox, Hilbert's Hotel, counting principles (sum rule, product rule), permutations/combinations, binomial coefficients, and the binomial theorem. There are many other topics which would be nice to cover, but if the topics presented herein are mastered, a student will be well-prepared for the proofs in their undergraduate mathematics courses.
 
@@ -236,29 +238,48 @@ If we had $C$ as the set of all rational numbers, we could write: let $z \in C$.
 
 \chapter{Introduction}\label{chapter:introductory}
 
+Before getting too far into the details, a word of encouragement: you are best suited to learn this material.
+The contents you'll see are really different compared to a math class had primarily focused on computation.
+However, when you've been in computation-foused math classes, you've been succesful with pattern recognition and seeing how things fit together.
+For this material, plesae bring those same habits to the table: pattern recognition and seeing how things fit together.
+The material is going to feel very different at first, and it will require your patience, but we will build everything needed from the ground up.
+Finally, because the material is going to look so different (we will see lots of sentences, and include some goofy, humorous sentences in the process,
+because, well, why not?), please be advised that you shouldn't ``wait to take notes until the real math shows up.''
+Please note that, in a broader sense, all of what we introduce here is math. Mathematics is more than just computations with numbers
+(and if we can just admit now that the variables in algebra are numbers, then tha's what algebra was too). Mathematics is a style of argumentation
+with water-tight thought arguments. 
+
 \section{Definitions}\label{section:definitions}
 
 Definitions are the most fundamental sentences for mathematicians. Without definitions, we could not prove anything. Definitions are probably the most neglected aspect by students new to mathematical proof. You must commit to understanding each definition thoroughly. You must have more than ``just the gist'' of definitions. We are about to discuss how definitions appear in sentences, but don't let that give the false impression that definitions in math are ambiguous. Instead, definitions in math are very technical and precise, in the same way that sine of $\frac\pi6$ is exactly $\frac12$, not $0.49$.
 
-Definitions in mathematics are always written in complete sentences. In contrast, definitions in an English language dictionary are not written in complete sentences. Sometimes, the term being defined is more than one word, so look to see if there's a larger phrase being defined. (Often, it will be necessary to incorporate the new word as part of a more complete phrase.) In mathematics, the word or phrase being defined \emph{must} be used in the definition. In contrast, definitions in an English language dictionary do not use the word being defined.
+Definitions in mathematics are always written in complete sentences. In contrast, definitions in an English language dictionary are not written in complete sentences. Sometimes, the term being defined is more than one word, so look to see if there's a larger phrase being defined. (Often, it will be necessary to incorporate the new word as part of a more complete phrase.) In mathematics, the word or phrase being defined \emph{must} be written in the definition. In contrast, definitions in an English language dictionary do not write the word being defined.
+\begin{bhabit}{}{write-word}
+When reciting a definition, be sure to write the word (or phrase) being defined.
+\end{bhabit}
 
 Notice the two differences to dictionary definitions: complete sentences and mentioning the word (or phrase) when stating the definition.
 Mathematicians follow these conventions because stating mathematical definitions in this way is how mathematicians communicate the part of speech of the new word, in addition to how the new word is used in context.
 \begin{bhabit}{}{part-of-speech}
 Every time you encounter a new definition, determine if the thing being defined is a noun, an adjective, a verb, etc.
 \end{bhabit}
-When you write a definition, your instructor expects you to write in complete sentences and include the word (or phrase) in your sentence(s). Your written definition must clearly convey whether the term being defined is a noun, adjective, verb, etc. As a brief review, nouns are persons, places, or things (such as your math instructor, Central Park, or your favorite board game), adjectives are descriptive words (such as fast, green, or smooth), and verbs are actions (such as runs, sings, or talks).
+One thing that catches students off guard in a class that introduces a proof is the expectation that teachers have that students will need to recite definitions in written form.
+That is, is is very typical for quizzes and tests in a class based on this book to have students write a definition for terminology introduced in class 
+in a closed-book closed-note setting such as a quiz.
+It is besd to avoid ``memorizing'' a definition word-for-word and symbol-for-symbol. Instead, focus on inventorying all of the essential points about a definition when first seeing one, and then be sure that all of the essential details get included when reciting a definition.
+When you write a definition, your instructor expects you to write in complete sentences and include the word (or phrase) in your sentence(s) because your written definition must clearly convey whether the term being defined is a noun, adjective, verb, etc. As a brief review, nouns are persons, places, or things (such as your math instructor, Central Park, or your favorite board game), adjectives are descriptive words (such as fast, green, or smooth), and verbs are actions (such as runs, sings, or talks).
+This process takes getting used to, so keep working on it!
 
 If the term being defined is a noun, your writing should make clear whether the noun is a vector, or a number, or a matrix, or a set, or an equation, etc.
 
 If the term being defined is an adjective, what is the noun being modified? For example, the definition of \underline{continuous} from calculus applies to \underline{functions}. Keeping track of what adjective applies to which noun is a \emph{critical} aspect of mathematical language and totally unlike how adjectives work in English. While you'd probably never use the adjective \fbox{sleepy} in front of the noun \fbox{car}, it is technically okay. As far as English grammar is concerned, the phrase \fbox{sleepy car} is allowed. 
 You would most likely never use the adjective `sad' to describe the noun `pickle,' but this is technically okay.
-The mathematical adjective \fbox{continuous} can \emph{only} be used for a \fbox{function}. So, you can speak of a \fbox{continuous function}, but the phrase \fbox{continuous equation} makes absolutely no sense. As another example that you're familiar with, saying that ``two lines are parallel'' has meaning, but saying that ``two points are parallel'' does not make sense.
+The mathematical adjective \fbox{continuous} can \emph{only} be used for a \fbox{function}. So, you can speak of a \fbox{continuous function}, but the phrase \fbox{continuous equation} doesn't make sense. As another example that you're familiar with, saying that ``two lines are parallel'' has meaning, but saying that ``two points are parallel'' does not make sense.
 \begin{bwarning}{}{adjective-grammar}
 Always be mindful of what noun an adjective may modify. Never use an adjective to modify an inappropriate noun.
 \end{bwarning}
 \begin{bwarning}{Do not ignore language issues and grammar}{do-not-ignore}
-Be sure to write definitions in complete sentences. Think of whether a word being defined is a noun, adjective, verb, etc. and clearly convey this when you write definitions. Adjectives should only be applied to \emph{appropriate} nouns. Do not ignore this advice regarding language. You might have been quite successful in a previous math class without paying attention to language, but that will not work here.
+Be sure to write definitions in complete sentences. Think of whether a word being defined is a noun, adjective, verb, etc. and clearly convey this when you write definitions. Adjectives should only be applied to \emph{appropriate} nouns. Do not ignore this advice regarding language. You might have been quite successful in a previous math class without paying attention to language, but it is important to now start paying attention to definitions in a very deep way.
 \vskip6pt
 You \emph{can} succeed at using mathematical language appropriately -- many before you have been successful at this -- but only if you try! Be willing to work on mathematical language. The author of this handbook understands that this is probably new to you, so there are boxes about language discussion: read and re-read these.
 \end{bwarning}
@@ -274,7 +295,7 @@ In the subsequent sections, we will introduce definitions, and illustrate some o
 
 \section{Mathematical language}
 
-It is tempting for new mathematicians to write phrases like ``The sphere, $S$, is centered at the origin.'' Leave out the commas. It is correct to write ``The sphere $S$ is centered at the origin'' instead. Why is this? In English, consider the following sentence: ``My dog Fido likes to play frisbee.''  There is no need to surround Fido (the name of the dog) by commas. Likewise, there is no need to surround $S$ (the name/label of the sphere) by commas. Putting ``Fido'' immediately after ``dog'' makes it clear that Fido is a dog. Similarly, putting $S$ immediately after ``sphere'' makes it clear that $S$ is a sphere. There is something very important to learn from this:
+It is tempting for new mathematicians to write phrases like ``The sphere, $S$, is centered at the origin.'' Leave out the commas. It is correct to write ``The sphere $S$ is centered at the origin'' instead. Why is this? In English, consider the following sentence: ``My dog Thor likes to play frisbee.''  There is no need to surround Thor (the name of the dog) by commas. Likewise, there is no need to surround $S$ (the name/label of the sphere) by commas. Putting ``Thor'' immediately after ``dog'' makes it clear that Thor is a dog. Similarly, putting $S$ immediately after ``sphere'' makes it clear that $S$ is a sphere. There is something very important to learn from this:
 \begin{blanguage}{Notation placement}{notation-placement}
 Notation for an object is placed immediately after the noun which describes the object, with no surrounding commas.
 \end{blanguage}
@@ -283,7 +304,7 @@ Placement of notation within a complete mathematical sentence is challenging at 
 
 \section{Main objects}
 
-Every math class has to start somewhere: a course in Euclid's geometry begins with Euclid's five axioms. For this text, we introduce two types of objects. Everything else in this text is built on top of these two objects.
+Every math class has to start somewhere: a course in Euclid's geometry begins with Euclid's five axioms. For this text, we introduce two types of objects. Everything else that we will study is built on top of these two objects.
 
 \subsection{Propositions}
 
@@ -1552,6 +1573,23 @@ In due time, we will go through some complete proofs. Every proof will consist o
 \begin{bwarning}{Using versus proving a proposition}{using-vs-proving}
 Using a proposition and proving a proposition are very different tasks. Do not confuse these two tasks.
 \end{bwarning}
+The general structure of proofs that we will write will be to start with allowable assumptions, and then reach a final conclusion.
+From the assumption(s) that we are allowed, we will \emph{use} these to \emph{prove} an additional proposition.
+The new propositon that was just proved is a new fact that we know to be true, and the fact that this new proposition is true can then be \emph{used} to \emph{prove} a further proposition.
+While the analogy isn't perfect, it is helpful to imagine the following:
+Say that we start a journey by airplane at New York City and our final destination is Singapore.
+The itenerary we have might be a first flight from New York City to Los Angeles,
+and second flight from Los Angeles to Tokyo, and a third flight from Tokyo to Singapore.
+Now, is New York City a departure or arrival airport? It's a departure airport.
+Is Singaproe a departure or arrival ariport? It's our arrival airport; in fact it's our final destination.
+What about Los Angeles? Is it a departure or arrival airport? Well, both, but at different points in the story:
+in the early part of the story, when we just get on our first flight, Los Angeles is an arrival airport.
+A little bit later in the story, when we hop on our second flight, Los Angeles is (to us in that moment) a departure airport.
+Think of NYC where we started like the assumption(s) that we are allowed to make in our proof.
+Think of Singapore like the final conclusion of the proof.
+We will need to ``stop'' at some places along the way: think of the stops in Los Angeles and Tokyo like the \emph{intermediate conclusions} in a proof:
+these are statements that are proved at first because they are helpful steps in our proof, but once proved, we are looking for a way to \emph{use} these
+newly-true-to-us statements to prove something further.
 
 Do not attempt to merely memorize proofs word-for-word. There are a lot of often-used steps (introduced below), so don't memorize those steps! If there's anything to memorize, it's the key \emph{idea} behind large proofs.
 
@@ -2365,10 +2403,36 @@ Then, it seems a bit redundant to have ``there exists...'' as well as the
 \end{center}
 
 \begin{proof}
-Let $a$ be even and $b$ be even. We want to prove $a+b$ is even. Since $a$ is even, there exists an integer $r$ such that $a=2r$. Since $b$ is even, there exists an integer $s$ such that $b=2s$.
+Let $a$ be even and $b$ be even. We want to prove $a+b$ is even. 
+Since $a$ is even, there exists an integer $r$ such that $a=2r$. Since $b$ is even, there exists an integer $s$ such that $b=2s$.
 
-Let $t=r+s$. Since $r$ and $s$ are integers, $t$ is an integer. By substitution, $a+b=2r+2s=2(r+s)=2t$. Because there exists an integer $t$ such that $a+b=2t$, we conclude $a+b$ is even.
+Let $t=r+s$. Since $r$ and $s$ are integers, $t$ is an integer. 
+By substitution, $a+b=2r+2s=2(r+s)=2t$. Because there exists an integer $t$ such that $a+b=2t$, we conclude $a+b$ is even.
 \end{proof}
+Before moving on, I encourage you to re-read the introductory paragraphs that begin this chapter, especially the paragrph that made an analogy between
+a multi-segmint flight itinerary and the process of proof. We need  to be clear about the difference between proving and using, so we will point this out 
+in the proof that we just wrote. We started with the assumptions that $a$ is even and $b$ is even.
+Note that $a$ being even and $b$ being even are propositions that are never proved. These are just assumptions, meaning these are accepted as being true for free.
+For the rest of the proof text:
+\begin{itemize}
+\item We use the fact that $a$ is even to prove that there exists an integer $r$ such that $a=2r$.
+\item We use the fact that $b$ is even to prove that there exists an integer $s$ such that $b=2s$.
+\item We defined $t$. Nothing is proved in doing this.
+\item We used the fact that $r$ is integer and used that $s$ is an integer and used the definition of $t=r+s$ to prove that $t$ is an integer.
+\item We used $a=2r$ and $b=2s$ and $t=r+s$ to prove $a+b=2t$, and this proving this was several algebra steps in a row.
+\item We used the fact that there exists an integer $t$ such that $a+b=2t$ to prove that $a+b$ iseven.
+\end{itemize}
+So one big proof is actually a bunch of mini-proofs strung together in a meaningful way. The list above is discussing each of the mini-proofs
+(though the exception that was pointed out is that defining $t$ didn't prove anything). In each of the remaining steps of the proof, 
+one or more propsitions that is alerady true (whether by assumption, or previously proved) is used to prove the next proposition.
+The newly-proved propsition is new information, and the things that were \emph{used} to get there are the \emph{reasons} why the new proposition is true.
+In terms of the flowchart diagrams, when one or more boxed propositions point down to a proposition, the boxes above (where the arrows come \emph{from})
+are the propositions thate are \emph{used}, and the box below (where the arrows point \emph{to}) is the proposition that is \emph{proved}.
+Keep in mind, though, that many boxes in the middle (not at the top, not at the bottom) serve both the role of being \emph{proved} first, 
+only to be \emph{used} later. The timeline matters. Back to our flight analogy of an itnerary from New York City to Los Angeles to Tokyo to Singapore,
+Los Angeles is an arrival (analogy to a proposition that is proved), but then later Los Angeles is our departure point (analogy to a proposition being used).
+We keep working in this way until we get to the \emph{final} conclusion.
+
 
 For additional practice, prove these two theorems:
 \begin{theorem}
@@ -2800,7 +2864,9 @@ Do not use an ``alternate definition'' as a definition.
 \end{bhabit}
 Recall the definition of odd: an integer $m$ is odd if there exists an integer $s$ such that $m=2s+1$. While it turns out to be true that an integer $m$ is odd if and only if there exists an integer $k$ such that $m=2k-1$, do not use this as the definition. The fact that $m$ is odd if and only if there is an integer $k$ such that $m=2k-1$ is known as a \defn{characterization}\index{characterization} of being odd. A characterization should not replace the definition. (It is this characterization which we have called an ``alternate definition'' above.)
 
-Think of each definition given as the \emph{original} source material. With each newly-introduced term, we have to start somewhere, and that is the definition. When you are asked to recite a definition, do not provide a characterization instead.
+Think of each definition given as the \emph{original} source material. 
+With each newly-introduced term, we have to start somewhere, and that is the definition. 
+When you are asked to recite a definition, do not provide a characterization instead.
 
 \begin{bhabit}{}{}
 Do not bother writing ``by definition'' all the time.
