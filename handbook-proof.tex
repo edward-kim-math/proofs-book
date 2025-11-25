@@ -1032,7 +1032,7 @@ Determine whether these biconditionals are true or false. Briefly explain why.
 
 \section{Mathematical language: definitions}
 
-Because we now have enough topics to discuss, this is a good time to pause to discuss mathematical language before moving on. Recall our definition of conjunction from Definition~\ref{definition:conjunction}. Do not try to memorize this definition word-for-word. Instead, ensure that a definition that you write conveys all the required meaning. For examples, we show other perfectly good ways to write the definition of conjunction (each word or piece of notation has been marked with a numerical subscript, so that we can refer to this later), with the first sample being the original definition we gave:
+Because we now have enough topics to discuss, this is a good time to pause to discuss mathematical language before moving on. Recall our definition of conjunction from Definition~\ref{definition:conjunction}. Instead of trying to memorize the definition of conjunction word-for-word, ensure that a definition that you write conveys all the required meaning. For examples, we show other perfectly good ways to write the definition of conjunction, with the first sample being the original definition we gave:
 \begin{enumerate}
 \item Let $p$ and $q$ both be propositions. The \defn{conjunction} of $p$ and $q$, denoted $p \wedge q$, is the proposition that is true when both $p$ and $q$ are true, and is false otherwise. The conjunction of $p$ and $q$ is read aloud ``$p$ and $q$.''
 
@@ -1050,7 +1050,7 @@ Because we now have enough topics to discuss, this is a good time to pause to di
 
 These are six good examples of how to write the definition of conjunction.
 \begin{bwarning}{}{}
-Do not memorize the text of a definition word-for-word.
+Do not memorize the text of a definition word-for-word. (Why does this matter? In practice, some students who have focused on memorizing each definition word-for-word and symbol-for-symbol down to the exactness of which letter(s) appeared when a definition was first stated, tended to de-emphasize focus on the meaning that's behind the words, and that led to more struggle in the end)
 \end{bwarning}
 Instead of memorizing, understand what key things you are supposed to learn from the definition (and thus, what key things are expected every time you write a definition). We'll use the conjunction as an example. All six samples above make clear that the conjunction requires two ``things'' -- one called $p$, and one called $q$. However, $p$ is not just any thing. All samples make clear that $p$ is a proposition. Similarly, all samples make clear that $q$ is a proposition.
 
@@ -1062,9 +1062,9 @@ Finally, the full phrase ``conjunction of $p$ and $q$'' appears, whether it is e
 
 Similar discussion can be held for all definitions introduced so far. You should try this yourself.
 
-With every new definition always figure out the part of speech (see Habit~\ref{habit:part-of-speech}) and for adjectives determine what type of noun is modified (Warning~\ref{warning:adjective-grammar}). In addition, for a noun, determine what kind of object is being defined. The vast majority of nouns defined so far have been propositions. This advice may not seem important now, but later, your nouns might be sets, relations, functions, ordered pairs, and so on. There will be so many moving parts later, it is important to practice these habits now.
+With every new definition always figure out the part of speech (see Habit~\ref{habit:part-of-speech}) and for adjectives determine what type of noun is modified (Warning~\ref{warning:adjective-grammar}). In addition, for a noun, determine what kind of object is being defined. The vast majority of nouns defined so far have been propositions. This advice may not seem important now, but later, your nouns might be things that are not propositions (some examples of this we'll see later on include sets, relations, functions, and ordered pairs). There will be so many moving parts later, it is important to practice these habits now.
 
-Appealing to previous mathematical experience, it is vital to mathematical proof in the next chapter that you pay close attention to grammar. For instance, a function can be continuous, but an equation cannot. So, one should not say ``The equation $3x^2 + 5 =8$ is continuous.'' You have equations with variables (such as $3x^2+5=8$) and equations without variables (such as $3+6=9$). An equation with variables might have a solution(s), but we wouldn't speak of an equation \emph{without} variables as having a solution: pay attention, even to the language surrounding this algebra. We would say, ``$x=-1$ is a solution to the equation $3x^2+5=8$ because substituting $-1$ for $x$ would make $3x^2+5$ have the same value as $8$.
+Appealing to previous mathematical experience, it is vital to mathematical proof in the next chapter that you pay close attention to grammar. For instance, a function can be continuous, but an equation cannot. So, we can't say ``The equation $3x^2 + 5 =8$ is continuous.'' You have equations with variables (such as $3x^2+5=8$) and equations without variables (such as $3+6=9$). An equation with variables might have solutions, but we wouldn't speak of an equation \emph{without} variables as having a solution: pay attention, even to the language surrounding this algebra. We would say, ``$x=-1$ is a solution to the equation $3x^2+5=8$'' because substituting $-1$ for $x$ would make $3x^2+5$ have the same value as $8$.
 
 Samples 4 and 5 of the definitions for conjunction from earlier in this section place the notation $p \wedge q$ immediately after the word conjunction, following Language Discussion~\ref{language:notation-placement}.
 
@@ -1082,7 +1082,9 @@ What are the key things you must address when writing out a definition of disjun
 
 \section{Propositional equivalence}\label{section:propositional-equivalence}
 
-In Section~\ref{section:logical-operations}, logical operations such as $\wedge$ were used to take \defn{simple propositions} such as $p$ and such as $q$ to make \defn{compound propositions} such as $p \wedge q$. Some propositions are always true:
+In Section~\ref{section:logical-operations}, logical operations such as $\wedge$ were used to take \defn{simple propositions} such as $p$ and such as $q$ to make \defn{compound propositions} such as $p \wedge q$. 
+(By \emph{compound} proposition, we mean that instead of a proposition being represented as a single letter such as $p$, we have a larger proposition constructed from prior propositions and logical operations.)
+Some propositions are always true:
 \begin{bdefinition}{Tautology}{tautology}
 A \defn{tautology}\index{tautology} is a compound proposition that is always true, regardless of the truth values of the simple propositions which appear.
 \end{bdefinition}
@@ -1124,10 +1126,11 @@ $F$ & $F$ & $T$ & $T$ & $T$ & $T$ & $T$
 
 \end{bexample}
 
-\begin{bwarning}{Abusing $\equiv$}{}
+\begin{bwarning}{Be careful where $\equiv$ appears}{}
 In the truth table above, we have a column heading of $[a \rightarrow b] \leftrightarrow [(\neg b) \leftrightarrow (\neg a)]$. This is fine, as the symbols used are the logical operators introduced in the previous section. It is a bit of abuse of notation if we had a column heading which said $[a \rightarrow b] \equiv [(\neg b) \leftrightarrow (\neg a)]$. Instead, we write $[a \rightarrow b] \equiv [(\neg b) \leftrightarrow (\neg a)]$ to say that $[a \rightarrow b]$ is logically equivalent to $[(\neg b) \leftrightarrow (\neg a)]$, which, if we peel apart the definition of logical equivalence, is that $[a \rightarrow b] \equiv [(\neg b) \leftrightarrow (\neg a)]$ is a tautology, which, if we peel apart the definition of tautology says that $[a \rightarrow b] \equiv [(\neg b) \leftrightarrow (\neg a)]$ is always true, which is evidenced by having the column for $[a \rightarrow b] \equiv [(\neg b) \leftrightarrow (\neg a)]$ have only ``T''s in it.
 
 Having a $\equiv$ symbol as part of a column heading is missing the point of what $\equiv$ is for.
+Let's write $\equiv$ between one propsition and another to indicate that two propositions are equal, which we can verify using a truth table, but in truth table columns, let's only stick to writing compound propositions using the logical operations such as $\neg, \wedge, \vee, \rightarrow$, and $\leftrightarrow$.
 \end{bwarning}
 Practice showing logical equivalences using the examples below as exercises by writing out appropriate truth tables, as shown in Example~\ref{example:implication-contrapositive-logically-equivalent}.
 \begin{exercise}
@@ -1214,11 +1217,30 @@ There are two ways to show that one proposition is equivalent to another. Suppos
 \begin{enumerate}
 \item Write a truth table, showing that the column for $[p \rightarrow (q \rightarrow r)] \leftrightarrow [(p \wedge q) \rightarrow r]$ only has $T$s, which means that $[p \rightarrow (q \rightarrow r)] \leftrightarrow [(p \wedge q) \rightarrow r]$ is a tautology and, therefore, $[p \rightarrow (q \rightarrow r)] \equiv [(p \wedge q) \rightarrow r]$. This way was done in Example~\ref{example:implication-contrapositive-logically-equivalent} to show that two propositions are logically equivalent.
 
-\item Start with the proposition $p \rightarrow (q \rightarrow r)$ and use previous logical equivalences (in a manner of substitution) to obtain the proposition $(p \wedge q) \rightarrow r$ \`a la verifying trigonometric identities. So $[p \rightarrow (q \rightarrow r)] \equiv [(p \wedge q) \rightarrow r]$ is shown by using previous logical equivalences such as $\neg (p \wedge q) \equiv (\neg p) \vee (\neg q)$ in the same way that a trig identity like $\tan \theta + \cot \theta = \sec \theta \csc \theta$ is verified using standard (previous) trig identities such as $\sin^2 \theta + \cos^2 \theta = 1$.
+\item Start with the proposition $p \rightarrow (q \rightarrow r)$ and use previous logical equivalences (in a manner of substitution) to obtain the proposition $(p \wedge q) \rightarrow r$ in the same format as trigonometric identities. So $[p \rightarrow (q \rightarrow r)] \equiv [(p \wedge q) \rightarrow r]$ is shown by using previous logical equivalences such as $\neg (p \wedge q) \equiv (\neg p) \vee (\neg q)$ in the same way that a trig identity like $\tan \theta + \cot \theta = \sec \theta \csc \theta$ is verified using standard (previous) trig identities such as $\sin^2 \theta + \cos^2 \theta = 1$.
 \end{enumerate}
 \end{bmethod}
+As an example of what me mean by the format of verifying a trigonometric identity, let's examine the following example
+where we verify $\sec\theta - \cos\theta = \sin\theta \tan\theta$.
+\begin{align*}
+\sec\theta - \cos\theta &= \frac{1}{\cos\theta} - \cos\theta \\
+&= \frac{1}{\cos\theta} - \frac{\cos\theta}{1} \\
+&= \frac{1}{\cos\theta} - \frac{\cos^2\theta}{\cos \theta} \\
+&= \frac{1 - \cos^2\theta}{\cos\theta} \\
+&= \frac{\sin^2\theta}{\cos\theta} \\
+&= \sin\theta \,\frac{\sin\theta}{\cos\theta} \\
+&= \sin\theta \tan\theta
+\end{align*}
+Our process took the left side of $\sec\theta - \cos\theta$ and used the standard list of trigonometric identities to arrive 
+at the right side. Our first step took $\sec\theta - \cos\theta$ and rewrote it as $\frac{1}{\cos\theta} - \cos\theta$ using the 
+the standard identity $\sec \theta = \frac{1}{\cos \theta}$. The second and third steps were algebra. The next step took 
+$1 - \cos^2\theta$ and rewrote this as $\sin^2\theta$ using the standard trig identity $\sin^2 \theta + \cos^2\theta = 1$.
+The last step applied the standard trig identity $\tan \theta = \frac{\sin \theta}{\cos \theta}$.
+In summary, by applying standard trig identities (and some algebra identities) we verified the new identity $\sec\theta - \cos\theta = \sin\theta \tan\theta$, though this identity is not ``standard'' in the sense that it's not on everyone's list to memorize, but it is nonetheless true.
+We apply that same kind of formatting and thought process (use what we know is true to get something new to be true) for logical equivalences.
 \begin{example}
-Here, we show how that second method works. Using the logical equivalences introduced earlier,
+Here, we show how that second method works. Using the logical equivalences introduced earlier, 
+let's verify that $p \rightarrow (q \rightarrow r) \equiv (p \wedge q) \rightarrow r$.
 \begin{align*}
 p \rightarrow (q \rightarrow r)
 &\equiv p \rightarrow ((\neg q) \vee r)\\
@@ -1231,10 +1253,10 @@ p \rightarrow (q \rightarrow r)
 
 One of the main purposes of the idea of logical equivalences is to know when two propositions always have the same truth value, as one proposition could then justifiably be replaced with the other. This is the same as saying the algebra student should know that $5a+15b$ can be replaced with $5(a+3b)$.
 
-A common mistake of algebra students is to replace $(a+b)^2$ with $a^2+b^2$. As a reader of this handbook, you're well aware that $(a+b)^2=a^2+b^2$ is not true in general. That is, the expressions $(a+b)^2$ and $a^2+b^2$ are not numerically equivalent. The algebra student should know that these two expressions are different. In the same way, the logic student should know of logical equivalence to know of the idea that two propositions may \emph{not} be logically equivalent:
+A common mistake of algebra students is to replace $(a+b)^2$ with $a^2+b^2$. We know $(a+b)^2=a^2+b^2$ is not true in general. That is, the expressions $(a+b)^2$ and $a^2+b^2$ are not numerically equivalent. The algebra student should know that these two expressions are different. In the same way, the logic student should know of logical equivalence to know of the idea that two propositions may \emph{not} be logically equivalent:
 
 \begin{bwarning}{Conjunction is not the same as implication}{conjunction-not-implication}
-Let $p$ be a proposition and let $q$ be a proposition. The conjunction $p \wedge q$ and the implication $p \rightarrow q$ are not logically equivalent, as seen in their truth tables. Therefore, do not mentally equate $p \rightarrow q$ with $p \wedge q$, since they are different propositions.
+Let $p$ be a proposition and let $q$ be a proposition. The conjunction $p \wedge q$ and the implication $p \rightarrow q$ are not logically equivalent, as seen in their truth tables. Therefore, we shouldn't mentally equate $p \rightarrow q$ with $p \wedge q$, since they are different propositions.
 \begin{center}
 \begin{tabular}{c|c||c|c}
 $p$ & $q$ & $p \rightarrow q$ & $p \wedge q$ \\\hline
@@ -1273,6 +1295,8 @@ Show that the proposition $\neg(p \leftrightarrow q)$ and the proposition $p \le
 
 \section{Predicates and quantifiers}\label{section:predicates-quantifiers}
 
+\subsection{Predicates}
+
 \begin{bdefinition}{Predicate}{predicate}
 A \defn{predicate}\index{predicate} (with variable $x$) is a declarative sentence $P(x)$, which satisfies the property that upon substituting $x$ with an appropriate entity, the sentence is a proposition. 
 \end{bdefinition}
@@ -1298,10 +1322,13 @@ If $Q(x)$ is a predicate, then $Q(x)$ is neither true nor false. If $x$ is subst
 Suppose $Q(x)$ is the predicate \fbox{$x^2 < 82$} with $\mathbb{R}$ as the universe of discourse. Then, it makes no sense to say that $Q(x)$ is true or false. However, $Q(9)$ is true, while $Q(10)$ is false. To have a truth value, you must plug in something for $x$. We just saw that $Q(x)$ didn't have a truth value, while $Q(9)$ did. By analogy, using $f(x)=\sqrt{x-10}$ from earlier, $f(x)$ does not have a numerical value, but $f(26)$ does. In fact, $f(26)=4$.
 \end{example}
 
-The process of taking a predicate and obtaining a proposition involves taking a \defn{free}\index{free} variable and \defn{binding}\index{binding} it to have a \defn{bound}\index{bound} variable. There are two ways to \defn{bind}\index{bind} a variable. The first way is the one that we have seen. Using the previous example, $Q(x)$ is a predicate, but if the variable $x$ is bound to have value $9$, then $Q(9)$ is a proposition. A second way to bind a variable is using a quantifier.
+The process of taking a predicate and obtaining a proposition involves taking a \defn{free}\index{free} variable and \defn{binding}\index{binding} it to have a \defn{bound}\index{bound} variable. There are two ways to \defn{bind}\index{bind} a variable. The first way is the one that we have seen. Using the previous example, $Q(x)$ is a predicate, but if the variable $x$ is bound to have value $9$, then $Q(9)$ is a proposition, specifically the true proposition $9^2 < 82$. Continuing this example, we could instead take the predicate $Q(x)$ and bind the variable $x$ to the value $10$, and get the proposition $Q(10)$, which is $10^2<82$, which is a false proposition. A second way to bind a variable is using a quantifier. In a moment, we will learn about both quantifiers.
 \begin{bwarning}{}{rebinding}
 Due to the grammatical role of binding a variable, a variable may not be bounded more than once. In other words, binding can only be applied to free variables. The process of binding turns a free variable into a bound variable.
 \end{bwarning}
+
+\subsection{Universal quantifier}
+
 Starting with a predicate $P(x)$, substituting $x$ with an element from the universe of discourse is one way to get a proposition. Another way to get a proposition is to do the thought experiment of substituting \emph{every} element from the universe of discourse for $x$, which uses a \defn{quantifier}\index{quantifier}:
 \begin{bdefinition}{Universal quantification}{universal-quantification}
 Given a predicate $P(x)$, the \defn{universal quantification}\index{universal quantification} of $P(x)$ over the set $U$ is the proposition that is true if $P(x)$ is true for all $x \in U$ and is false otherwise. The universal quantification is written $\forall x \in U\,[P(x)]$ and is read, ``For all $x$ in $U$,\, $P(x)$.''
@@ -1312,58 +1339,39 @@ Recall $\mathbb{H}$ denotes the set of all people. Define $P(x)$ to be the predi
 
 Stating ``For all $x$ which is a human, for all $x$ which is a human, $x$ was kung fu fighting'' would be grammatically incorrect (see Warning~\ref{warning:rebinding}) due to binding $x$ more than once. 
 \end{example}
-\begin{example}
-Let $M(x)$ be the predicate ``$x^2 > 100$'' and let $S = \{11,12,13\}$. Then $\forall x \in S\,[M(x)]$ is true. However, with $T = \{10,20,30,40\}$, the proposition $\forall x \in T\,[M(x)]$ is false. Since $S$ only had three elements, we could check whether this ``for all'' statement was true by plugging in each element of $S$ for $x$ and verifying whether $x^2 > 100$ was true or not. Similarly, $T$ only had four elements, so we could plug in each of the four elements of $T$ into $x$. Plugging in $x=10$ made $x^2>100$ false, and therefore $\forall x \in T\,[M(x)]$ is false.
-\end{example}
-\begin{bremark}{}{}
-Revisiting the last example, specifying the set used (for the universe of discourse) made a difference. A ``for all'' statement (a universally-quantified statement) is very ``strong'' in the sense that $M(x)$ must be true for \emph{each} element of the set specified.
-\vskip6pt
-In fact, $\forall x \in S\,[M(x)]$ is logically equivalent to $M(11) \wedge M(12) \wedge M(13)$. Likewise, $\forall x \in T\,[M(x)]$ is logically equivalent to $M(10) \wedge M(20) \wedge M(30) \wedge M(40)$.
-\end{bremark}
-A universally-quantified statement is very ``strong'' in that many individual propositions have to be true. In fact, if the set $L$ consists of $27$ elements, then $\forall x \in L\,[P(x)]$ can be rewritten using the word ``and'' a total of $26$ times. This idea extends for a set such as $\mathbb{Z}_{>0}$ with an unlimited number of elements. So, if $P(x)$ is some proposition, we can think of $\forall x \in \mathbb{Z}_{>0}\,[P(x)]$ as the same as $P(1) \wedge P(2) \wedge P(3) \wedge P(4) \wedge \cdots$, but we won't have time to write out the whole proposition using conjunctions.
 
-Again, consider $\forall x \in S\,[M(x)]$ but for a new purpose. This says we should write $M(x)$ replacing $x$ with $11$, then with $12$, and then with $13$. So we get $M(11) \wedge M(12) \wedge M(13)$. What would $\forall y \in S\,[M(y)]$ say? We should write $M(y)$ replacing $y$ with $11$, then with $12$, then with $13$. So we get $M(11) \wedge M(12) \wedge M(13)$, the same as before.
-\begin{bremark}{The quantified variable is a placeholder variable}{forall-placeholder}
-Recall Remark~\ref{remark:predicate-placeholder} where the predicate $P(x)$ variable $x$ should be thought of the same as $P(y)$ with variable $y$. In the same way, if $P(x)$ is a predicate, then $\forall x \in S\,[P(x)]$ is the same proposition as $\forall y \in S\,[P(y)]$. The quantified variable is a placeholder variable.
-\end{bremark}
-If an algebra student struggles with applying $a(b+c)=ab+ac$ on the expression $5(a+2)$ due to the notation clash, we would encourage the student to apply $x(y+z)=xy+xz$ on the expression $5(a+2)$. Similarly, if $x$ is already used in a proof and you encounter $\forall x \in S\,[P(x)]$, this remark tells us it's okay to replace this with $\forall y \in S\,[P(y)]$. This isn't strictly required, but removing the notation clash may be helpful at first.
+Our first several examples are focused on making sure that the meaning of these statements is clear.
+In order to do that, we have to focus on taking symbolic language and translating this into plain but accurate English.
+At first, this will feel challenging and confusing to do, but it is very important to focus on what things mean instead of hoping to slip by just by doing symbolic manipulation.
 \begin{example}
-Let $C(x)$ be the predicate ``$x$ was born in New York.'' Then $\forall x \in \mathbb{H}\,[C(x)]$ is the same proposition as $\forall s \in \mathbb{H}\,[C(s)]$. In plain English, both propositions say ``Every person was born in New York.'' Clearly, $\forall t \in \mathbb{H}\,[C(t)]$ is false.
-\end{example}
-Like the last example shows, practice writing the same universally-quantified statement using \emph{different} variables.
-
-We started with a predicate $P(x)$ and examined the universal quantification. There is another \defn{quantifier}\index{quantifier} which yields a proposition:
-\begin{bdefinition}{Existential quantification}{existential-quantification}
-Given a predicate $P(x)$, the \defn{existential quantification}\index{existential quantification} of $P(x)$ over the set $U$ is the proposition that is true if $P(x)$ is for at least one $x \in U$ and is false otherwise. The existential quantification is written $\exists x \in U\,[P(x)]$ and is read, ``There exists $x$ in $U$ such that $P(x)$.''
-\end{bdefinition}
-Occasionally, the existential quantification is read, ``$P(x)$ for some $x$ in $U$.'' In Section~\ref{section:nested-quantifiers}, we will explain why we use this language sparingly. The phrase ``There exists'' is used at the beginning of the sentence, while the phrase ``for some'' is used at the end, due to English grammar.
-\begin{blanguage}{What does the phrase ``such that'' mean?}{such-that}
-The phrase ``such that'' is used to indicate that the text before and the text after are connected in some way. While mathematicians don't usually read $\exists x \in U\,[P(x)]$ as, ``There exists $x$ in $U$, and $P(x)$ is true,'' this would technically be a possible way to comprehend this proposition. The phrase ``$\alpha$ such that $\beta$'' is used to say $\alpha$ is true, $\beta$ is true, and in some way, $\alpha$ and $\beta$ are connected. In this case, the connection between the sentence ``There exists $x \in U$'' and the sentence ``$P(x)$ is true'' is that both mention $x$. The universal quantification does not use the phrase ``such that.''
-\end{blanguage}
-\begin{example}
-Let $Y$ be the set of all U.S. states. Let $P(s)$ be the predicate ``$s$ begins with the letter Z.'' Then the proposition $\exists s \in Y\,[P(s)]$ in plain English says ``There exists a U.S. state which begins with the letter Z'' which is clearly false. Using the word ``which'' was natural for the English language, but a slightly more mathematical verbiage of this would have been ``There exists a U.S. state $y$ such that $y$ begins with the letter Z.'' The use of the phrase ``such that'' is a connecting phrase. In a sense, it would have been the same to say ``There exists a U.S. state $y$'' and ``$y$ begins with the letter Z'' but because the two sentences are linked (by both having $y$) the phrase ``such that'' is preferred over ``and'' here.
-\end{example}
-\begin{example}
-Let $Y$ be the set of all U.S. states. Let $Q(t)$ be the predicate ``The state vegetable of $t$ is the watermelon.'' The proposition $\exists t \in Y\,[Q(t)]$ is true because the state vegetable of Oklahoma is the watermelon.
+Suppose that $P(x)$ is the predicate ``$x$ has a logo'' and that $C$ is the set of all car brands.
+We can take $\forall x \in C [ P(x)]$ and say ``For all $x \in C$, \,\,$x$ has a logo'' and while this is technically accurate, 
+it's much more helpful to understand if we can use plain language. Here are other examples that are accurate, but not plain:
+\begin{itemize}
+    \item For all $x$ in the set of car brands, $x$ has a logo
+    \item For all $x$ in $C$, where $C$ is the set of all car brands, $x$ has a logo.
+    \item For all $x$ in $C$, $x$ has a logo, where $C$ is the set of all car brands.
+    \item For all things in the set of car brands, that thing has a logo
+\end{itemize}
+A truly accurate and plain way to say this is to say ``Every car brand has a logo'' or to say ``Each car brand has a logo.''
+If there's even one car brand out there without a logo, then this statement would be false. But if every car brand has a logo, then this statement would be true.
 \end{example}
 
-An existentially-quantified statement is ``weak'' in the sense that only one of many individual propositions has to be true:
 \begin{example}
-Let $M(x)$ be the predicate ``$x^2 > 100$'' and let $T = \{10,20,30,40\}$. The proposition $\exists x \in T\,[M(x)]$ is true. Since $T$ only has four elements, we could plug in each of the four elements of $T$ into $x$. Plugging in $x=20$ made $x^2>100$ true, and therefore $\exists x \in T\,[M(x)]$ is true.
+Let $T(x)$ be the predicate ``$x$ has an orange cowboy hat'' and let $N$ be the set of all New York residents (or if we wish, we could say that $N$ is the set of all New Yorkers).
+When we discuss $\forall x \in N [T(x)]$ we tend to say and write ``For all $x \in N$, $x$ has an orange cowboy hat.''
+If we were trying to say plainly what this means, it's not enough to say ``For all $x$ in the set of New Yorkers, $x$ has an orange cowboy hat.''
+Instead, we should say ``Every New Yorker has a cowboy hat'' or say ``Each New Yorker has a cowboy hat.''
+The proposition is false: to be false, we only need information that at least one New Yorker doesn't have a cowboy hat, and that seems like easy enough information for us to ascertain.
 \end{example}
-In fact, with the notation set up from the last example, $\exists x \in T\,[M(x)]$ is logically equivalent to $M(10) \vee M(20) \vee M(30) \vee M(40)$.
-\begin{bremark}{The quantified variable is a placeholder variable}{}
-Just as Remark~\ref{remark:forall-placeholder} says for universally-quantified statements, the quantified variable in an existentially-quantified statement is a placeholder variable. Thus, if $P(x)$ is a predicate and $D$ is a set, then $\exists x \in D\,[P(x)]$ is the same proposition as $\exists t \in D\,[P(t)]$. In the next chapter on proofs, there will be times when writing $\exists t \in D\,[P(t)]$ to replace $\exists x \in D\,[P(x)]$ helps us avoid notation clashes.
-\end{bremark}
-As with universally-quantified statements, practice writing existentially-quantified statements using new placeholder variables.
 
-\begin{bwarning}{Do not use the word ``for'' alone}{}
-Suppose $P(x)$ is a predicate. In their alternate wordings, ``$P(x)$ for all $x \in M$'' is the universal quantification while ``$P(x)$ for some $x \in M$'' is the existential quantification. These are \emph{different} propositions. Therefore, it is ambiguous to say ``$P(x)$ for $x \in M$.'' Never use the word ``for'' alone right before ``$x \in M$'' or right before ``$y \in N$'' or similar. Always use ``for all'' or ``for some'' to clearly communicate whether you are talking about the universal quantification or the existential quantification.
-\end{bwarning}
-
-\begin{blanguage}{Grammar of quantified statements}{}
-A universally-quantified statement and an existentially-quantified statement have different grammar. If $P(x)$ is the predicate ``Google knows $x$'s phone number'' then $\forall x \in \mathbb{H}\,[P(x)]$ is the proposition ``For all $x \in \mathbb{H}$, Google knows $x$'s phone number'' while $\exists x \in \mathbb{H}\,[P(x)]$ is the proposition ``There exists an $x \in \mathbb{H}$ such that Google knows $x$'s phone number.'' The first sentence does not use the phrase ``such that'' and requires a comma (because of the dependent clause: the phrase ``for all $x \in \mathbb{H}$'' is not a sentence on its own). The second sentence uses the phrase ``such that'' and should not have a comma (because the phrase ``There exists an $x \in \mathbb{H}$'' is a sentence).
-\end{blanguage}
+\begin{example}
+Let $Z$ be the set of all Canadians. Let $J(x)$ be the predicate ``$x$ likes to drink boba tea.''
+Then when writing  $\forall x \in Z [J(x)]$, we tend to say ``For all $x \in Z$, $x$ likes to drink boba tea'' so that our speaking mimicks our writing.
+However, to plainly (but still accurately) describe what $\forall x \in Z [J(x)]$ means,
+we could say ``Every Canadian likes to drink boba tea.''
+I don't know about you, but I'd believe that ``Every Canadian likes to drink boba tea'' is false.
+\end{example}
 
 \begin{example}\label{example:universal-city}
 Suppose that there was a small town (called Uruapan) which had the following twelve residents:
@@ -1384,11 +1392,118 @@ Kylar	&	4248 Rosebud Avenue	&	580-461-6572	&	O-	&	Jul. 24, 1997	\\ \hline
 Lee	&	773  Hart Ridge Road	&	217-202-2432	&	A+	&	May 13, 1948	\\ \hline
 \end{tabular}
 \end{center}
-% NEXT EDITION: UPDATE/EXPAND Perhaps double check that this table has good for ALL our examples...
 
 That is, Uruapan (for which we will use $U$ as notation) consists of these twelve people, and only these twelve people, and nobody other than these twelve people.
 
 The proposition ``For all $p \in U$, the last digit in $p$'s phone number is a $2$'' is true.
+\end{example}
+To preview something in the next chapter, let's point out that in order to \emph{prove} the proposition
+``For all $p \in U$, the last digit in $p$'s phone number is a $2$'', well, I would ask you (the person reading)
+to select to represent $p$ any object from $U$ that you like. That is, you could have $p$ be \emph{whichever} resident of Uruapan that you'd like.
+You don't even have to tell me who. You might have selected Finley. You might have selected Hollis.
+No matter who you picked, though, if I could write down that person's phone number accurately, and it ended in a 2, then I will have proved my point.
+The key thing though is that I'd have to perform this feat \emph{no matter} who you selected.
+Or, if we had the time, you could keep selected elemenst of $U$ (and there's only 12 anyway), and after exhausting all possibilities, if I demonstrate each resident has a 2 as th elast digit of their phone number, then I've proved my point.
+
+\begin{example}
+Let $M(x)$ be the predicate ``$x^2 > 100$'' and let $S = \{11,12,13\}$. Then $\forall x \in S\,[M(x)]$ is true. However, with $T = \{10,20,30,40\}$, the proposition $\forall x \in T\,[M(x)]$ is false. Since $S$ only had three elements, we could check whether this ``for all'' statement was true by plugging in each element of $S$ for $x$ and verifying whether $x^2 > 100$ was true or not. Similarly, $T$ only had four elements, so we could plug in each of the four elements of $T$ into $x$. Plugging in $x=10$ made $x^2>100$ false, and therefore $\forall x \in T\,[M(x)]$ is false.
+\end{example}
+\begin{bremark}{}{}
+Revisiting the last example, specifying the set used (for the universe of discourse) made a difference. A ``for all'' statement (a universally-quantified statement) is very ``strong'' in the sense that $M(x)$ must be true for \emph{each} element of the set specified.
+\vskip6pt
+In fact, $\forall x \in S\,[M(x)]$ is logically equivalent to $M(11) \wedge M(12) \wedge M(13)$. Likewise, $\forall x \in T\,[M(x)]$ is logically equivalent to $M(10) \wedge M(20) \wedge M(30) \wedge M(40)$.
+\end{bremark}
+A universally-quantified statement is very ``strong'' in that many individual propositions have to be true. In fact, if the set $L$ consists of $27$ elements, then $\forall x \in L\,[P(x)]$ can be rewritten using the word ``and'' a total of $26$ times. This idea extends for a set such as $\mathbb{Z}_{>0}$ with an unlimited number of elements. So, if $P(x)$ is some proposition, we can think of $\forall x \in \mathbb{Z}_{>0}\,[P(x)]$ as the same as $P(1) \wedge P(2) \wedge P(3) \wedge P(4) \wedge \cdots$, but we won't have time to write out the whole proposition using conjunctions.
+
+Again, consider $\forall x \in S\,[M(x)]$ but for a new purpose. This says we should write $M(x)$ replacing $x$ with $11$, then with $12$, and then with $13$. So we get $M(11) \wedge M(12) \wedge M(13)$. What would $\forall y \in S\,[M(y)]$ say? We should write $M(y)$ replacing $y$ with $11$, then with $12$, then with $13$. So we get $M(11) \wedge M(12) \wedge M(13)$, the same as before.
+\begin{bremark}{The quantified variable is a placeholder variable}{forall-placeholder}
+Recall Remark~\ref{remark:predicate-placeholder} where the predicate $P(x)$ variable $x$ should be thought of the same as $P(y)$ with variable $y$. In the same way, if $P(x)$ is a predicate, then $\forall x \in S\,[P(x)]$ is the same proposition as $\forall y \in S\,[P(y)]$. The quantified variable is a placeholder variable.
+\end{bremark}
+If an algebra student struggles with applying $a(b+c)=ab+ac$ on the expression $5(a+2)$ due to the notation clash, we would encourage the student to apply $x(y+z)=xy+xz$ on the expression $5(a+2)$. Similarly, if $x$ is already used in a proof and you encounter $\forall x \in S\,[P(x)]$, this remark tells us it's okay to replace this with $\forall y \in S\,[P(y)]$. This isn't strictly required, but removing the notation clash may be helpful at first.
+\begin{example}
+Let $C(x)$ be the predicate ``$x$ was born in New York.'' Then $\forall x \in \mathbb{H}\,[C(x)]$ is the same proposition as $\forall s \in \mathbb{H}\,[C(s)]$. In plain English, both propositions say ``Every person was born in New York.'' Clearly, $\forall t \in \mathbb{H}\,[C(t)]$ is false.
+\end{example}
+Like the last example shows, practice writing the same universally-quantified statement using \emph{different} variables.
+\begin{example}
+Given $S$ is the set of all tuba players and $P(x)$ is the predicate ``$x$ likes pumpkin pie''
+then $\forall x \in S [P(x)]$ is ``For all $x \in S$, $x$ likes pumpkin pie'' or in plain English ``Every tuba player likes pumpkin pie.''
+Switching variables, $\forall y \in S [P(y)]$ is ``For all $y \in S$, $y$ likes pumpkin pie'' which in plain English is still ``Every tuba player likes pumpkin pie.''
+\end{example}
+
+\subsection{Existential quantifier}
+
+We started with a predicate $P(x)$ and examined the universal quantification. There is another \defn{quantifier}\index{quantifier} which yields a proposition:
+\begin{bdefinition}{Existential quantification}{existential-quantification}
+Given a predicate $P(x)$, the \defn{existential quantification}\index{existential quantification} of $P(x)$ over the set $U$ is the proposition that is true if $P(x)$ is for at least one $x \in U$ and is false otherwise. The existential quantification is written $\exists x \in U\,[P(x)]$ and is read, ``There exists $x$ in $U$ such that $P(x)$.''
+\end{bdefinition}
+Occasionally, the existential quantification is read, ``$P(x)$ for some $x$ in $U$.'' In Section~\ref{section:nested-quantifiers}, we will explain why we use this language sparingly. The phrase ``There exists'' is used at the beginning of the sentence, while the phrase ``for some'' is used at the end, due to English grammar.
+\begin{blanguage}{What does the phrase ``such that'' mean?}{such-that}
+The phrase ``such that'' is used to indicate that the text before and the text after are connected in some way. While mathematicians don't usually read $\exists x \in U\,[P(x)]$ as, ``There exists $x$ in $U$, and $P(x)$ is true,'' this would technically be a possible way to comprehend this proposition. The phrase ``$\alpha$ such that $\beta$'' is used to say $\alpha$ is true, $\beta$ is true, and in some way, $\alpha$ and $\beta$ are connected. In this case, the connection between the sentence ``There exists $x \in U$'' and the sentence ``$P(x)$ is true'' is that both mention $x$. The universal quantification does not use the phrase ``such that.''
+\end{blanguage}
+\begin{example}
+Let $Y$ be the set of all U.S. states. Let $P(s)$ be the predicate ``$s$ begins with the letter Z.'' Then the proposition $\exists s \in Y\,[P(s)]$ in plain English says ``There exists a U.S. state which begins with the letter Z'' which is clearly false. Using the word ``which'' was natural for the English language, but a slightly more mathematical verbiage of this would have been ``There exists a U.S. state $y$ such that $y$ begins with the letter Z.'' The use of the phrase ``such that'' is a connecting phrase. In a sense, it would have been the same to say ``There exists a U.S. state $y$'' and ``$y$ begins with the letter Z'' but because the two sentences are linked (by both having $y$) the phrase ``such that'' is preferred over ``and'' here.
+\end{example}
+\begin{example}
+Let $Y$ be the set of all U.S. states. Let $Q(t)$ be the predicate ``The state vegetable of $t$ is the watermelon.'' The proposition $\exists t \in Y\,[Q(t)]$ is true because the state vegetable of Oklahoma is the watermelon.
+\end{example}
+
+Before digging in too far, we want to make sure that we practice what the existential quantifier looks like when put into plain English.
+
+\begin{example}
+Suppose that $P(x)$ is the predicate ``$x$ has a logo'' and that $C$ is the set of all car brands.
+We can take $\exists x \in C [ P(x)]$ and say ``There exists $x \in C$ such that $x$ has a logo'' and while this is technically accurate, 
+it's much more helpful to understand if we can use plain language. Here are other examples that are accurate, but not plain:
+\begin{itemize}
+    \item There exists an $x$ in the set of car brands such that $x$ has a logo
+    \item There exists $x$ in $C$, where $C$ is the set of all car brands, such that $x$ has a logo.
+    \item There exists $x$ in $C$ such that $x$ has a logo, where $C$ is the set of all car brands.
+\end{itemize}
+A truly accurate and plain way to say this is to say ``There exists a car brand has a logo'' or to say ``At least one car brand has a logo.''
+To be true, we just need at least one car brand to have a logo. 
+To be false would mean that there isn't even one car brand out there with a logo.
+\end{example}
+
+\begin{example}
+Let $T(x)$ be the predicate ``$x$ has an orange cowboy hat'' and let $N$ be the set of all New York residents (or if we wish, we could say that $N$ is the set of all New Yorkers).
+When we discuss $\exists x \in N [T(x)]$ we tend to say and write ``There exists $x \in N$ such that $x$ has an orange cowboy hat.''
+If we were trying to say plainly what this means, it's not enough to say ``There exists $x$ in the set of New Yorkers such that $x$ has an orange cowboy hat.''
+Instead, we should say ``There exists a New Yorker that has a cowboy hat'' or say ``There is a New Yorker that has a cowboy hat''
+or ``Some New Yorker has a cowboy hat.''
+To be true, among all the New Yorkers, we would just need one person to have an orange cowboy hat.
+To be false, nobody from New York could own an orange cowboy hat.
+\end{example}
+
+\begin{example}
+Let $Z$ be the set of all Canadians. Let $J(x)$ be the predicate ``$x$ likes to drink boba tea.''
+Then when writing  $\exists x \in Z [J(x)]$, we tend to say ``There exists $x \in Z$ such that $x$ likes to drink boba tea'' so that our speaking mimicks our writing.
+However, to plainly (but still accurately) describe what $\exists x \in Z [J(x)]$ means,
+we could say ``There exists a Canadian who likes to drink boba tea.''
+I don't know about you, but I'd believe that ``There exists a Canadian likes to drink boba tea'' is true: 
+after interviewing every Canadian person and asking each to answer ``Do you like boba tea?'' it seems likely that a response of ``Yes'' will happen at least once.
+\end{example}
+
+An existentially-quantified statement is ``weak'' in the sense that only one of many individual propositions has to be true:
+\begin{example}
+Let $M(x)$ be the predicate ``$x^2 > 100$'' and let $T = \{10,20,30,40\}$. The proposition $\exists x \in T\,[M(x)]$ is true. Since $T$ only has four elements, we could plug in each of the four elements of $T$ into $x$. Plugging in $x=20$ made $x^2>100$ true, and therefore $\exists x \in T\,[M(x)]$ is true.
+\end{example}
+In fact, with the notation set up from the last example, $\exists x \in T\,[M(x)]$ is logically equivalent to $M(10) \vee M(20) \vee M(30) \vee M(40)$.
+\begin{bremark}{The quantified variable is a placeholder variable}{}
+Just as Remark~\ref{remark:forall-placeholder} says for universally-quantified statements, the quantified variable in an existentially-quantified statement is a placeholder variable. Thus, if $P(x)$ is a predicate and $D$ is a set, then $\exists x \in D\,[P(x)]$ is the same proposition as $\exists t \in D\,[P(t)]$. In the next chapter on proofs, there will be times when writing $\exists t \in D\,[P(t)]$ to replace $\exists x \in D\,[P(x)]$ helps us avoid notation clashes.
+\end{bremark}
+As with universally-quantified statements, practice writing existentially-quantified statements using new placeholder variables.
+
+\subsubsection{Comparing the quantifiers}
+
+\begin{bwarning}{Do not use the word ``for'' alone}{}
+Suppose $P(x)$ is a predicate. In their alternate wordings, ``$P(x)$ for all $x \in M$'' is the universal quantification while ``$P(x)$ for some $x \in M$'' is the existential quantification. These are \emph{different} propositions. Therefore, it is ambiguous to say ``$P(x)$ for $x \in M$.'' Never use the word ``for'' alone right before ``$x \in M$'' or right before ``$y \in N$'' or similar. Always use ``for all'' or ``for some'' to clearly communicate whether you are talking about the universal quantification or the existential quantification.
+\end{bwarning}
+
+\begin{blanguage}{Grammar of quantified statements}{}
+A universally-quantified statement and an existentially-quantified statement have different grammar. If $P(x)$ is the predicate ``Google knows $x$'s phone number'' then $\forall x \in \mathbb{H}\,[P(x)]$ is the proposition ``For all $x \in \mathbb{H}$, Google knows $x$'s phone number'' while $\exists x \in \mathbb{H}\,[P(x)]$ is the proposition ``There exists an $x \in \mathbb{H}$ such that Google knows $x$'s phone number.'' The first sentence does not use the phrase ``such that'' and requires a comma (because of the dependent clause: the phrase ``for all $x \in \mathbb{H}$'' is not a sentence on its own). The second sentence uses the phrase ``such that'' and should not have a comma (because the phrase ``There exists an $x \in \mathbb{H}$'' is a sentence).
+\end{blanguage}
+
+\begin{example}
+This example refers back to the table in Example~\ref{example:universal-city}.s
 The proposition ``There exists an $m \in U$ such that $m$ has a phone number that starts with a $7$'' is false.
 The proposition ``There exists an $m \in U$ such that $m$ has a B- blood type'' is true. (Namely, Echo has this blood type.)
 The proposition ``There exists an $n \in U$ such that $n$ lives on Fillmore Street'' is false.
