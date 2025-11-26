@@ -2082,7 +2082,9 @@ We use the proposition $p \wedge q$ according to the following flowchart:
 \end{tikzpicture}
 \end{center}
 \end{bmethod}
-Visually, we have written $p \wedge q$ at the top, and have an arrow down to $p$ as well as an arrow down to $q$. Suppose that $p \wedge q$ is already established to be true (whether we were told to assume it in the beginning, or through the course of writing a proof, we discovered this fact to be true). How can we use $p \wedge q$? We can conclude that $p$ is true. We can also conclude that $q$ is true.
+Visually, we have written $p \wedge q$ at the top, and have an arrow down to $p$ as well as an arrow down to $q$. 
+In a situation where we know that $p \wedge q$ is true (whether we were told to assume it in the beginning, or through the course of writing a proof, we discovered this fact to be true),
+how can we use $p \wedge q$? We can conclude that $p$ is true. We can also conclude that $q$ is true.
 
 Why should we accept this rule of inference? This rule of inference is based on the definition of conjunction. Take the truth table of conjunction, and note that there are three rows where $p \wedge q$ is false. If we remove these three rows, we are left with
 \begin{center}
@@ -2091,15 +2093,16 @@ $p$ & $q$ & $p \wedge q$ \\\hline
 $T$ & $T$ & $T$
 \end{tabular}
 \end{center}
-and notice that $p$ is true, and also that $q$ is true. Think of the flowchart above as a small puzzle piece used in a larger puzzle.
+and notice that $p$ is true, and also that $q$ is true. Think of the flowchart above as a small puzzle piece used in a larger puzzle. (In this analogy, think of the entire proof as being the entire puzzle.)
 \begin{example}
 Suppose we knew ``$c$ is a snark and $d$ eats vegetables.'' Then we can conclude ``$c$ is a snark.'' We can also conclude ``$d$ eats vegetables.''
+(To be clear what we mean by \emph{conclude}, we mean that we have a proposition that we now know for certain is true for sure, and before this moment, we didn't know whether the propositien ``$c$ is a snark'' was true or false.)
 \end{example}
 \begin{example}
-Suppose we knew (or were told, or just proved) that ``$a$ is even and $b$ is even.'' Then we can conclude that ``$a$ is even.'' We can also conclude that ``$b$ is even.''
+Suppose we knew  ``$a$ is even and $b$ is even.'' Then we can conclude that ``$a$ is even.'' We can also conclude that ``$b$ is even.''
 \end{example}
 \begin{example}\label{example:a-odd-and-b-odd-use-and}
-Suppose we knew (or were told, or just proved) that ``$a$ is odd and $b$ is odd.'' Then we can conclude that ``$a$ is odd.'' We can also conclude that ``$b$ is odd.''
+Suppose we knew ``$a$ is odd and $b$ is odd.'' Then we can conclude that ``$a$ is odd.'' We can also conclude that ``$b$ is odd.''
 \end{example}
 
 The puzzle piece we saw has $p \wedge q$ at the top, and we saw what facts can be obtained from having $p \wedge q$ be true. Another ``puzzle piece'' is the flowchart for \emph{proving} the proposition $p \wedge q$. Notice that in this flowchart, $p \wedge q$ is at the bottom:
@@ -2117,12 +2120,12 @@ The puzzle piece we saw has $p \wedge q$ at the top, and we saw what facts can b
 \end{bmethod}
 How should we read this? As soon as $p$ is established to be true and $q$ is also established to be true, we can then conclude that $p \wedge q$ is true. Why should we accept this rule of inference? Start with the truth table for conjunction and remove any rows where there is an $F$ in the column for $p$, since we are in the situation where $p$ is true. Similarly, because $q$ is true, remove any rows where there is an $F$ for the $q$ column. In all remaining rows, the column for $p \wedge q$ always has a $T$.
 \begin{example}
-Suppose we were told to assume that ``$s$ has a dog.'' Suppose we were also told to assume that ``$t$ has a cat.'' Then we can conclude that ``$s$ has a dog and $t$ has a cat.''
+Suppose we knew ``$s$ has a dog.'' Suppose we also knew ``$t$ has a cat.'' Then we can conclude ``$s$ has a dog and $t$ has a cat.''
 \end{example}
 
 \subsection{Proving/using implications}\label{section:proving-using-implication}
 
-There are two main ways to use the implication $p \rightarrow q$. The first method of using $p \rightarrow q$ is called \defn{modus ponens}\index{modus ponens}:
+There are two main ways to use the implication $p \rightarrow q$. The first way of using $p \rightarrow q$ is called \defn{modus ponens}\index{modus ponens}:
 \begin{bmethod}{Using an implication (modus ponens)}{modus-ponens}
 \begin{center}
 \begin{tikzpicture}
@@ -2135,7 +2138,7 @@ There are two main ways to use the implication $p \rightarrow q$. The first meth
 \end{tikzpicture}
 \end{center}
 \end{bmethod}
-Modus ponens is saying that, in the course of a proof, if you know that $p \rightarrow q$ is true and you know that $p$ is true, then you can conclude that $q$ is true. Why should we accept modus ponens as one of our rules of inference? Start with the truth table for implication:
+Modus ponens is saying that, in the process of writing a proof, when you know that $p \rightarrow q$ is true and you know that $p$ is true, then you can conclude that $q$ is true. Why should we accept modus ponens as one of our rules of inference? Start with the truth table for implication:
 \begin{center}
 \begin{tabular}{c|c||c}
 $p$ & $q$ & $p \rightarrow q$ \\\hline
@@ -2190,6 +2193,10 @@ Suppose we were allowed to assume ``If $x$ is a borogove, then $x$ is a tove'' a
 Suppose we had just proved the implication ``If $s^2$ is even, then $s$ is even'' and we were instructed to assume that ``$s^2$ is not even'' is true. Then, we can conclude ``$s$ is not even'' via modus tollens.
 \end{example}
 \begin{bwarning}{}{}
+An implication can never be used on its own. To use $p \to q$, we need at least one other proposition, and the typical proposition we need is $p$.
+\end{bwarning}
+The warning above just stated that in addition to $p \to q$, we would need $p$. It is tempting to fall into the trap of saying that $p \to q$ together with $q$ will allow us to conclude something. However:
+\begin{bwarning}{}{}
 It is not possible to conclude anything from the propositions $p \rightarrow q$ and $q$, though someone new to proof is often tempted to conclude $p$. In other words, following the flowchart
 \begin{center}
 \begin{tikzpicture}
@@ -2208,6 +2215,7 @@ Suppose we were allowed to assume ``If $x$ is a borogove, then $x$ is a tove'' a
 That we cannot conclude anything, because neither modus ponens nor modus tollens will apply. In particular, we do not obtain ``$x$ is a borogove'' as a conclusion.
 \end{example}
 
+
 There are several ways to prove the implication $p \rightarrow q$. We introduce the \defn{direct proof}\index{direct proof} of $p \rightarrow q$ here, and save the other methods for Sections~\ref{section:indirect-proof} and~\ref{section:proof-by-contradiction}:
 \begin{bmethod}{Proving an implication (direct proof)}{proving-implication-direct}
 \begin{center}
@@ -2224,6 +2232,22 @@ We will use the direct proof so often, let us highlight this strategy:
 \begin{bmethod}{Direct proof of $p \rightarrow q$}{direct-proof-method}
 To prove the implication $p \rightarrow q$, assume that $p$ is true. Then use rules of inference to (eventually) obtain the fact that $q$ is true.
 \end{bmethod}
+To show it visually in the format of a cartoon, text that we work on might have this shape:
+\begin{itemize}
+    \item Theorem: if $p$, then $q$.
+    \item Proof of theorem: Assume $p$. (Additional text here based on rules of inference.) Final conclusion $q$.
+\end{itemize}
+Please note that in the proof of the theorem, there is no mention of the phrase ``if $p$, then $q$'' itself. Instead, the format of this text tells us where to look:
+what we assume is the text that is after ``if'' and before ``then'', while the text that we need as our final conclusion is the proposition appearing after the word ``then.''
+As a bit of an analogy, in algebra, we teach students that in $y = mx + b$, the value of $m$ is the slope.
+So, when a student new to this is given $y = 3x + 4$ and says that $3x$ is the slope, we have to gently correct for this,
+and say that $m$ represents the slope, and (in terms of position), $m$ is the content after the equal sign but \emph{before} the $x$, meaning the slope doesn't include $x$ itself.
+(I have used language that's helpful like saying that $x$ tells us where to look, but that we need the content \emph{before} that $x$.)
+This is helpful here, so much so, that let's box things: when tasked with proving ``if \fbox{$p$}, then \fbox{$q$}'', 
+we get to assume \fbox{$p$} to be true for free (for free meaning we don't have to do any work: we just get to assume $p$ is true),
+then work to conclude \fbox{$q$}. As in the analogy with identifying the slope in $y = 3x + 4$, be very literal about what's being assumed and what's being proved.
+Part of the confusion is that in the process of proving the overall proposition ``if $p$ then $q$'' the proof text we write needs to end up proving $q$ (though proving $q$ ends up happening because we get to start the proof text by positioning ourselves in the hypothetical world where $p$ must be true.)
+
 \begin{example}
 Consider the implication ``If Jo buys a car, then Jo lives in an apartment.'' To prove this proposition via the direct proof method, the author of the proof would start by writing ``Assume that Jo buys a car.'' The goal is to then prove that ``Jo lives in an apartment.''
 \end{example}
