@@ -1830,6 +1830,26 @@ In due time, we will go through some complete proofs. Every proof will consist o
 \begin{bwarning}{Using versus proving a proposition}{using-vs-proving}
 Using a proposition and proving a proposition are very different tasks. Do not confuse these two tasks.
 \end{bwarning}
+
+We will preview the details in a second, but it would be good to first pause and give the big picture.
+We will be given a \emph{statement} to prove. (That statement is actually a proposition.)
+Then, we will write sentences that constitute a \emph{proof} of that proposition.
+The previous chapter (about propositions) was important to make sure that we understood the \emph{statement},
+as most statements are compound propositions, built using language from logical operations and quantifiers.
+Thus, we first built up the foundation to know what is \emph{meant} by the statements we will soon see.
+What about the proof? The proof is text that is written that follow the logic (the rules given by the rules of inference)
+which forms a convincing argument that the statement is true. The text of the proof is often several sentences, 
+but let's start with an everyday analogy where the ``proof'' is only one sentence:
+
+Again, what we are about to state is meant to be a helpful analogy. If someone makes the \emph{statement} 
+that ``Someone went to the kitchen and ate a cookie.'' This person might \emph{prove} this statement by showing 
+the top of the cookie jar is no longer level, and there are clearly crumbs on the counter top. The proof is evidence Of
+the claimed statement. The statement says ``Here's something that's true'' while the proof is text that convinces the reader that the statement is true.
+However, the difference with this everyday version is that the ``proof'' provided isn't really a proof: it's evidence of plausibility.
+That is, someone might have just taken a cookie clumsily without having eaten it.
+The analogy breaks down, because what we will do is write proofs based on the rules of inference, which leave absoluetly no room for an alternative explanation.
+
+So, what does a proof like? Even that, let's discuss by analogy first.
 The general structure of proofs that we will write will be to start with allowable assumptions, and then reach a final conclusion.
 From the assumption(s) that we are allowed, we will \emph{use} these to \emph{prove} an additional proposition.
 The new propositon that was just proved is a new fact that we know to be true, and the fact that this new proposition is true can then be \emph{used} to \emph{prove} a further proposition.
@@ -1848,6 +1868,26 @@ We will need to ``stop'' at some places along the way: think of the stops in Los
 these are statements that are proved at first because they are helpful steps in our proof, but once proved, we are looking for a way to \emph{use} these
 newly-true-to-us statements to prove something further.
 
+The anology is helpful, but now let's actually explain what a proof looks like.
+Again, recall that there's a statement (the claim that a certain fact is true) and the proof of the statement (the argument that the claimed fact actually \emph{is} true).
+Each kind of compound proposition to prove has a format for how to prove that proposition. (We will carefully study these.)
+While each of these will look different in their implementation, for a big picture, we will be allowed to assume one or more propositions.
+(By ``assume'', we mean that we will get to accept certain propositions as being true for free.)
+Then, based on these assumptions, we will apply any/all applicable rules of inference to end up learning a new proposition is true, and the new proposition is called an intermediate proposition.
+(We will say that we \emph{used} the assumptions to \emph{prove} this intermediate conclusion.)
+Then, we take the new intermediate conclusion (which we now know to be true) alongside our assumptions (which we were allowed to pretend for free are true) and then work to discover another fact (also called an intermediate conclusion) obtained through the rules of inference.
+This new intermediate conclusion is also called proved.
+We keep continuing in this way: any facts that we know to be true (either because we just proved them, proved them earlier in the text of the proof, or got to assume were true at the beginning of the proof) are \emph{used} to \emph{prove} additional intermediate conclusions.
+At some point, we end up proving a proposition that we needed to be true (again, according to the process of rules of inference which we will describe soon) and then our proof is complete.
+
+One major aspect of confusion that we just want to bring up right away is that in the process of writing a proof, there are a bunch of individual steps along the way where one or more propositions previously in the proof are \emph{used}, and they are used to \emph{prove} another proposition.
+That is, a proof (which might be several paragraphs of text) has within it a bunch of little steps of proving: yes, a proof has ``mini-proofs'' inside it.
+Imagine the individual steps of going from proposition to proposition like the individual flights: using one proposition to prove another proposition should be thought of like the flight that departs from New York and arrives at Los Angeles. Then, the next part of the proof that uses the new proposition to get an even newer proposition can be thought of as the second flight which departs Los Angeles and arrives at Tokyo.
+Then using the newest proposition to get an even newer proposition can be thought of like that third (and in our analogy, final) flight from Tokyo to Singapore.
+To complete this analogy (where ``using'' a proposition is like departing from a certain airport, and ``proving'' a proposition is like arriving at a certain airport), the proof (that is, the overall multi-paragraph text) should be thought of as the entire flight itinerary: the proof is like whole journey (plane 1 from New York to LA, plane 2 from LA to Tokyo, and plane 3 from Tokyo to Singapore).
+
+The big questions at this point might be: what are we allowed to assume? What has to be the final fact that we get? How do we do the steps in between? That's what the point of this chapter is: to carefully introduce this for each kind of logical operation and quantifier we introduced in the previous chapter.
+
 Do not attempt to merely memorize proofs word-for-word. There are a lot of often-used steps (introduced below), so don't memorize those steps! If there's anything to memorize, it's the key \emph{idea} behind large proofs.
 
 The last section of this chapter (Section~\ref{section:previous-class-proofs}) highlights some moments from previous math classes where the ideas in this Chapter may have been used in bite-sized chunks. You may consider reading the last section first as a way to appreciate how past math experiences (even if they were awful at the time) serve as a warm up for a formal study that we are about to undertake. Alternatively, you may wish to keep that section for the end, where references to methods throughout this chapter help paint a complete picture of your past exposure to proof.
@@ -1855,10 +1895,36 @@ The last section of this chapter (Section~\ref{section:previous-class-proofs}) h
 \section{Basic methods of proof}\label{section:basic-methods-of-proof}
 
 This section introduces the rules of inference. The presentation does not parallel the order from Chapter~\ref{chapter:propositions}, and while that may seem peculiar, several ideas have to come together and our first complete proofs appear in Section~\ref{section:proving-using-definition}.
+(There are a lot of things that need to get put together, but we intentionally do not cover the logical operations in the same order as the previous chapter: our goal is to have students see a complete proof as soon as possible, because it will be helpful to see the big picture.)
 
 \subsection{Introduction to rules of inference}\label{section:description}
 
 A rule of inference will be presented visually like this:
+\begin{center}
+\begin{tikzpicture}
+\node at (0,.3) {};
+\node [block] (pimpliesq) at (-1,0) {$\alpha$};
+\node [block] (p) at (1,0) {$\beta$};
+\node [block] (q) at (0,-1) {$\gamma$};
+\path [line] (pimpliesq) -- (q);
+\path [line] (p) -- (q);
+\end{tikzpicture}
+\end{center}
+Each rule of inference will tell us how knowing certain propositions to be true leads us to learn other propositions are true. 
+The diagram above is generic: in place of $\alpha$ and $\beta$ and $\gamma$ will be actual propositions, instead of these Greek symbols.
+How we are to read this is that in any situation where we know that $\alpha$ is true and we also know that $\beta$ is true,
+then we get to conclude that $\gamma$ is true.
+We can't just draw any of these diagrams to our heart's content. Instead, for the diagram to legitimately be a rule of inference,
+we need to argue why we sohuld accept the rule of inference being presented. We do this by examining truth tables
+(and recall that truth tables themselves are actually just visual summaries of the definitions of each of the logical operations).
+Once we have provided an argument of why we should accept a rule of inference, it becomes a useful tool for us:
+it allows us to say that in a situation where we know that $\alpha$ is true and also know that $\beta$ is true, we end up learning that $\gamma$ has to be true (and so $\gamma$ is called a conclusion, or an intermediate conclusion).
+Now, why might $\alpha$ be true? It might be that we were allowed to assume $\alpha$ is true for free, or it might be that we just earlier in our proof got $\alpha$ as an intermediate conclusion.
+Similarly, why might we have $\beta$ being true? It might be that $\beta$ was an allowable assumption, or it might be that $\beta$ was an intermediate conclusion that we obtained earlier in the proof.
+Then, the proposition in the spot where $\gamma$ is (note that both upper boxes point down to the box containing $\gamma$) ends up being our newest intermediate conclusion.
+We will say that we \emph{use} $\alpha$ and \emph{use} $\beta$, and by using both, we ended up \emph{proving} $\gamma$.
+
+The discussion above was generic. Let's now present a specific rule of inference:
 \begin{center}
 \begin{tikzpicture}
 \node at (0,.3) {};
@@ -1869,7 +1935,9 @@ A rule of inference will be presented visually like this:
 \path [line] (p) -- (q);
 \end{tikzpicture}
 \end{center}
-Each rule of inference will tell us how knowing certain propositions to be true leads us to learn other propositions are true. How do we read this rule of inference? If we know that \fbox{$p \rightarrow q$} is true and we know that \fbox{$q \rightarrow r$} is true, then we can conclude that \fbox{$p \rightarrow r$} is true.
+How do we read this rule of inference? 
+Wheneer we are in a situation where we know that \fbox{$p \rightarrow q$} is true and we also know that \fbox{$q \rightarrow r$} is true, 
+then we can conclude that \fbox{$p \rightarrow r$} is true.
 
 Why should we accept this rule of inference? Consider the following truth table which presents the three propositions \fbox{$p \rightarrow q$} and  \fbox{$q \rightarrow r$} and \fbox{$p \rightarrow r$}.
 \begin{center}
@@ -1920,7 +1988,9 @@ Before jumping into that section, though, we present another (rare) rule of infe
 \path [line] (p) -- (q);
 \end{tikzpicture}
 \end{center}
-How do we read this? If we know \fbox{$p \vee q$} is true and we know \fbox{$r \vee\neg p$} is true, then we can conclude that \fbox{$q \vee r$} is true. Why do we trust this rule of inference? Why do we accept it? The truth table below presents \fbox{$p \vee q$} and  \fbox{$r \vee\neg p$} and \fbox{$q \vee r$}.
+How do we read this? 
+Say that we happen to be in a situation where we know \fbox{$p \vee q$} is true and we also know \fbox{$r \vee\neg p$} is true.
+In that situation, we can conclude that \fbox{$q \vee r$} is true. Why do we trust this rule of inference? Why do we accept it? The truth table below presents \fbox{$p \vee q$} and  \fbox{$r \vee\neg p$} and \fbox{$q \vee r$}.
 \begin{center}
 \begin{tabular}{c|c|c||c|c|c}
 $p$ & $q$ & $r$ & $p \vee q$ & $r \vee \neg p$ & $q \vee r$ \\\hline
