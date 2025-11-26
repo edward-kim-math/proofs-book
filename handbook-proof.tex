@@ -1377,7 +1377,7 @@ I don't know about you, but I'd believe that ``Every Canadian likes to drink bob
 Suppose that there was a small town (called Uruapan) which had the following twelve residents:
 \begin{center}
 \begin{tabular}{|l|l|l|l|l|}\hline
-Name	&	Address	&	Phone	&	Blood type	&	Birthday	\\ \hline
+{\bf Name}	&	{\bf Address}	&	{\bf Phone}	&	{\bf Blood type}	&	{\bf Birthday}	\\ \hline \hline
 Al	&	3064  Ross Street	&	910-390-9402	&	O-	&	May 12, 1960	\\ \hline
 Bo	&	2901  Florence Street	&	870-432-0142	&	AB-	&	Mar. 4, 1935	\\ \hline
 Cloyne	&	3290  Hickory Ridge Drive	&	501-216-6782	&	AB+	&	Jul. 16, 1978	\\ \hline
@@ -1504,15 +1504,15 @@ A universally-quantified statement and an existentially-quantified statement hav
 
 \begin{example}
 This example refers back to the table in Example~\ref{example:universal-city}.s
-The proposition ``There exists an $m \in U$ such that $m$ has a phone number that starts with a $7$'' is false.
-The proposition ``There exists an $m \in U$ such that $m$ has a B- blood type'' is true. (Namely, Echo has this blood type.)
-The proposition ``There exists an $n \in U$ such that $n$ lives on Fillmore Street'' is false.
+The proposition ``There exists $m \in U$ such that $m$ has a phone number that starts with a $7$'' is false.
+The proposition ``There exists $m \in U$ such that $m$ has a B- blood type'' is true. (Namely, Echo has this blood type.)
+The proposition ``There exists $n \in U$ such that $n$ lives on Fillmore Street'' is false.
 
-The proposition ``There exists a $b \in U$ such that the birth year of $b$ is less than or equal to $1930$'' is false. Another way to express this is to say that ``For all $b \in U$, the birth year of $b$ is greater than $1930$'' is true. Notice that one of these sentences has the phrase ``less than or equal to $1930$'' while the other sentence has the phrase ``greater than $1930$.'' Negating quantified statements is the subject of the next section.
+The proposition ``There exists $b \in U$ such that the birth year of $b$ is less than or equal to $1930$'' is false. Another way to express this is to say that ``For all $b \in U$, the birth year of $b$ is greater than $1930$'' is true. Notice that one of these sentences has the phrase ``less than or equal to $1930$'' while the other sentence has the phrase ``greater than $1930$.'' Negating quantified statements is the subject of the next section.
 \end{example}
 
 \begin{bwarning}{Do not ignore quantifiers}{}
-When learning definitions, reciting definitions, and eventually when proving statements, it is dangerous to ignore quantifiers. Let's consider the following example, where $S = \{6,7,8,9\}$. The statement $\forall x \in S [x^2 < 40]$ is false, while the statement $\exists x \in S [x^2 < 40]$ is true. So, one should not write `for all' where `there exists' is appropriate and vice versa. Do not switch which quantifier appears, but in addition, do not just ``ignore'' quantifiers altogether. The pair of examples here that $\forall x \in S [x^2 < 40]$ has a different truth value from $\exists x \in S [x^2 < 40]$ gives all the evidence that writing \fbox{$x^2 <40$} alone is insufficient as an attempt to mean $\exists x \in S [x^2 < 40]$ if that is what is meant, or to mean $\forall x \in S [x^2 < 40]$ if that is what is meant. Do not ignore or leave out quantifiers: they are not optional, and should not be treated as optional.
+When learning definitions, reciting definitions, and eventually when proving statements, it is dangerous to ignore quantifiers. Let's consider the following example, where $S = \{6,7,8,9\}$. The statement $\forall x \in S [x^2 < 40]$ is false, while the statement $\exists x \in S [x^2 < 40]$ is true. So, one should not write `for all' where `there exists' is appropriate and vice versa. Do not switch which quantifier appears, but in addition, do not just ``ignore'' quantifiers altogether. The pair of examples here that $\forall x \in S [x^2 < 40]$ has a different truth value from $\exists x \in S [x^2 < 40]$ gives all the evidence that writing \fbox{$x^2 <40$} alone is insufficient as an attempt to mean $\exists x \in S [x^2 < 40]$ if that is what is meant, or to mean $\forall x \in S [x^2 < 40]$ if that is what is meant. So we can't ignore or leave out quantifiers: they are not optional, and should not be treated as optional.
 \end{bwarning}
 
 
@@ -1527,6 +1527,12 @@ we have
 so just as sigma notation is a compact way of writing a sum of many numbers, ``for all'' can be thought of as a compact way of writing a conjunction of many propositions. Likewise, we can think of ``there exists'' in the following manner:
 \[ \exists k \in S [P(k)] \equiv P(1) \vee P(2) \vee P(3) \vee P(4).\]
 
+When writing 
+\[ \sum_{k=1}^4\]
+before $f(k)$, the notation is asking us to have the value of $k$ take on each number between $1$ and $4$, including the endpoints.
+In other words, we are to take the values of $f(k)$ for each $k \in \{1,2,3,4\}$ and add the results together. Similarly, in the case of
+\[ \forall k \in S [P(k)]\]
+we are to take the [logical] values of $P(k)$ for each $k \in \{1,2,3,4\}$ and then ``and'' the results together.
 
 \subsection{Negating quantified statements}
 
@@ -1548,6 +1554,20 @@ Note $\forall x \in \mathbb{H}\,[\neg P(x)]$ says ``Everybody was not kung fu fi
 \begin{bwarning}{}{}
 The negation of $\forall x \in A\,[P(x)]$ is not $\forall x \in A\,[\neg P(x)]$.
 \end{bwarning}
+To ensure all of the discussion above is clear, let's put into plain English the propositions that have come up:
+\begin{itemize}
+    \item $\forall x \in \mathbb{H}\,[P(x)]$ is: Everybody was kung fu fighting.
+    \item $\forall x \in \mathbb{H}\,[\neg P(x)]$ is: Everybody was not kung fu fighting.
+    \item $\exists x \in \mathbb{H}\,[P(x)]$ is: Somebody was kung fu fighting.
+    \item $\exists x \in \mathbb{H}\,[\neg P(x)]$ is: Somebody was not kung fu fighting.
+\end{itemize}
+Now, if we negate each of these four propositions (in the same order as presented), we have:
+\begin{itemize}
+    \item $\neg \forall x \in \mathbb{H}\,[P(x)]$ is: It isn't true that everybody was kung fu fighting. (If we interviewed everybody and asked ``Were you kung fu fighting?'' at least one person would answer no.)
+    \item $\neg \forall x \in \mathbb{H}\,[\neg P(x)]$ is: It isn't true that everybody was not kung fu fighting. (If we interviewed everybody and asked ``Were you kung fu fighting?'' at least one person would answer yes.)
+    \item $\neg \exists x \in \mathbb{H}\,[P(x)]$ is: Not even one person was kung fu fighting. (If we interviewed everybody and asked ``Were you kung fu fighting?'' at everyone wwould answer no.)
+    \item $\neg \exists x \in \mathbb{H}\,[\neg P(x)]$ is: Not even one person was not king fu fighting. (If we interviewed everybody and asked ``Were you kung fu fighting?'' every person doesn't answer no, meaning every person answers yes.)    
+\end{itemize}
 
 Let us consider another incorrect negation: $\forall x \not\in \mathbb{H}\,[P(x)]$ would in plain English become ``Every non-human was kung fu fighting.'' This is not the correct negation of $\forall x \in \mathbb{H}\,[P(x)]$. (Why, in discussing whether every human was kung fu fighting or not, would we start up a discussion of whether chameleons were kung fu fighting?)
 \begin{bwarning}{Do not negate the set membership}{}
@@ -1645,8 +1665,8 @@ will become ``For all $b \in D$, there exists an $a \in C$ such that $P(a,b)$.''
 How does $\forall b \in D\,\exists a \in C\,P(a,b)$ become true? Imagine a video camera recording a conversation between you (the speaker) and another person (the skeptic). A video plays and to interpret the part which says ``For all $b \in D$'' the skeptic chooses anything in $D$ that they would like, but so that you can refer to it, both people agree to call it $b$. (The skeptic may keep the identity of $b$ hidden.) For the proposition $\forall b \in D\,\exists a \in C\,P(a,b)$ to be true, among other things, with the $b$ in $D$ chosen, the statement $\exists a \in C\,P(a,b)$, and to interpret the $\exists a \in C$ part, the speaker must now choose an $a \in C$. However, the $a$ that you choose must be chosen in such a way that $P(a,b)$ is true (so the choice must be made carefully).
 
 \begin{remark}\label{remark:rewind-the-tape}
-At any point, the skeptic may ``rewind the tape.'' So the skeptic can go back and choose a new $b$ in $D$, but then the skeptic must allow the speaker to choose a new $a \in C$ in reaction to the newly-chosen $b \in D$. If each individual can make their choices in a way that $P(a,b)$ ends up being true (that is, the speaker can ``react'' to the skeptic's choice of $b \in D$ by selecting an appropriate $a \in C$), then the proposition $\forall b \in D\,\exists a \in C\,P(a,b)$ is true.
-\end{remark}
+At any point, the skeptic may ``rewind the tape.'' (In other words, if we think of the conversation like a video playing, the skeptic can bring the video back to an earlier point.) So the skeptic can go back and choose a new $b$ in $D$, but then the skeptic must allow the speaker to choose a new $a \in C$ in reaction to the newly-chosen $b \in D$. If each individual can make their choices in a way that $P(a,b)$ ends up being true (that is, the speaker can ``react'' to the skeptic's choice of $b \in D$ by selecting an appropriate $a \in C$), then the proposition $\forall b \in D\,\exists a \in C\,P(a,b)$ is true.
+ao\end{remark}
 
 The discussion in the last two paragraphs is a bit abstract at first, but the idea of playing and rewinding a video is meant to give a strong intuition for what the logic is when there are multiple (that is, nested) quantifiers.
 \begin{example}
@@ -1700,6 +1720,7 @@ In a more long-winded approach, the beginning of $\forall a \in \mathbb{H}\,\exi
 \vskip 6pt
 
 The more long-winded phrasing makes clear why $\forall a \in \mathbb{H}\,\exists a \in \mathbb{H}\,Q(a,a)$ could not have any meaning. In the second quantification of $a$, we have already placed an identity on $a$ earlier in the first quantification. A variable may not be quantified twice, as there is a complete lack of meaning in doing so. 
+(In fact, each time we take a statement with a quantified variable in it, our plain English sentence to capture the meaning no longer even has that variable appear anymore, so this really goes to show why we can't quantify a variable more than once.)
 \end{bwarning}
 
 \begin{exercise}
