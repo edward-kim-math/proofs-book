@@ -2596,9 +2596,9 @@ We introduce flowcharts for proving $g$ is a borogove and -- just to use a diffe
 \end{bmethod}
 
 \begin{blanguage}{Every definition behaves like an ``if and only if'' statement}{definition-iff}
-By staring at the rules of inference for using and proving a definition, you may notice that we are using the text \fbox{$z$ is a \defn{borogove} if $P(z)$} as if it says \fbox{$z$ is a \defn{borogove} if and only if $P(z)$}. While there are some authors that insist on writing the phrase ``if and only if'' in each definition for this very reason, the majority of authors only use the word ``if.'' Nevertheless, when reading definitions from these authors, one use of the word ``if'' in the definition truly operates as an ``if and only if.''
+By staring at the rules of inference for using and proving a definition, you may notice that we are using the text \fbox{$z$ is a \defn{borogove} if $P(z)$} as if it says \fbox{$z$ is a \defn{borogove} if and only if $P(z)$}. While there are some authors that insist on writing the phrase ``if and only if'' in each definition for this very reason, the majority of authors only write the word ``if.'' Nevertheless, when reading definitions from these authors, one use of the word ``if'' in the definition truly operates as an ``if and only if.''
 \end{blanguage}
-This handbook on proof follows the convention that the majority of mathematical authors use: one use of the word `if' in each definition operates as an `if and only if,' but the word `if' is used nonetheless.
+This handbook on proof follows the convention that the majority of mathematical authors use: one instances of the word `if' in each definition operates as an `if and only if,' but the word `if' is used nonetheless.
 
 While you are certainly familiar with integers that are even and integers that are odd, to manipulate odd and even numbers in proofs, we will need definitions:
 \begin{bdefinition}{Even}{even}
@@ -2607,7 +2607,7 @@ The integer $n$ is \defn{even}\index{even} if there exists an integer $k$ such t
 \begin{bdefinition}{Odd}{odd}
 The integer $n$ is \defn{odd}\index{odd} if there exists an integer $k$ such that $n=2k+1$.
 \end{bdefinition}
-Be referencing the definition of odd, here are flowcharts (based on the template flowcharts in Methods~\ref{method:proving-borogove} and~\ref{method:using-borogove}) for using $a$ is odd and for proving $c$ is odd:
+By referencing the definition of odd, here are flowcharts (based on the template flowcharts in Methods~\ref{method:proving-borogove} and~\ref{method:using-borogove}) for using $a$ is odd and for proving $c$ is odd:
 \begin{center}
 \begin{tikzpicture}
 \node [block] (upper) at (0,0) {$a$ is odd};
@@ -2621,9 +2621,20 @@ Be referencing the definition of odd, here are flowcharts (based on the template
 \path [line] (upper) -- (lower);
 \end{tikzpicture}
 \end{center}
+Notice the intentional writing of different letters than the usual ones appearing in the definition of odd.
 \begin{exercise}
 Write for yourself flowcharts for using $r$ is even and for proving $s$ is even.
 \end{exercise}
+
+Here's a flowchart for proving $j+k$ is even:
+\begin{center}
+\begin{tikzpicture}
+\node [block] (upper) at (0,0) {$\exists y \in \mathbb{Z}\,[j+k=2y]$};
+\node [block] (lower) at (0,-1) {$j+k$ is even};
+\path [line] (upper) -- (lower);
+\end{tikzpicture}
+\end{center}
+This flowchart is based on Method~\ref{method:proving-borogove} and the definition of even.
 
 \begin{exercise}
 In Exercise~\ref{exercise:disjunction-checklist}, you were asked to consider what are things that must be addressed in writing a definition of disjunction. Similarly, what are things that you must address when writing a definition for odd?
@@ -2631,6 +2642,69 @@ In Exercise~\ref{exercise:disjunction-checklist}, you were asked to consider wha
 \begin{exercise}
 In Exercise~\ref{exercise:disjunction-checklist}, you were asked to consider what are things that must be addressed in writing a definition of disjunction. Similarly, what are things that you must address when writing a definition for even?
 \end{exercise}
+
+In this class, your instructor will likely ask you to recite definitions such as the definitions of odd and even.
+Like we did for the definition of conjunction, let's give some sample texts that are \emph{almost} acceptable definitions for even and for odd, then explain what's missing in each (and provide a fixed version).
+\begin{itemize}
+
+\item {\bf Incomplete:} Let $m$ be an integer. Then $m$ is odd if there exists $k$ such that $m=2k+1$.
+\begin{itemize}
+\item This text does not specify that $k$ is an integer. A definition must specify the universe of discourse for each variable that appears in the definition.
+As written, $k$ could be a real number, a rational number, a complex number, or something else like an elephant.
+Here is a fixed version: 
+Let $m$ be an integer. Then $m$ is odd if there exists an integer $k$ such that $m=2k+1$.
+\end{itemize}
+
+\item {\bf Incomplete:} Let $n$ be an integer. There exists an integer $k$ such that $n=2k+1$.
+\begin{itemize}
+\item This text does not introduce the word ``odd'' itself. A definition must introduce a new word or phrase. Why is this important? By reading the text given, the reader does not know if the word ``odd'' is going to be the word describing $n$ or the word describing $k$. So we should clarify \emph{which} thing is odd.
+Here is a fixed version: 
+Let $n$ be an integer. We call $n$ odd if there exists an integer $k$ such that $n=2k+1$.
+\end{itemize}
+
+\item {\bf Incomplete:} Let $n$ be an integer. Even is when there exists an integer $a$ such that $n=2a$.
+\begin{itemize}
+\item This text introduces the word ``even'' 
+but by reading the text given, the reader does not know if the word ``even'' is going to be the word describing $n$ or the word describing $a$. So we should clarify \emph{which} thing is even.
+Here is a fixed version: 
+Let $n$ be an integer. Then $n$ is even if there exists an integer $a$ such that $n=2a$.
+\end{itemize}
+
+\item {\bf Incomplete:} We will call $z$ even if there exists $b$ such that $z=2b$.
+\begin{itemize}
+\item This text introduces the word ``even'' and clarifies that $z$ is the thing being described as even.
+However, the text does not specify that $z$ is an integer, nor does it specify that $b$ is an integer.
+If we take the text written at its word, then $z=2\pi$ and $b=\pi$ would satisfy the definition, and we should conclude $2\pi \approx 6.28$ is even, but we don't want that to happen.
+We should specify that $z$ should be an integer (so that the reader can't attempt to apply the definition of even to anything that isn't an integer in the first place such as $6.28$),
+and we should also always specify a set for a quantified variable such as $b$.
+Here is a fixed version: 
+We will call the integer $z$ even if there exists $b \in \mathbb{Z}$ such that $2b=z$.
+\end{itemize}
+
+\end{itemize}
+Finally, here's another incorrect definition: ``An integer $n$ is even if $n$ can be divided by $2$ with no remainder.'' This isn't really text that we can say is ``incomplete'' and just add text to it to fix it.
+This text is problematic because the phrase ``can be divided by $2$ with no remainder'' is not precise enough to be useful in proofs.
+The text after the first ``if'' in a definition must be written in the language of logical operations and quantifiers, because these are the types of text that we have tools for using and proving.
+We have no tools for using or proving the phrase ``can be divided by $2$ with no remainder.''
+It turns out that all mathematical definitions can be written using this language:
+\begin{itemize}
+\item ... and ... 
+\item ... or ... 
+\item not ... 
+\item if ... then ...
+\item ... if and only if ...
+\item there exists ... such that ... 
+\item for all ... , ...
+\end{itemize}
+Because the types of text above are the ones that we have developed tools for using and proving, this is the type of text we need to have appearing in definitions.
+
+Here are definitions of even that are complete:
+\begin{itemize}
+\item An integer $a$ is even if there exists an integer $k$ such that $a=2k$.
+\item The integer $b$ is even if there exists an integer $m$ such that $b=2m$.
+\item We say that the integer $n$ is even if there exists $t \in \mathbb{Z}$ such that $2t=n$
+\end{itemize}
+The first two examples are similar: writing ``an'' or ``the'' are both acceptable here.
 
 \begin{example}
 Consider the following definition: A real number $m$ is \defn{duporous} if there exists an integer $c$ such that $m=2^c$.
