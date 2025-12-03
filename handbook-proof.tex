@@ -220,21 +220,7 @@ Because proof is so different from students' computational courses, there are fr
 
 I am grateful for the support from my colleagues Robert Allen, Tushar Das, Whitney George, and Nathan Warnberg in the development of this handbook. A huge thank you is due to Kaisa Crawford-Taylor for extensive comments, corrections, and suggestions in an early version of this manuscript. I also wish to thank Kean Fallon, Mitch Haeuser, Sam Haeuser, Madisyn Janusiak, and Avery McLain for conversations in the brainstorming phase of this manuscript. Some of the work presented here grew out of conversations with fellow Project NExT Gold'14 dots. Comments from MTH 309 in Spring 2019 and MTH 225 in Fall 2019 have been helpful in improving the handbook. I thank Jenn Kosiak and Megan Litster for conversations on active learning that have influenced this handbook. I am also grateful for Deb Hoskins for our conversations on teaching and learning which have influenced this handbook as well. The danger of writing an acknowledgments section is the error of omission. If I have missed you, I apologize, and ask that you kindly ask for acknowledgment in the next iteration of the handbook.
 
-
 \mainmatter
-
-\chapter{Test chapter}
-Let $x$ be a real number. If we had $A$ as the set of all real numbers, we could write: let $x \in A$. From the fact that $x$ is a real number, here are some facts we know:
-\begin{itemize}
-    \item $x^2 \geq 0$
-    \item $x - x = 0$
-\end{itemize}
-If we had $B$ as the set of all integers, we could write: let $y \in B$. From the fact that $y$ is an integer, here are some facts we know:
-\begin{itemize}
-    \item $y+1$ is an integer
-    \item $y-1$ is an integer
-\end{itemize}
-If we had $C$ as the set of all rational numbers, we could write: let $z \in C$. From the fact that $z$ is a rational number, here are some facts we know:
 
 \chapter{Introduction}\label{chapter:introductory}
 
@@ -2258,17 +2244,190 @@ Consider the implication ``If $a$ is odd and $b$ is odd, then $a+b$ is even.'' T
 
 \subsection{Our first complete proofs}
 
+We can now apply what we've learned to write our first complete proofs.
+
 \begin{example}
-AAAA Use the following hypotheses
+Use the following hypotheses
 \begin{itemize}
-\item If Alice is a math major, then Carol is a math major.
-\item If Steve is a chemistry major, then Bob is a computer science major.
-\item 
-\item 
+\item H1: If Dave is not a physics major, then Steve is a chemistry major.
+\item H2: If Alice is a math major, then Carol is a math major.
+\item H3: If Steve is a chemistry major, then Bob is a computer science major.
+\item H4: If Dave is a physics major, then Carol is not a math major.
 \end{itemize}
 to prove: if Alice is a math major, then Bob is a computer science major.
-.
 \end{example}
+Because this process is new, we'll take it slowly.
+The four hypotheses are propositions that we are allowed to assume to be true for free.
+We will visually represent these as boxes at the top of our diagram:
+\begin{center}
+\begin{tikzpicture}
+\node [block] (h1) at (0,0) {H1};
+\node [block] (h2) at (2,0) {H2};
+\node [block] (h3) at (4,0) {H3};
+\node [block] (h4) at (6,0) {H4};
+\end{tikzpicture}
+\end{center}
+We wrote ``H1'' inside the box instead of the acutual full text ``If Dave is not a physics major, then Steve is a chemistry major'' to keep the diagram from being too cluttered.
+Now, we were asked to prove ``If Alice is a math major, then Bob is a computer science major.''
+Because we are being asked to prove an implication, we will assume the hypothesis of the implication (the part after ``if'') and work to prove the conclusion of the implication (the part after ``then'').
+So, we will have a box that says ``Alice is a math major'' at the top of our diagram, and place our goal of ``Bob is a computer science major'' in a box at the bottom of our diagram:
+\begin{center}
+\begin{tikzpicture}
+\node [block] (h1) at (0,0) {H1};
+\node [block] (h2) at (2,0) {H2};
+\node [block] (h3) at (4,0) {H3};
+\node [block] (h4) at (6,0) {H4};
+\node [block] (assume-alice) at (9,0) {Alice is a math major};
+\node at (4, -1) {...};
+\node [block] (goal-bob) at (4,-2) {Bob is a computer science major};
+\end{tikzpicture}
+\end{center}
+Now, we need to take the five boxes at the top and see how to connect them to the goal at the bottom, by applying rules of inference. (This is what needs to be filled in, represented by the three dots in the diagram above.)
+Starting with the box that says ``Alice is a math major,'' we can use H2 (If Alice is a math major, then Carol is a math major'') via modus ponens to conclude ``Carol is a math major.'' We add this to our diagram:
+\begin{center}
+\begin{tikzpicture}
+\node [block] (h1) at (0,0) {H1};
+\node [block] (h2) at (2,0) {H2};
+\node [block] (h3) at (4,0) {H3};
+\node [block] (h4) at (6,0) {H4};
+\node [block] (assume-alice) at (9,0) {Alice is a math major};
+\node [block] (carol-math) at (8,-1) {Carol is a math major};
+\node at (4, -2) {...};
+\node [block] (goal-bob) at (4,-3) {Bob is a computer science major};
+\path [line] (assume-alice) -- (carol-math);
+\path [line] (h2) -- (carol-math);
+\end{tikzpicture}
+\end{center}
+The fact that ``Carol is a math major'' is a new fact for us. Now that we know this to be true, we can use H4 (If Dave is a physics major, then Carol is not a math major'') via modus tollens to conclude ``Dave is not a physics major.'' We add this to our diagram:
+\begin{center}
+\begin{tikzpicture}
+\node [block] (h1) at (0,0) {H1};
+\node [block] (h2) at (2,0) {H2};
+\node [block] (h3) at (4,0) {H3};
+\node [block] (h4) at (6,0) {H4};
+\node [block] (assume-alice) at (9,0) {Alice is a math major};
+\node [block] (carol-math) at (8,-1) {Carol is a math major};
+\node [block] (dave-not-physics) at (5,-2) {Dave is not a physics major};
+\node at (4, -3) {...};
+\node [block] (goal-bob) at (4,-4) {Bob is a computer science major};
+\path [line] (assume-alice) -- (carol-math);
+\path [line] (h2) -- (carol-math);
+\path [line] (carol-math) -- (dave-not-physics);
+\path [line] (h4) -- (dave-not-physics);
+\end{tikzpicture}
+\end{center}
+New we can use H1 (If Dave is not a physics major, then Steve is a chemistry major'') via modus ponens to conclude ``Steve is a chemistry major.'' We add this to our diagram:
+\begin{center}
+\begin{tikzpicture}
+\node [block] (h1) at (0,0) {H1};
+\node [block] (h2) at (2,0) {H2};
+\node [block] (h3) at (4,0) {H3};
+\node [block] (h4) at (6,0) {H4};
+\node [block] (assume-alice) at (9,0) {Alice is a math major};
+\node [block] (carol-math) at (8,-1) {Carol is a math major};
+\node [block] (dave-not-physics) at (5,-2) {Dave is not a physics major};
+\node [block] (steve-chemistry) at (3.5,-3) {Steve is a chemistry major};
+\node at (4, -4) {...};
+\node [block] (goal-bob) at (5,-5) {Bob is a computer science major};
+\path [line] (assume-alice) -- (carol-math);
+\path [line] (h2) -- (carol-math);
+\path [line] (carol-math) -- (dave-not-physics);
+\path [line] (h4) -- (dave-not-physics);
+\path [line] (dave-not-physics) -- (steve-chemistry);
+\path [line] (h1) -- (steve-chemistry);
+\end{tikzpicture}
+\end{center}
+Finally, we can use H3 (If Steve is a chemistry major, then Bob is a computer science major'') via modus ponens to conclude ``Bob is a computer science major,'' which is our goal. We add this to our diagram:
+\begin{center}
+\begin{tikzpicture}
+\node [block] (h1) at (0,0) {H1};
+\node [block] (h2) at (2,0) {H2};
+\node [block] (h3) at (4,0) {H3};
+\node [block] (h4) at (6,0) {H4};
+\node [block] (assume-alice) at (9,0) {Alice is a math major};
+\node [block] (carol-math) at (8,-1) {Carol is a math major};
+\node [block] (dave-not-physics) at (5,-2) {Dave is not a physics major};
+\node [block] (steve-chemistry) at (3.5,-3) {Steve is a chemistry major};
+\node [block] (bob-cs) at (0,-4) {Bob is a computer science major}; 
+\path [line] (assume-alice) -- (carol-math);
+\path [line] (h2) -- (carol-math);
+\path [line] (carol-math) -- (dave-not-physics);
+\path [line] (h4) -- (dave-not-physics);
+\path [line] (dave-not-physics) -- (steve-chemistry);
+\path [line] (h1) -- (steve-chemistry);
+\path [line] (steve-chemistry) -- (bob-cs);
+\path [line] (h3) -- (0,-3) -- (bob-cs);
+\end{tikzpicture}
+\end{center}
+The diagram is connected, so now we can write the proof in complete sentences. (In what we write below, we will place the propositions that appeared in the flowchart in quotation marks, just to be able to see clearly the propositions being discussed, but these should actually be removed.)
+\begin{proof}
+Assume the four numbered hypotheses. Assume that ``Alice is a math major.'' We want to prove that ``Bob is a computer science major.''
+Because ``If Alice is a math major, then Carol is a math major'' and ``Alice is a math major'' we conclude ``Coral is a math major.''
+Because ``If Dave is a physics major, then Carol is not a math major'' and ``Carol is a math major,'' we conclude ``Dave is not a physics major.''
+Because ``If Dave is not a physics major, then Steve is a chemistry major'' and ``Dave is not a physics major,'' we conclude ``Steve is a chemistry major.''
+Because ``If Steve is a chemistry major, then Bob is a computer science major'' and ``Steve is a chemistry major,'' we conclude ``Bob is a computer science major.''
+\end{proof}
+Notice that the third sentence of the proof said that \emph{We want to prove that ``Bob is a computer science major.''} 
+At this moment in the proof, we haven't actually proved that Bob is a computer science major yet, but this is what \emph{will} be proved by the the end of the proof.
+In each of the places in the proof where we wrote a full implication, we could instead have written H1, H2, H3, or H4. Let's provide a proof that does that (and then removes any/all quotation marks).
+\begin{proof}
+Assume the four numbered hypotheses. Assume that Alice is a math major. We want to prove that Bob is a computer science major.
+Because H2 and Alice is a math major, we conclude Carol is a math major.
+Because H4 and Carol is a math major, we conclude Dave is not a physics major.
+Because H1 and Dave is not a physics major, we conclude Steve is a chemistry major.
+Because H3 and Steve is a chemistry major, we conclude Bob is a computer science major.
+\end{proof}
+Noitec that we have a sentence like ``Because H4 and Carol is a math major, we conclude Dave is not a physics major.'' which states both of the propositions which were used (namely H4 as well as ``Carol is a math major'') 
+and while there are times that writing a proof with this amount of thoroughness makes sense, because we had just obtained the fact that ``Carol is a math major'' one sentence before, we could (for stylistic reasons)
+write the proof slightly shorter. We will apply this shortening in the same way to all sentences where this makes sense to do:
+\begin{proof}
+Assume the four numbered hypotheses. Assume that Alice is a math major. We want to prove that Bob is a computer science major.
+By H2, we conclude Carol is a math major.
+By H4, we conclude Dave is not a physics major.
+By H1, we conclude Steve is a chemistry major.
+By H3, we conclude Bob is a computer science major.
+\end{proof}
+We switched from the word ``Because'' to the word ``By'' in the last proof, which is a stylistic choice. Both words are acceptable.
+We could actually insert the information when modus ponens applied versus when modus tollens applied, but this is not required. Just to see what it looks like to do this, here's a slightly longer proof that includes this information:
+\begin{proof}
+Assume the four numbered hypotheses. Assume that Alice is a math major. We want to prove that Bob is a computer science major.
+By H2, we conclude Carol is a math major applying modus ponens.
+By H4, we conclude Dave is not a physics major applying modus tollens.
+By H1, we conclude Steve is a chemistry major applying modus ponens.
+By H3, we conclude Bob is a computer science major applying modus ponens.
+\end{proof}
+This proof is a slightly longer text. If we wanted to shorten the shortest that we had by silghtly further, we could even remove ``we conclude'' from each sentence:
+\begin{proof}
+Assume the four numbered hypotheses. Assume that Alice is a math major. We want to prove that Bob is a computer science major.
+By H2, Carol is a math major.
+By H4, Dave is not a physics major.
+By H1, Steve is a chemistry major.
+By H3, Bob is a computer science major.
+\end{proof}
+This is a very concise proof. Each sentence is short and to the point. However, it is still clear what is happening in each step.
+\begin{bremark}{}{}
+There are many ways to write a proof. The proofs above illustrate some of the choices that can be made. As you write proofs, you will develop your own style. The important thing is that the logic is clear and easy to follow.
+\end{bremark}
+Let us comment on one way that this proof shouldn't be written:
+when we know $p \to q$ and we also know $p$, then applying modus ponens means that we need to conclude $q$, instead of concluding $p \to q$.
+Notice the subtle difference: the implication $p \to q$ is not the new fact that we get. The new fact that we get is $q$. 
+So after the first three sentences ``Assume the four numbered hypotheses. Assume that Alice is a math major. We want to prove that Bob is a computer science major.'' sometimes when people are new to this process of writing a proof,
+the following sentence gets included: ``If Alice is a math major, then Carol is a math major.'' Writing this sentence never actually states that Carol is a math major.
+By writing a sentence in the form ``If $p$ then $q$'' all that's doing is providing a complete sentence version of $p \to q$. The conclusion that we need to reach is $q$, and that conclusion itself (that is, the text after the word ``then'' in the implication) needs to be stated as a standalone conclusion.
+
+
+
+\begin{exercise}
+Using the hypotheses
+\begin{itemize}
+\item If it does not rain or if it is not foggy, then the sailing race will be held and the lifesaving demonstration will go on.
+\item If the sailing race is held, then the trophy will be awarded.
+\item The trophy was not awarded.
+\end{itemize}
+prove (in full sentences) the statement ``It rained.''
+\quad\quad\href{https://www.sharelatex.com/project/59ceb65136e6671a14199aec}{{\color{red}[key]}}
+\end{exercise}
+
 
 \subsection{Proving/using existentially-quantified statements}\label{section:proving-using-existential}
 
@@ -2287,26 +2446,47 @@ To use the existentially-quantified statement $\exists x \in U\,[P(x)]$, we intr
 \end{tikzpicture}
 \end{center}
 \end{bmethod}
-If we are to start with $\exists x \in U\,[P(x)]$ being true, since there exists something in $U$, and if that something were called $x$, then $P(x)$ is true, we should make such an object. In the flowchart above, we intentionally use a new variable $b$. It may be the case that you have already used $b$ in your proof. Then, use another letter. The word ``Let'' should always be followed by a new variable that has not yet been used. For example, the sentence \fbox{Let $b \in U$ satisfying $P(b)$.} written in a proof creates a new object called $b$, and $b$ happens to be a member of $U$ and, in addition, $P(b)$ is true. We can make such an object (called $b$) because it was previously established that there exists $x \in U$ such that $P(x)$.
+If we are to start with $\exists x \in U\,[P(x)]$ being true, since there exists something in $U$, and if that something were called $x$, then $P(x)$ is true, we should make such an object. In the flowchart above, we intentionally use a new variable $b$. It may be the case that you have already used $b$ in your proof. Then, use another letter. The word ``Let'' should always be followed by a new variable that has not yet been used. For example, the sentence \fbox{Let $b \in U$ satisfying $P(b)$.} written in a proof creates $b$, and $b$ happens to be an element of $U$ (Generically, $b$ is an object. Now, if $U$ were the set of all car brands, then $b$ would be a car brand. If $U$ were instead the set of all countries, then $b$ would be a country.) and, in addition, $P(b)$ is true. We can make such an object (called $b$) because it was previously established that there exists $x \in U$ such that $P(x)$.
 
 \begin{example}
 Say we know \fbox{$\exists m \in Y [P(m)]$} is true. Then, as long as $b$ has not been written in our proof yet, we could write \fbox{Let $b \in Y$ satisfying $P(b)$}, then from this conclude that \fbox{$b \in Y$} and \fbox{$P(b)$} are true.
+
+Why does this work? Suppose that $Y$ was the set of all cats, and $P(m)$ was the property ``$m$ has green eyes.'' Then, the statement $\exists m \in Y [P(m)]$ means that there exists a cat with green eyes, which we can also state as: there is a cat with green eyes.
+Because we are starting from the fact that there exists a cat with green eyes, writing ``Let $b \in Y$ satisfying $b$ has green eyes'' is giving us access to a cat (that we may not know the name of, so we just call it $b$) and this cat has green eyes.
+Though we might not know the specific identity of the cat with green eyes, we know that a cat with green eyes must exist, and now that we have labeled this cat $b$, we can continue in our proof using this information:
+any time after the sentence ``Let $b \in Y$ satisfying $P(b)$'' is written, we can use the fact that $b$ is a cat (because $b \in Y$) and can also use the fact that $b$ has green eyes (because $P(b)$ is true).
 \end{example}
+
 \begin{example}
 Say we know \fbox{there exists $h \in L$ such that $P(h)$} is true. Then, as long as $b$ has not been written in our proof yet, we could write \fbox{Let $b \in L$ satisfying $P(b)$}, then from this conclude that \fbox{$b \in L$} and \fbox{$P(b)$} are true.
+
+Why does this work? Suppose $L$ is the set of all lakes and $P(h)$ is the property ``$h$ has a depth greater than 100 feet.'' Then, the statement ``there exists $h \in L$ such that $P(h)$'' means that there exists a lake with a depth greater than 100 feet.
+Because we are starting from the fact that there exists a lake with a depth greater than 100 feet, writing ``Let $b \in L$ satisfying $P(b)$'' is giving us access to talking about a specific lake (that we may not know the name of, so we just call it $b$) that has a depth greater than 100 feet.
 \end{example}
+
 \begin{example}
 Say we know \fbox{there exists $m \in S$ such that $P(m)$} is true. Then, as long as $y$ has not been written in our proof yet, we could write \fbox{Let $y \in S$ satisfying $P(y)$}, then from this conclude that \fbox{$y \in S$} and \fbox{$P(y)$} are true.
+
+Why does this work? Suppose $S$ is the set of all smartphones and $P(m)$ is the property ``$m$ has a battery life longer than 24 hours.'' Then, the statement ``there exists $m \in S$ such that $P(m)$'' means that there exists a smartphone with a battery life longer than 24 hours.
+Because we are starting from the fact that there exists a smartphone with a battery life longer than 24 hours, writing ``Let $y \in S$ satisfying $P(y)$'' is giving us access to a specific smartphone (that we may not know the identity of, so we just call it $y$) that has a battery life longer than 24 hours.
 \end{example}
+
 \begin{example}
 Say we knew that \fbox{there exists $c \in D$ such that $c$ plays soccer} is true. Then, as long as $b$ has not been written in our proof yet, we could use this by writing \fbox{Let $b \in D$ satisfying $b$ plays soccer}, then conclude from this that \fbox{$b \in D$} and \fbox{$b$ plays soccer} are true.
+
+Why does this work? Suppose $D$ is the set of all dogs. Then the statement ``there exists $c \in D$ such that $c$ plays soccer'' means that there exists a dog that plays soccer.
+Because we are starting from the fact that there exists a dog that plays soccer, writing ``Let $b \in D$ satisfying $b$ plays soccer'' is giving us access to a specific dog (that we may not know the name of, so we just call it $b$).
+Then, we know that $b$ is a dog (because $b \in D$) and we also know that $b$ plays soccer, in spite of potentially not knowing the specific dog that $b$ refers to.
 \end{example}
+
 \begin{example}
 Say we knew that \fbox{there exists $c \in D$ such that $c$ plays soccer} is true. Then, if $b$ has been used in our proof, but $k$ has not, we could use this by writing \fbox{Let $k \in D$ satisfying $k$ plays soccer}, then conclude from this that \fbox{$k \in D$} and \fbox{$k$ plays soccer} are true.
 \end{example}
 
 \begin{example}
-Suppose we were told to assume the proposition ``There exists an $x \in \mathbb{H}$ such that $x$ has dual citizenship.'' To use this proposition, we would include in our proof the sentence ``Let $b$ be in $\mathbb{H}$ satisfying the property that $b$ has dual citizenship.'' Then, we could draw two additional conclusions. We can conclude $b \in \mathbb{H}$. We can also conclude $b$ has dual citizenship.
+Suppose we know the proposition ``There exists an $x \in \mathbb{H}$ such that $x$ has dual citizenship'' is true. To use this proposition, we would include in our proof the sentence ``Let $b$ be in $\mathbb{H}$ satisfying the property that $b$ has dual citizenship.'' Then, we could draw two additional conclusions. We can conclude $b \in \mathbb{H}$. We can also conclude $b$ has dual citizenship.
+
+Why does this work? Because we are starting from the fact that there exists an $x \in \mathbb{H}$ such that $x$ has dual citizenship, which in words is ``Someone has dual citizenship'' writing ``Let $b$ be in $\mathbb{H}$ satisfying the property that $b$ has dual citizenship'' is giving us access to a specific $b$ (that we may not know the identity of, so we just call it $b$): that is, $b$ is a specific person who has dual citizenship.
 \end{example}
 \begin{example}\label{example:use-existence-revisit-first-proof}
 Suppose we were to assume ``There exists $k \in \mathbb{Z}$ such that $a=2k+1$.'' Then, we could write ``Let $x \in \mathbb{Z}$ satisfying $a=2x+1$.'' 
@@ -2317,7 +2497,7 @@ To prove the existentially-quantified statement $\exists x \in U\,[P(x)]$, follo
 \begin{bmethod}{Proving an existentially-quantified statement}{proving-exists}
 \begin{center}
 \begin{tikzpicture}
-\node [block] (exists) at (0,1) {Define an appropriate object $c$};
+\node [block] (exists) at (0,1) {Carefully define an appropriate object $c$};
 \node [block] (p) at (-2,0) {Prove $c \in U$};
 \node [block] (q) at (2,0) {Prove $P(c)$};
 \node [block] (p-and-q) at (0,-1) {Conclude $\exists x \in U\,[P(x)]$};
@@ -2329,7 +2509,9 @@ To prove the existentially-quantified statement $\exists x \in U\,[P(x)]$, follo
 \end{center}
 \end{bmethod}
 
-It is extremely intentional that $c$ is used in three locations. First, $c$ should be defined. Then, using how $c$ was defined, prove that $c \in U$. Third, using the $c$ that was defined, prove $P(c)$. The emphasis is that it must be the same $c$. In other words, both $c \in U$ and $P(c)$ must simultaneously be true. This is the only way we could rightly conclude that there exists an $x \in U$ such that $P(x)$ is true.
+It is extremely intentional that $c$ is used in three locations. First, $c$ should be defined. Then, using how $c$ was defined, prove that $c \in U$. Third, using the $c$ that was defined, prove $P(c)$. 
+The emphasis is that it must be the same $c$. In other words, both $c \in U$ and $P(c)$ must simultaneously be true. This is the only way we could rightly conclude that there exists an $x \in U$ such that $P(x)$ is true.
+Now, if $c$ had already appeared in the proof, then a different letter would be written instead of $c$. That is, replace all of the $c$s in the flowchart above with a letter that has not yet been used in the proof.
 
 \begin{bremark}{Proving something exists}{proving-existence}
 This is essentially a restating of the flowchart above. To prove that something exists and satisfies a certain property, make an object (say we call it $c$) and prove that all the necessary properties are true for that object: in this case, prove that $c \in U$ and prove that $P(c)$ is true. In short, to convince someone that a certain thing exists, make the thing! To prove $\exists m \in U$ such that $P(m)$ is true, you should find an object $c$ in $U$ be carefully defining $c$, then show $P(c)$.
@@ -2337,26 +2519,41 @@ This is essentially a restating of the flowchart above. To prove that something 
 In order to prove something exists (and has a certain behavior), you should find it (and show that it has that behavior).
 \end{bremark}
 
-
-
-
-
 \begin{example}
 Say we need to prove \fbox{$\exists m \in Y [P(m)]$} is true. Then, as long as $b$ has not been written in our proof yet, we could define $b$. Then, with this $b$, prove that \fbox{$b \in Y$} and \fbox{$P(b)$} are true.
+
+Why does is work? Suppose that $Y$ is the set of all cats, and $P(m)$ is the property ``$m$ has green eyes.'' Then, the statement $\exists m \in Y [P(m)]$ means that there exists a cat with green eyes.
+To prove to someone that there exists a cat with green eyes, we should find such a cat. By defining $b$ to be such a cat, we can then prove that $b$ is a cat (because $b \in Y$) and also prove that $b$ has green eyes.
+Once we have defined $b$, and proved $b$ is a cat, and proved $b$ has green eyes, then the reader should be convinced that there exists a cat with green eyes.
 \end{example}
+
 \begin{example}
 Say we need to prove \fbox{there exists $h \in L$ such that $P(h)$} is true. Then, as long as $b$ has not been written in our proof yet, define $b$. Then, based on what you have said $b$ is, prove that \fbox{$b \in L$} and \fbox{$P(b)$} are true.
+
+Why does this work? Suppose $L$ is the set of all lakes and $P(h)$ is the property ``$h$ has a depth greater than 100 feet.'' Then, the statement ``there exists $h \in L$ such that $P(h)$'' means that there exists a lake with a depth greater than 100 feet.
+To prove to someone that there exists a lake with a depth greater than 100 feet, we should find such a lake. By defining $b$ to be such a lake, we can then prove that $b$ is a lake (because $b \in L$) and also prove that $b$ has a depth greater than 100 feet.
+Once we have defined $b$, and proved $b$ is a lake, and proved $b$ has a depth greater than 100 feet, then the reader is convinced that there exists a lake with a depth greater than 100 feet.
 \end{example}
+
 \begin{example}
 Say we need to prove \fbox{there exists $m \in S$ such that $P(m)$} is true. Then, as long as $y$ has not been written in our proof yet, define $y$. Then, based on how you defined $y$, prove \fbox{$y \in S$} and also prove \fbox{$P(y)$}.
+
+Why does this work? Suppose $S$ is the set of all smartphones and $P(m)$ is the property ``$m$ has a battery life longer than 24 hours.'' Then, the statement ``there exists $m \in S$ such that $P(m)$'' means that there exists a smartphone with a battery life longer than 24 hours.
+To prove to someone that there exists a smartphone with a battery life longer than 24 hours, we should find such a smartphone. By defining $y$ to be such a smartphone, we can then prove that $y$ is a smartphone (because $y \in S$) and also prove that $y$ has a battery life longer than 24 hours.
+Once we have defined $y$, and proved $y$ is a smartphone, and proved $y$ has a battery life longer than 24 hours, then the reader is convinced that there exists a smartphone with a battery life longer than 24 hours.
 \end{example}
+
 \begin{example}
 Say we need to prove \fbox{there exists $c \in D$ such that $c$ plays soccer} is true. Then, as long as $b$ has not been written in our proof yet, define something to be $b$. If $b$ has been defined appropriately, then it will be possible to prove \fbox{$b \in D$} and \fbox{$b$ plays soccer} are true.
+
+Why does this work? Suppose $D$ is the set of all dogs. Then the statement ``there exists $c \in D$ such that $c$ plays soccer'' means that there exists a dog that plays soccer.
+To prove to someone that there exists a dog that plays soccer, we should find such a dog. By defining $b$ to be such a dog, we can then prove that $b$ is a dog (because $b \in D$) and also prove that $b$ plays soccer.
+Once we have defined $b$, and proved $b$ is a dog, and proved $b$ plays soccer, then the reader is convinced that there exists a dog that plays soccer.
 \end{example}
+
 \begin{example}
 Say we need to prove \fbox{there exists $c \in D$ such that $c$ plays soccer} is true. Then, if $b$ has been used in our proof, but $k$ has not, carefully define $k$, and based on how you defined $k$, prove \fbox{$k \in D$} and \fbox{$k$ plays soccer} are true.
 \end{example}
-
 
 \begin{example}\label{example:prove-existence-revisit-first-proof}
 Suppose we have the task of needing to prove $\exists k \in \mathbb{Z}\,[a+b=2k]$. If so, we should define $z$. Then, based on how we have defined $z$, we would need to prove $z \in \mathbb{Z}$. We also would need to prove $a+b=2z$. If we are successful proving both of these things, we would then be able to conclude $\exists k \in \mathbb{Z}\,[a+b=2k]$.
@@ -2364,26 +2561,15 @@ Suppose we have the task of needing to prove $\exists k \in \mathbb{Z}\,[a+b=2k]
 
 As another example, let us consider the proof of this short theorem.
 \begin{theorem}\label{theorem:existence-not-uniqueness}
-There exists a real number $b$ such that $b^2-3b=40$.
+There exists a real number $b$ such that $b^2-10=3b+30$.
 \end{theorem}
 \begin{proof}
-Let $b = 8$. Then $b \in \mathbb{R}$. Also, $b^2-3b=8^2-3(8)=40$.
+Let $b = 8$. Then $b \in \mathbb{R}$ because every integer is a real number. Because $b^2-10 = (8)^2-10 = 64-10 = 54$ and $3b+30=3(8)+30=54$, we have $b^2-10=3b+30$. 
 \end{proof}
 Of course, this is not the only possible proof of this theorem. Here is another proof:
 \begin{proof}
-Let $a = 8$. Then $a \in \mathbb{R}$. Also, $a^2-3a=(-5)^2-3(-5)=40$.
+Let $a = -5$. Then $a \in \mathbb{R}$ because every integer is a real number. Because $a^2-10 = (-5)^2-10 = 25-10 = 15$ and $3a+30=3(-5)+30=15$, we have $a^2-10=3a+30$. 
 \end{proof}
-
-\begin{exercise}
-Using the hypotheses
-\begin{itemize}
-\item If it does not rain or if it is not foggy, then the sailing race will be held and the lifesaving demonstration will go on.
-\item If the sailing race is held, then the trophy will be awarded.
-\item The trophy was not awarded.
-\end{itemize}
-prove (in full sentences) the statement ``It rained.''
-\quad\quad\href{https://www.sharelatex.com/project/59ceb65136e6671a14199aec}{{\color{red}[key]}}
-\end{exercise}
 
 \subsection{Proving/using a fact by definition}\label{section:proving-using-definition}
 
