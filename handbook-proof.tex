@@ -2607,34 +2607,37 @@ The integer $n$ is \defn{even}\index{even} if there exists an integer $k$ such t
 \begin{bdefinition}{Odd}{odd}
 The integer $n$ is \defn{odd}\index{odd} if there exists an integer $k$ such that $n=2k+1$.
 \end{bdefinition}
-By referencing the definition of odd, here are flowcharts (based on the template flowcharts in Methods~\ref{method:proving-borogove} and~\ref{method:using-borogove}) for using $a$ is odd and for proving $c$ is odd:
+By referencing the definition of even, here are flowcharts (based on the template flowcharts in Methods~\ref{method:proving-borogove} and~\ref{method:using-borogove}) for using $a$ is even and for proving $c$ is even:
 \begin{center}
 \begin{tikzpicture}
-\node [block] (upper) at (0,0) {$a$ is odd};
-\node [block] (lower) at (0,-1) {$\exists k \in \mathbb{Z}\,[a=2k+1]$};
+\node [block] (upper) at (0,0) {$a$ is even};
+\node [block] (lower) at (0,-1) {$\exists k \in \mathbb{Z}\,[a=2k]$};
 \path [line] (upper) -- (lower);
 \end{tikzpicture}
 \quad
 \begin{tikzpicture}
-\node [block] (upper) at (0,0) {$\exists y \in \mathbb{Z}\,[c=2y+1]$};
-\node [block] (lower) at (0,-1) {$c$ is odd};
+\node [block] (upper) at (0,0) {$\exists y \in \mathbb{Z}\,[c=2y]$};
+\node [block] (lower) at (0,-1) {$c$ is even};
 \path [line] (upper) -- (lower);
 \end{tikzpicture}
 \end{center}
-Notice the intentional writing of different letters than the usual ones appearing in the definition of odd.
+Notice the intentional writing of different letters than the usual ones appearing in the definition of even.
 \begin{exercise}
-Write for yourself flowcharts for using $r$ is even and for proving $s$ is even.
+Write for yourself flowcharts for using $r$ is odd and for proving $s$ is odd.
 \end{exercise}
 
-Here's a flowchart for proving $j+k$ is even:
+\begin{example}\label{example:flowchart-even-sum}
+Here's a flowchart for proving $r+s$ is even:
 \begin{center}
 \begin{tikzpicture}
-\node [block] (upper) at (0,0) {$\exists y \in \mathbb{Z}\,[j+k=2y]$};
-\node [block] (lower) at (0,-1) {$j+k$ is even};
+\node [block] (upper) at (0,0) {$\exists m \in \mathbb{Z}\,[r+s=2m]$};
+\node [block] (lower) at (0,-1) {$r+s$ is even};
 \path [line] (upper) -- (lower);
 \end{tikzpicture}
 \end{center}
 This flowchart is based on Method~\ref{method:proving-borogove} and the definition of even.
+How is that so? In the flowchart above, replace each $c$ with $r+s$, and replace each $y$ with $m$.
+\end{example}
 
 \begin{exercise}
 In Exercise~\ref{exercise:disjunction-checklist}, you were asked to consider what are things that must be addressed in writing a definition of disjunction. Similarly, what are things that you must address when writing a definition for odd?
@@ -2713,19 +2716,21 @@ If we were given the fact that \fbox{$r$ is duporous} is true, then we can concl
 
 On the other hand, suppose we needed to prove that $y$ is duporous. (For the sake of simplicity, suppose we already knew that $y$ is real.) Then, we should first prove the statement ``there exists an integer $k$ such that $y=2^k$.'' After proving this, we could conclude that $y$ is duporous.  This follows Method~\ref{method:proving-borogove}.
 \end{example}
-Notice in this example that the text of the definition of dupourous only has the word ``if'' instead of the phrase ``if and only if.'' However, we operate as if the sentence were ``A real number $m$ is \defn{duporous} if and only if there exists an integer $c$ such that $m=2^c$.'' See Language Discussion~\ref{language:definition-iff}.
+Notice in this example that the text of the definition of dupourous only has the word ``if'' instead of the phrase ``if and only if.'' However, we operate pretending the sentence were ``A real number $m$ is \defn{duporous} if and only if there exists an integer $c$ such that $m=2^c$.'' See Language Discussion~\ref{language:definition-iff}.
 
 \begin{bwarning}{}{}
-It is tempting to ignore these two definitions. Don't. Notice that both definitions above include the phrase ``there exists.'' We will need to deal with the phrase ``there exists'' in the manner introduced in Section~\ref{section:proving-using-existential}. It will be impossible to do proofs if you think of ``$n$ is even'' as being ``$n$ can be divided by $2$ with no remainder'' or similar notions such as ``$2$ goes evenly into $n$.'' These phrases are unhelpful for proof (because we have no rules of inference that deals with the phrase ``goes evenly into.''
+This is an important discussion about the definition of even and the definition of odd.
+Please do not ignore these two definitions.Notice that both definitions include the phrase ``there exists.'' We will need to deal with the phrase ``there exists'' in the manner introduced in Section~\ref{section:proving-using-existential}. It will be impossible to do proofs if you think of ``$n$ is even'' as being ``$n$ can be divided by $2$ with no remainder'' or similar notions such as ``$2$ goes evenly into $n$.'' These phrases are unhelpful for proof (because we have no rules of inference that deals with the phrase ``goes evenly into.''
 \end{bwarning}
 
 We are now ready to prove our first theorem:
 \begin{theorem}\label{theorem:odd-plus-odd-is-even}
 If $a$ is odd and $b$ is odd, then $a+b$ is even.
 \end{theorem}
-Your intuition might tell you this statement is ``true.'' After all, $3+5=8$ and $11+9=20$. However, thinking of a million examples where this seems to be true does not make a proof! Examples are helpful as intuition, but they are not substitutes for the proof.
+Your intuition might tell you this statement is true. After all, $3+5=8$ and $11+9=20$. However, thinking of a million examples where this seems to be true does not make a proof! Examples are helpful as intuition, but they are not substitutes for the proof.
+(It is nice that we have intuition, but the big idea of this chapter is that there is a ``one size fits all'' process of proving statements based on the logical operations and quantifiers that appear in the relevant definitions.)
 
-The first several times you work on a proof, it will seem like an immense amount of work. It will be tempting to think, ``Why should I follow such dry methods of proof when I can use my intuition on this statement?'' In future math classes, you will be expected to prove statements for which you will have no intuition at all. However, the methods of proof will apply. Even if the theorem above seems silly, this is a chance to practice the methods of proof.
+The first several times you work on a proof, it will feel like a lot of work. It will be tempting to think, ``Why should I follow such dry methods of proof when I can use my intuition on this statement?'' In future math classes, you will be expected to prove statements for which you will have no intuition at all. However, the methods of proof will apply. Even if the theorem above seems silly, this is a chance to practice the methods of proof.
 
 Notice that Theorem~\ref{theorem:odd-plus-odd-is-even} is an implication. To prove an implication, we follow Method~\ref{method:direct-proof-method}, so we will assume that \fbox{$a$ is odd and $b$ is odd} and work to prove \fbox{$a+b$ is even}. (See Example~\ref{example:aoddandbodd-implies-aplusbeven-directproof}.) If we were to organize this in a flowchart, the flowchart of logic so far would look like this:
 \begin{center}
@@ -2737,7 +2742,13 @@ Notice that Theorem~\ref{theorem:odd-plus-odd-is-even} is an implication. To pro
 \path [line] (0,-1.25) -- (q);
 \end{tikzpicture}
 \end{center}
-We need to use the rules of inference to connect these two propositions. (This is what the dots represent -- details which we need to fill in.) The statement \fbox{$a$ is odd and $b$ is odd} is a conjunction, and since we are assuming this to be true, let's use this statement, following Method~\ref{method:using-conjunction}. (In fact, we have already done this work in Example~\ref{example:a-odd-and-b-odd-use-and}.) Now our flowchart is
+We have more that we need to fill in for the flowchart above, but we already get to see what box is at the top and what box is at the bottom.
+Moreover, the placement of the boxes already tells us how some of the sentences in the eventual proof will look, as well as when they will appear.
+For example, since ``$a$ is odd and $b$ is odd'' is at the top of the flowchart, our first sentence will be ``Assume $a$ is odd and $b$ is odd'' or will be ``Suppose $a$ is odd and $b$ is odd'' and both of these are functionally equivalent.
+Similarly, since ``$a+b$ is even'' is at the bottom of the flowchart, our last sentence will be ``Therefore, $a+b$ is even'' or some version of this such as ``We finally conclude that $a+b$ is even.''
+Because we need the final fact that's true to be ``$a+b$ is even,'' after our starting sentence (the sentence that begins with ``Assume'' or ``Suppose''), we can optionally include as our second sentence 
+something like ``We will show that $a+b$ is even'' or ``Our goal is to prove that $a+b$ is even'' or similar, since a sentence like this helps us see where we need to go.
+We need to use the rules of inference to connect these two propositions. (This is what the dots represent -- details which we need to fill in. Note that this is how nearly all proofs go in their flowchart form: we have one or more boxes and the top, we have a box at the bottom, and we have to use the box or boxes at the top and connect to the box at the bottom based on the rules of inference.) The statement \fbox{$a$ is odd and $b$ is odd} is a conjunction, and since we are assuming this to be true, let's use this statement, following Method~\ref{method:using-conjunction}. (In fact, we have already done this work in Example~\ref{example:a-odd-and-b-odd-use-and}.) Now our flowchart is
 \begin{center}
 \begin{tikzpicture}
 \node [block] (assume-p) at (0,0) {$a$ is odd and $b$ is odd};
@@ -2767,7 +2778,10 @@ We should use the fact that $a$ is odd, a flowchart which we already wrote out a
 \path [line] (0,-3) -- (q);
 \end{tikzpicture}
 \end{center}
-It is helpful to work on the lower portion of the flowchart. What is it going to take for $a+b$ to be even? (In other words, what will need to be the box immediately before?) Here, Method~\ref{method:proving-borogove} applies and our updated flowchart is:
+It is helpful to work on the lower portion of the flowchart. What is it going to take for $a+b$ to be even? (In other words, what will need to be the box immediately before?) 
+Here, Method~\ref{method:proving-borogove} applies. 
+To give more detail, examine Example~\ref{example:flowchart-even-sum}, which gives a flowchart for proving $r+s$ is even: by replacing each $r+s$ with $a+b$ and replacing each $m$ with $k$, we see that to prove $a+b$ is even, we need to prove \fbox{$\exists k \in \mathbb{Z}\,[a+b=2k]$}.
+Our updated flowchart is:
 \begin{center}
 \begin{tikzpicture}
 \node [block] (assume-p) at (0,0) {$a$ is odd and $b$ is odd};
@@ -2817,9 +2831,38 @@ We have two existence statements which we have not yet used. We update the flowc
 \path [line] (def-even) -- (q);
 \end{tikzpicture}
 \end{center}
-We have already done a lot of work, and this may seem overwhelming at first, but this process will get easier. Up to this point, everything (other than choosing to use the letters $x$ and $y$) done was very methodical and did not require creativity. We now enter the creative phase of this proof. We still need to prove \fbox{$\exists k \in \mathbb{Z}\,[a+b=2k]$} and to prove this statement, Method~\ref{method:proving-exists} says we need to define an appropriate object. Let's say that the object we define will be called $z$, though we could have used any letter other than $x$, $y$, $a$, or $b$. (See Example~\ref{example:prove-existence-revisit-first-proof}.) Not \emph{only} do we have to define $z$, but $z$ needs to be defined in such a way that two things are true. First, we will need $z \in \mathbb{Z}$ and second, we will need $a+b=2z$. Note that we are allowed to use the facts that $a=2x+1$ and $b=2y+1$. In fact, we should define $z$ in \emph{in terms of} these already-defined variables $x$, $y$, $a$, and $b$.
-
-If we consider $a+b$, we can rewrite this as $a+b=(2x+1)+(2y+1)$ and using further properties of algebra, this can be rewritten as $2x+2y+1+1=2x+2y+2=2(x+y+1)$. In short, using the facts $a=2x+1$ and $b=2y+1$, we see that $a+b=2(x+y+1)$, yet recall we need to define an integer $z$ such that $a+b=2z$. It seems we should define $z$ to be $x+y+1$. In fact, note that because $x$ and $y$ are integers, $z$ is an integer (since the sum of integers is an integer, the closure of addition stated in Section~\ref{section:examples-of-assumed-propositions}). This will complete the flowchart:
+We have already done a lot of work, and this may seem overwhelming at first, but this process will get easier. 
+Up to this point, everything (other than choosing to use the letters $x$ and $y$) done was very methodical and did not require creativity. 
+(What we mean by ``did not require creativity'' is that there weren't any choices to be made. It might not feel that way yet, but this is just an attempt to point out that there wasn't really anything that the proof writer had to decide.
+If we were to consider examples in previous math classes, to solve $3x^2=4x-5$ using the quadratic formula, there is very little creativity involved, as you'd just need to decide whether you want all the terms on the left or all the terms on the right before applying the Quadratic Formula. By contrast, given a typical integral, you have a lot of creativity: you'd have to choose between substitution, integration by parts, and so on.)
+We now enter the creative phase of this proof. We still need to prove \fbox{$\exists k \in \mathbb{Z}\,[a+b=2k]$} and to prove this statement, Method~\ref{method:proving-exists} says we need to define an appropriate object. Let's say that the object we define will be called $z$, though we could have used any letter other than $x$, $y$, $a$, or $b$. (See Example~\ref{example:prove-existence-revisit-first-proof}.) Not \emph{only} do we have to define $z$, but $z$ needs to be defined in such a way that two things are true. The first of two things we will need is $z \in \mathbb{Z}$. 
+The second of two things we will need is $a+b=2z$. Note that we are allowed to use the facts that $a=2x+1$ and $b=2y+1$. In fact, we should define $z$ in \emph{in terms of} these already-defined variables $x$, $y$, $a$, and $b$.
+Because we need $z$ to be an integer, it is probably not good for us to define $z$ to be something like $z = \frac{a+y}{3}$ or $z=\sqrt[7]{a}$, because defining $z$ in either of those two ways probably does not make an integer.
+Instead, we will probably need to define $z$ as something like $z=a-b+y$. Now, it won't actually be this, but $a-b+y$ is certainly an integer because $a$, $b$, and $y$ are all integers.
+How do we actually determine how we should define $z$? There are several explanations that feel very different, but are actually the same.
+We will provide several explanations: try reading them all to see which one makes the most sense to you, but then go back to see how the other explanations are really saying the same thing:
+\begin{itemize}
+\item
+If we consider $a+b$, we can rewrite this as $a+b=(2x+1)+(2y+1)$ and using further properties of algebra, this can be rewritten as $2x+2y+1+1=2x+2y+2=2(x+y+1)$. In short, using the facts $a=2x+1$ and $b=2y+1$, we see that $a+b=2(x+y+1)$, yet recall we need to define an integer $z$ such that $a+b=2z$. It seems we should define $z$ to be $x+y+1$. In fact, note that because $x$ and $y$ are integers, $z$ is an integer (since the sum of integers is an integer, the closure of addition stated in Section~\ref{section:examples-of-assumed-propositions}).
+\item
+The equation that we need to be true is $a+b=2z$, which will end up being true by picking $z$ appropriately.
+In the equation $a+b=2z$, let's substitute $2x+1$ for $a$ and $2y+1$ for $b$. This gives us \[(2x+1)+(2y+1)=2z.\]
+We can rewrite the left side \[2x+2y+2=2z.\]
+We can factor a $2$ out of the left side to get \[2(x+y+1)=2z.\]
+Dividing both sides by $2$ gives \[x+y+1=z.\]
+This suggests defining $z$ to be $x+y+1$. Because $x$ and $y$ are integers, defining $z$ to be $x+y+1$ will mean that $z$ is an integer.
+\item We can take the view of ``several equations''. We have equations $a=2x+1$ and $b=2y+1$ that we know to be true, and the equation $a+b=2z$ that we want to be true.
+Since we need to define $z$, we can think of it like we need to solve for $z$. From $a+b=2z$, by dividing by $2$ on both sides, we have
+\[z = \frac{a+b}{2}.\]
+The problem is that we don't actually want to define $z$ as this fraction, because it's hard to argue that a fraction is an integer. So, in the equation we just wrote, let's substitute $2x+1$ for $a$ and $2y+1$ for $b$. This gives us
+\[z = \frac{(2x+1)+(2y+1)}{2}.\]
+We can simplify the right side:
+\[z = \frac{2x+2y+2}{2}.\]
+\[z = \frac{2(x+y+1)}{2}.\]
+\[z = x+y+1.\]
+This suggests defining $z$ to be $x+y+1$. Because $x$ and $y$ are integers, defining $z$ to be $x+y+1$ will mean that $z$ is an integer. (That is, when we define $z=x+y+1$, there is no fraction written: we have said that $z$ should be the sum of the integer $x$, the integer $y$, and the integer $1$.)
+\end{itemize}
+Defining $z = x+y+1$ will complete the flowchart:
 \begin{center}
 \begin{tikzpicture}
 \node [block] (assume-p) at (0,0) {$a$ is odd and $b$ is odd};
@@ -2865,7 +2908,7 @@ If we consider $a+b$, we can rewrite this as $a+b=(2x+1)+(2y+1)$ and using furth
 \end{tikzpicture}
 \end{center}
 
-The box ``Let $x \in \mathbb{Z}$ satisfying $a = 2x+1$'' defined $x$ and a similar bit of text defined $y$. Those definitions of $x$ and $y$ are all that are needed to be able to say ``Let $z = x+y+1$'' which ends up defining $z$. (This is why these are the only two arrows pointing toward the box for ``Let $z=x+y+1$.'' While the \emph{inspiration} for \emph{how} to define $z$ came from $a+b=2(x+y+1)$, the only things needed to define $z$ were $x$ and $y$.) The box defining $z$ as the upper part of the flowchart in Method~\ref{method:proving-exists}. The fact that $z$ is an integer relied on the definition of $z$, as well as the fact that $x$ and $y$ are integers (which explains the three arrows pointing inwards). Within the flowchart, we included the mechanics of proving that $a+b=2z$. The first step of that was a substitution of $a$ and $b$. The second step was algebra. The final step used the definition of $z$. The flowchart is now complete.
+The box ``Let $x \in \mathbb{Z}$ satisfying $a = 2x+1$'' defined $x$ and the box ``Let $y \in \mathbb{Z}$ satisfying $b = 2y+1$'' defined $y$. Those definitions of $x$ and $y$ are all that are needed to be able to say ``Let $z = x+y+1$'' which ends up defining $z$. (This is why these are the only two arrows pointing toward the box for ``Let $z=x+y+1$.'' While the \emph{inspiration} for \emph{how} to define $z$ came from $a+b=2(x+y+1)$, the only things needed to define $z$ were $x$ and $y$.) The box defining $z$ as the upper part of the flowchart in Method~\ref{method:proving-exists}. The fact that $z$ is an integer relied on the definition of $z$ (which was the text ``Let $z=x+y+1$'') as well as the fact that $x$ and $y$ are integers (which explains the three arrows pointing inwards), since adding integers will always produce an integer. Within the flowchart, we included the mechanics of proving that $a+b=2z$. The first step of that was a substitution of $a$ and $b$. The second step was algebra. The final step used the definition of $z$. The flowchart is now complete.
 
 Warning~\ref{warning:using-vs-proving} tells us not to confuse using a proposition with proving a proposition. Use the direction of the arrows (and the ``level'' at which we have written the boxes) of the flowchart to visually see which proposition(s) were used to prove which proposition(s). For example, the proposition ``$a$ is odd'' is used to prove the proposition ``$\exists k \in \mathbb{Z} [a=2k+1]$,'' while the proposition ``$\exists k \in \mathbb{Z} [a+b=2k]$'' is used to prove the proposition ``$a+b$ is even.''
 
@@ -2886,9 +2929,12 @@ Since we have defined $z \in \mathbb{Z}$ and proved that $a+b=2z$, it is true th
 \end{proof}
 If we wanted to include more detail, when saying that $z \in \mathbb{Z}$, we could have said: So $z \in \mathbb{Z}$, since the sum of integers is an integer, and since $x$, $y$, and $1$ are all integers. While mentioning that $1$ is an integer is true, and similarly saying that the sum of integers is an integer is true, we hinted at these things with our shorter sentence.
 
-Our first example took a while to build, and it is important for you to work on building some of the top of the flowchart, then some of the bottom of the flowchart, then going back to the top, and so on. Very often, it is helpful to ``zigzag'' back and forth like this, so that you can see where you are heading. In fact, in our proof, we wrote the sentence ``We want to show that $a+b$ is even.'' as a reminder to ourselves and to our reader, but the proof would be complete even without this sentence. (When you are new to proofs, it is helpful to include these sentences.)
+Our first example took a while to build, and it is important for you to work on building some of the top of the flowchart, then some of the bottom of the flowchart, then going back to the top, and so on. Very often, it is helpful to bounce back and forth like this, so that you can see where you are heading. In fact, in our proof, we wrote the sentence ``We want to show that $a+b$ is even.'' as a reminder to ourselves and to our reader, but the proof would be complete even without this sentence. (When you are new to proofs, it is helpful to include these sentences because it serves as a good self-reminder of your goals: that is, what sentence do you need to logically arrive at so that we can consider the proof complete.)
 
 It is important to emphasize Warning~\ref{warning:using-vs-proving}. Proving something and using something are very different: in the proof above, we used $a$ is odd, used $b$ is odd, and proved $a+b$ is even. After applying the definition that $a$ is odd, we \emph{used} the statement $\exists k \in \mathbb{Z}\, [a=2k+1]$. This is unlike later in the proof where we \emph{proved} the statement $\exists k \in \mathbb{Z}\,[a+b=2k]$ by defining an appropriate integer called $z$. In every proof, some statements get used and some statements get proved. Some statements which are proved along the way (the intermediate conclusions) are then \emph{used} to prove something later on in the proof.
+(Think of the airline travel analogy we gave. A first flight might go from New York City to Los Anegeles, meaning that Los Angeles is an arrival location. But the second flight might be from Los Angeles to Tokyo, meaning that Los Angeles is now thought of as a departure location. 
+The same location can be an arrival location at one time and a departure location at another time. Similarly, the same statement can be something that is proved at one time and something that is used at another time.
+Once we have proved a proposition to be true, we know it to be true, and so we can then use that proposition later on. This is analogous to the idea that we have to first arrive at an airport to then depart from it.)
 
 We will introduce a more compact form of using an existentially-quantified statement through an example. We will present three complete flowcharts and their corresponding proofs, each a little shorter than the previous. Our case study is the following theorem.
 \begin{theorem}\label{theorem:sum-of-evens}
@@ -2941,7 +2987,7 @@ Let $a$ be even and $b$ be even. We want to prove $a+b$ is even. Since $a$ is ev
 
 Let $t=r+s$. Since $r$ and $s$ are integers, $t$ is an integer. By substitution, $a+b=2r+2s=2(r+s)=2t$. So there exists an integer $t$ such that $a+b=2t$. Therefore, $a+b$ is even.
 \end{proof}
-Recall from Section~\ref{section:predicates-quantifiers} that the quantified variable is a placeholder variable, so writing $\exists k \in \mathbb{Z} [c=2k]$ is the same as writing $\exists u \in \mathbb{Z} [c=2u]$. Let's insist on using a new variable every time we have a quantifier. Then the flowchart is:
+Recall from Section~\ref{section:predicates-quantifiers} that the quantified variable is a placeholder variable, so writing $\exists k \in \mathbb{Z} [c=2k]$ is the same as writing $\exists u \in \mathbb{Z} [c=2u]$. Let's insist on writing a new variable every time we have an existential quantifier. Then the flowchart is:
 \begin{center} 
 \begin{tikzpicture}
 \node [block] (p1) at (0,0) {$a$ even and $b$ even};
@@ -2990,7 +3036,7 @@ Let $t=r+s$. Since $r$ and $s$ are integers, $t$ is an integer. By substitution,
 
 Then, it seems a bit redundant to have ``there exists...'' as well as the  
 ``let ... satisfying ...'' ... so let's just keep one, but not the other. 
-(We'll keep the ``there exists'' sentence. Must use new var each time.)
+(We'll keep the ``there exists'' sentence, but now we must write with a new variable each time.)
 
 \begin{center}
 \begin{tikzpicture}
