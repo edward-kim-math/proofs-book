@@ -1383,13 +1383,16 @@ That is, Uruapan (for which we will use $U$ as notation) consists of these twelv
 
 The proposition ``For all $p \in U$, the last digit in $p$'s phone number is a $2$'' is true.
 \end{example}
+
+\begin{remark}\label{remark:preview-universal-proof}
 To preview something in the next chapter, let's point out that in order to \emph{prove} the proposition
 ``For all $p \in U$, the last digit in $p$'s phone number is a $2$'', well, I would ask you (the person reading)
 to select to represent $p$ any object from $U$ that you like. That is, you could have $p$ be \emph{whichever} resident of Uruapan that you'd like.
 You don't even have to tell me who. You might have selected Finley. You might have selected Hollis.
 No matter who you picked, though, if I could write down that person's phone number accurately, and it ended in a 2, then I will have proved my point.
 The key thing though is that I'd have to perform this feat \emph{no matter} who you selected.
-Or, if we had the time, you could keep selected elemenst of $U$ (and there's only 12 anyway), and after exhausting all possibilities, if I demonstrate each resident has a 2 as th elast digit of their phone number, then I've proved my point.
+Or, if we had the time, you could keep selected elements of $U$ (and there's only 12 anyway), and after exhausting all possibilities, if I demonstrate each resident has a 2 as th elast digit of their phone number, then I've proved my point.
+\end{remark}
 
 \begin{example}
 Let $M(x)$ be the predicate ``$x^2 > 100$'' and let $S = \{11,12,13\}$. Then $\forall x \in S\,[M(x)]$ is true. However, with $T = \{10,20,30,40\}$, the proposition $\forall x \in T\,[M(x)]$ is false. Since $S$ only had three elements, we could check whether this ``for all'' statement was true by plugging in each element of $S$ for $x$ and verifying whether $x^2 > 100$ was true or not. Similarly, $T$ only had four elements, so we could plug in each of the four elements of $T$ into $x$. Plugging in $x=10$ made $x^2>100$ false, and therefore $\forall x \in T\,[M(x)]$ is false.
@@ -1797,7 +1800,7 @@ We will use these facts above (and similar facts such as $a+0=a$ for all $a \in 
 \end{itemize}
 In addition to the facts above, we will also use these facts:
 \begin{itemize}
-\item If an integer $s$ is not odd, then $s$ is even.
+\item If an integer $s$ is not odd, then $s$ is even. \label{not-odd-is-even}
 \item If an integer $s$ is not even, then $s$ is odd.
 \end{itemize}
 
@@ -3342,42 +3345,107 @@ In the same way, when proving $\forall x \in U\,[P(x)]$ we start by assuming we 
 The purpose of the word ``arbitrary'' is really meant to be a reminder that the person \emph{reading} the proof (not the person writing the proof) may really choose whichever element from $U$ they like to be $r$. Instead of writing ``Let $r \in U$ be arbitrary,'' this may be shortened to just writing ``Let $r \in U$.'' There is no change in meaning. The point is that the sentence ``Let $r \in U$'' -- should it end there with a period -- already allows the reader to pick whichever element from $U$ that they want to be called $r$, even without the subsequent words ``be arbitrary.'' However, the word ``arbitrary'' is meant to serve as \emph{emphasis} that the reader may pick.
 \vskip6pt
 Because the reader gets to pick \emph{whichever} element they want from $U$, and for the practical reason that a proof will need to be written, the reader's choice is called $r$, and then the proof writer then proves that $P(r)$ holds, this ends up proving $\forall x \in U\,[P(x)]$. The idea that the reader may make \emph{any} choice of $r \in U$ is why the for \emph{all} statement is true.
+Let's emphasize that the reader can pick any element from $U$ that they want, and we don't actually end up knowing \emph{which} element from $U$ gets chosen.
+However, we need to talk about the choice they made, so we call their selection $r$.
 \end{blanguage}
+As an analogy, there are many magic tricks where a magician asks a member of the audience to pick any card from a deck of cards. 
+While some tricks start with sleight of hand, there are some tricks where the magician genuinely does not know which card the audience member picked.
+In that case, you'll hear the magician say things like ``Now, put your card on the top of this half of the deck.''
+In a sentence like that, the phrase ``your card'' is the way the magician refers to the card that they don't know (but that the audience member knows).
+This is similar to what happens in our proof: we ask the reader to pick from $U$ (think of $U$ as ``the deck''), and the reader picks an element (think of this as ``the card'') which we refer to as $r$.
 
 \begin{bwarning}{Proving versus using a universally-quantified statement}{}
 To prove $\forall x \in U\,[P(x)]$, the first sentence to write would be ``Let $r \in U$ be arbitrary'' as long as $r$ is so far unused in the present proof. Instead the first sentence could be ``Let $s \in U$ be arbitrary'' but then the proof is done once $P(s)$ is proved.
 \vskip6pt
 This is unlike \emph{using} the proposition $\forall x \in U\,[P(x)]$. To \emph{use} this proposition, you must already have an element in $U$ that you know of (which we have called $y$ in our earlier flowchart and discussion). Using $\forall x \in U\,[P(x)]$ should \emph{never} have a sentence of the form ``Let $y \in U$ be arbitrary.''
 \end{bwarning}
+Back in Remark~\ref{remark:preview-universal-proof}, we previed the idea of proving ``For all $p \in U$, the last digit in $p$'s phone number is a $2$.''
+At that time, we didn't have the complete set up to talk about proving anything (after all, that's what we're doing right now!).
+In fact, at that time, the discussion was really to just try to make as clear as possible what ``for all'' really means.
+But since ``the last digit in $p$'s phone number is a $2$'' needed to be true for \emph{every} person $p$ in $U$, it makes sense that the proof strategy would start with the sentence ``Let $p \in U$'' which allows the 
+reader to pick any person from $U$ that they want.
+
+Recall that in Method~\ref{method:proving-implication-direct}, the most typical way to prove the implication $p \to q$, is to start by assuming $p$ is true, then prove that $q$ is true.
+We assume something (namely $p$), which gives us a fact to work with, and then we prove something (namely $q$).
+Proving a universally-quantified statement is similar in that we start by assuming we have an arbitrary element from the set $U$ (which we have named here $r$), 
+which gives us something to work with, and then we prove something, namely $P(r)$.
 
 \begin{example}
-Say you need to prove $\forall v \in D [P(v)]$. As long as $s$ has not been used, write \fbox{Let $s \in D$}. Then work to prove \fbox{$P(s)$}.
+Say we need to prove $\forall v \in D [P(v)]$. As long as $s$ has not been written before in the proof, write \fbox{Let $s \in D$}. Then work to prove \fbox{$P(s)$}.
+
+Why does this work? Imagine that $D$ is the set of all dolphins, and $P(v)$ is the predicate ``$v$ can jump over a boat.'' 
+Then $\forall v \in D[P(v)]$ in plain English is: every dolphin can jump over a boat. 
+To prove this statement, we start by writing ``Let $s \in D$'' which allows the reader to pick any dolphin they like to be called $s$. 
+Then we work to prove that $P(s)$ is true, which in plain English is: the dolphin $s$ can jump over a boat. 
+If we succeed in proving this, then the reader can rewind the tape and pick a different dolphin to be called $s$, and if our argument still applies, then the reader can be convinced that every dolphin can jump over a boat.
+The reader got to pick which dolphin they'd like, so they should be convinced that all dolphins can jump over a boat.
 \end{example}
+This process is useful language for writing proofs. We need to address \emph{every} dolphin, but it gets difficult to keep writing sentence after sentence that keeps mentioning all dolphins in the world.
+So, the sentence ``Let $s \in D$'' instructs the reader to pick any one dolphin, and then from there and further, we don't need to refer to \emph{all} dolphinsa anymore: we can just refer to $s$.
+This is a slick way of getting to talk about all dolphins (plural) by just talking about one dolphin (singular), namely $s$.
+
 \begin{example}
-Say you need to prove $\forall v \in D [P(v)]$. As long as $v$ has not been used, write \fbox{Let $v \in D$}. Then work to prove \fbox{$P(v)$}.
+Say we need to prove $\forall v \in D [P(v)]$. As long as $v$ has not appeared in the proof, write \fbox{Let $v \in D$}. Then work to prove \fbox{$P(v)$}.
+
+Why does this work? Imagine that $D$ is the set of all dolphins, and $P(v)$ is the predicate ``$v$ can jump over a boat.'' 
+Then $\forall v \in D[P(v)]$ in plain English is: every dolphin can jump over a boat. 
+To prove this statement, we start by writing ``Let $v \in D$'' which allows the reader to pick any dolphin they like to be called $v$. 
+Then we work to prove that $P(v)$ is true, which in plain English is: the dolphin $v$ can jump over a boat. 
+Since we allowed the reader to pick any dolphin that they want to be called $v$, and then we proved that $v$ can jump over a boat, the reader is convinced that every dolphin can jump over a boat.
 \end{example}
+
 \begin{example}
-Say you need to prove \fbox{for all $b \in C$, the manager gives $b$ a raise} is true. As long as $b$ has not been used in your proof, write \fbox{Let $b \in C$}. Then work to prove \fbox{the manager gives $b$ a raise}.
+Say we need to prove \fbox{for all $b \in C$, the manager gives $b$ a raise} is true. As long as $b$ has not been written in your proof, write \fbox{Let $b \in C$}. Then work to prove \fbox{the manager gives $b$ a raise}.
+
+Why does this work? Let's say that $C$ is the set of all Canadians.
+Then ``for all $b \in C$, the manager gives $b$ a raise'' translates to: the manager gives a raise to every Canadian.
+When we write ``Let $b \in C$,'' we are allowing the reader to pick any Canadian that they want to be called $b$.
+Then we work to prove that the manager gives $b$ a raise.
+Since the reader could have picked any Canadian to be called $b$, and we proved that the manager gives $b$ a raise, the reader is convinced that the manager gives a raise to every Canadian.
 \end{example}
+
 \begin{example}
-Say you need to prove \fbox{for all $b \in C$, the manager gives $b$ a raise} is true. Suppose that the letter $b$ is already used up. As long as $m$ has not been used in your proof, write \fbox{Let $m \in C$}. Then work to prove \fbox{the manager gives $m$ a raise}.
+Say we need to prove \fbox{for all $b \in C$, the manager gives $b$ a raise} is true. Suppose that the letter $b$ is already a letter that appears in the proof. As long as $m$ has not been written in your proof, write \fbox{Let $m \in C$}. Then work to prove \fbox{the manager gives $m$ a raise}.
 \end{example}
+
 \begin{example}
-Let's say the task is that you need to prove \fbox{for all $x \in S$, a delivery for $x$ is available} is true. Let's say that the letter $r$ has not been used yet in your proof. Then write \fbox{Let $r \in S$ be arbitrary} which allows the reader to pick any element from the set $S$ that they want, and you will refer to their choice by the variable $r$. Then you need to prove \fbox{a delivery for $r$ is available} is true.
+Let's say the task is that we need to prove \fbox{for all $x \in S$, a delivery for $x$ is available} is true. Let's say that the letter $r$ has not been written yet in your proof. Then write \fbox{Let $r \in S$ be arbitrary} which allows the reader to pick any element from the set $S$ that they want, and you will refer to their choice by the variable $r$. Then you need to prove \fbox{a delivery for $r$ is available} is true.
+
+Why does this work? Suppose that $S$ is the set of all geckos.
+Then ``for all $x \in S$, a delivery for $x$ is available'' translates into ``Every gecko has a delivery available''
+and when we write ``Let $r \in S$ be arbitrary,'' we are allowing the reader to pick any gecko that they want to be called $r$.
+Then we work to prove: a delivery is available for $r$.
+Since the reader could have picked any gecko to be called $r$, and we proved that a delivery is available for $r$, the reader is convinced that every gecko has a delivery available.
 \end{example}
 
 \begin{example} % forall implication
-Say we need to prove \fbox{for all $a \in A$, if $a$ likes to sew, then $a$ rides motorcycles}. As long as $b$ hasn't been used in the proof yet, we would write \fbox{Let $b \in A$ be arbitrary.} then we would need to prove \fbox{if $b$ likes to sew, then $b$ rides motorcycles}, so we would assume \fbox{$b$ likes to sew} and work to prove \fbox{$b$ rides motorcycles}.
+Say we need to prove \fbox{for all $a \in A$, if $a$ likes to sew, then $a$ rides motorcycles}. As long as $b$ hasn't been written in the proof yet, we would write \fbox{Let $b \in A$ be arbitrary.} then we would need to prove \fbox{if $b$ likes to sew, then $b$ rides motorcycles}, so we would assume \fbox{$b$ likes to sew} and work to prove \fbox{$b$ rides motorcycles}.
+
+The point of this example is to say that we take care of one thing at a time. Since the statement to prove starts with ``for all'' we do the usual thing by writing ``Let $b \in A$ be arbitrary.'' 
+Then, since the statement to prove is an implication, we follow Method~\ref{method:proving-implication-direct} by assuming the hypothesis of the implication (``$b$ likes to sew'') and working to prove the conclusion of the implication (``$b$ rides motorcycles'').
 \end{example}
+
+\subsection{Multiple quantifiers}
+
+When we see nested quantifiers, start slow. Address one quantifier at a time, in the order in which they appear.
+All of what we've discussed applies, and we just need to process one quantifier at a time.
+Let's look at some examples.
+
 \begin{example} % forall exists
-Say we need to prove \fbox{$\forall x \in U \exists y \in V [ Q(x,y) ]$}. It may help to write extra brackets for this, for now, taking it one step at a time. To prove \fbox{$\forall x \in U [\exists y \in V [ Q(x,y) ]]$} we should first write \fbox{Let $r \in U$ be arbitrary} as long as $r$ hasn't been used in our proof. Then we would need to prove \fbox{$\exists y \in V [ Q(r,y) ]$}. Connecting this back to Method~\ref{method:proving-forall}, the $P(x)$ that appears there is \fbox{$\exists y \in V [ Q(r,y) ]$} here.
+Say we need to prove \fbox{$\forall x \in U \exists y \in V [ Q(x,y) ]$}. It may help to write extra brackets for this, for now, taking it one step at a time. To prove \fbox{$\forall x \in U [\exists y \in V [ Q(x,y) ]]$} we should first write \fbox{Let $r \in U$ be arbitrary} as long as $r$ hasn't been written in our proof. Then we would need to prove \fbox{$\exists y \in V [ Q(r,y) ]$}. Connecting this back to Method~\ref{method:proving-forall}, the $P(x)$ that appears there is \fbox{$\exists y \in V [ Q(r,y) ]$} here.
+
+It is important again to take care of things one step at a time. First, we address the ``for all'' quantifier by writing ``Let $r \in U$ be arbitrary.'' 
+Then, we would need to prove \fbox{$\exists y \in V [ Q(r,y) ]$}, and this means that we'd have to find a specific thing (which we could name $y$), prove that thing is in $V$, then prove that $Q(r,y)$ is true for that specific thing.
 \end{example}
+
 \begin{example} % forall exists
-Say we need to prove \fbox{for all $m \in A$, there exists $r \in B$ such that $m$ gives $r$ money}. This is really in the same general structure/shape as the previous example, but in words. Then we would start by writing \fbox{Let $m \in A$ be arbitrary} as long as $m$ hasn't been used. (Otherwise, pick a variable that hasn't been mentioned in the proof yet.) Then we would work to prove \fbox{there exists $r \in B$ such that $m$ gives $r$ money}.
+Say we need to prove \fbox{for all $m \in A$, there exists $r \in B$ such that $m$ gives $r$ money}. This is really in the same general structure/shape as the previous example, but in words. Then we would start by writing \fbox{Let $m \in A$ be arbitrary} as long as $m$ hasn't been written. (Otherwise, pick a variable that hasn't been mentioned in the proof yet.) Then we would work to prove \fbox{there exists $r \in B$ such that $m$ gives $r$ money}.
+
+To do the next step, we'd define something (which could be called $r$ as long as $r$ hasn't been written yet in the proof), then we'd prove \fbox{$r \in B$} and then we'd prove \fbox{$m$ gives $r$ money}.
 \end{example}
 
 \begin{example}
-Say we need to prove \fbox{for all $h \in S$, if $h$ has a cat, then $h$ is photographer}. As long as $h$ is unused so far in our proof, then our proof of this statement would start \fbox{Let $h \in S$ be arbitrary.}. This allows the reader of our proof to pick their favorite element of $S$ and call it $h$. Then we would need to prove \fbox{if $h$ has a cat, then $h$ is photographer} which we could signal in the text of our proof by writing \fbox{We will prove if $h$ has a cat, then $h$ is photographer.} with emphasis here on the words ``we will prove'' because we haven't proven this implication at this point yet. Then to prove this implication, following Method~\ref{method:proving-implication-direct}, we would write \fbox{Suppose $h$ has a cat.} and then we would work to prove \fbox{$h$ is a photographer}.
+Say we need to prove \fbox{for all $h \in S$, if $h$ has a cat, then $h$ is photographer}. As long as $h$ is hasn't appeared so far in our proof, then our proof of this statement would start \fbox{Let $h \in S$ be arbitrary.}. This allows the reader of our proof to pick their favorite element of $S$ and call it $h$. Then we would need to prove \fbox{if $h$ has a cat, then $h$ is photographer} which we could signal in the text of our proof by writing \fbox{We will prove if $h$ has a cat, then $h$ is photographer.} with emphasis here on the words ``we will prove'' because we haven't proven this implication at this point yet. Then to prove this implication, following Method~\ref{method:proving-implication-direct}, we would write \fbox{Suppose $h$ has a cat.} and then we would work to prove \fbox{$h$ is a photographer}.
 \end{example}
 
 
@@ -3391,7 +3459,7 @@ Suppose that we were given the task to prove ``For all $m \in U$, there exists a
 At the end of the proof, there will probably a sentence like ``Therefore, there exists an $n \in L$ such that $n \geq m$,'' but this very likely not be the sentence immediately after the ``We will show...'' sentence.
 \end{example}
 
-The examples above show that in a proof, it is necessary to address the quantifiers in the order in which they appear. From Section~\ref{section:nested-quantifiers} it is generally incorrect to swap quantifiers.
+The examples above show that in a proof, it is necessary to address the quantifiers in the order in which they appear. In Section~\ref{section:nested-quantifiers} we learned it is not okay to swap quantifiers (in general).
 
 
 For a complete example, let us examine the following theorem:
@@ -3411,8 +3479,8 @@ If
 \begin{itemize}
 \item For all $a \in B$, if $a$ does not play chess, then $a$ does not bike to school.
 \item For all $j \in T$, if $j$ likes ketchup, then $j$ bikes to school.
-\item If $c \in S$, then $c \in T$.
-\item If $m \in T$, then $m \in B$.
+\item Every element of $S$ is an element of $T$.
+\item Every element of $T$ is an element of $B$.
 \end{itemize}
 then: For all $r \in S$, if $r$ likes ketchup, then $r$ plays chess.
 \end{theorem}
@@ -3424,15 +3492,21 @@ Let $r \in S$ be arbitrary. We want to prove if $r$ likes ketchup, then $r$ play
 Assuming the hypotheses
 \begin{itemize}
 \item H1: For all $r \in M$, if $r$ is vegetarian, then $r$ makes ceramic vases.
-\item H2: If $w$ makes ceramic vases, then there exists an $f \in Q$ such that $w$ mails a gift to $f$.
-\item H3: If $z \in X$, then $z$ is vegetarian.
-\item H4: If $g \in Q$, then $g \in Y$.
+\item H2: For all $w \in X$, if $w$ makes ceramic vases, then there exists an $f \in Q$ such that $w$ mails a gift to $f$.
+\item H3: For all $z \in X$, $z$ is vegetarian.
+\item H4: Every element of $Q$ is an element of $Y$.
 \item H5: Every element of $X$ is an element of $M$.
 \end{itemize}
 then, for all $b \in X$, there exists $c \in Y$ such that $b$ mails a gift to $c$.
 \end{theorem}
 \begin{proof}
-Let $b \in X$ be arbitrary. We want to prove there exists $c \in Y$ such that $b$ mails a gift to $c$, for then we would be done. Since $b \in X$, by H3 and modus ponens, $b$ is vegetarian. Since $b \in X$, by H5 we have $b \in M$. Since $b \in M$, applying H1, we learn that $b$ is vegetarian implies $b$ makes ceramic vases. Since we already saw $b$ is vegetarian, by modus ponens, $b$ makes ceramic  vases. Using this with modus ponens on H2, we conclude there exists an $f \in Q$ such that $b$ mails a gift to $f$. Let $c = f$. Since $c \in Q$, we conclude $c \in Y$ by H4. Since $c \in Y$ and since $b$ mails a gift to $c$, we have shown that there exists a $c \in Y$ such that $b$ mails a gift to $c$.
+Let $b \in X$ be arbitrary. We want to prove there exists $c \in Y$ such that $b$ mails a gift to $c$, for then we would be done. 
+Since $b \in X$, by H3, we get $b$ is vegetarian. Since $b \in X$, by H5 we have $b \in M$. 
+Since $b \in M$, applying H1, we learn that $b$ is vegetarian implies $b$ makes ceramic vases. Since we already saw $b$ is vegetarian, by modus ponens, $b$ makes ceramic vases. 
+Since $b \in X$, by H2, we get the following implication: if $b$ makes ceramic vases, then there exists an $f \in Q$ such that $b$ mails a gift to $f$.
+Using the implication we just got (via modus ponens) together with the fact that $b$ makes ceramic vases, 
+we conclude there exists an $f \in Q$ such that $b$ mails a gift to $f$. Let $c = f$. Since $c \in Q$, we conclude $c \in Y$ by H4. 
+Since $c \in Y$ and since $b$ mails a gift to $c$, we have shown that there exists a $c \in Y$ such that $b$ mails a gift to $c$.
 \end{proof}
 
 \begin{exercise}
@@ -3442,10 +3516,10 @@ Prove: For all integers $a$ and $b$, if there is an integer $c$ such that $10c=a
 \begin{exercise}
 Use the following hypotheses:
 \begin{itemize}
-\item H1: If $r$ likes Disneyland, then $r$ is an element in the set $S$.
+\item H1: For all $r \in M$, if $r$ likes Disneyland, then $r$ is an element in the set $S$.
 \item H2: For all $c \in P$, if $c$ walks to school, then $c$ is a rock climber.
-\item H3: Every element in the set $M$ is an element in the set $P$. (So $x \in M$ implies $x \in P$. Similarly, $z \in M$ implies $z \in P$.)
-\item H4: If $b$ does not like Disneyland, then $b$ is not an element in the set $P$.
+\item H3: Every element in the set $M$ is an element in the set $P$.
+\item H4: For all $b \in M$, if $b$ does not like Disneyland, then $b$ is not an element in the set $P$.
 \item H5: For all $s \in S$, the person $s$ walks to school.
 \end{itemize}
 to prove the proposition: For all $m \in M$, the person $m$ is a rock climber.
@@ -3461,7 +3535,7 @@ Prove: For all integers $s$, if $s$ is even, then $s^3$ is even.
 Prove: For all integers $s$, if $s$ is odd, then $s^2$ is odd.
 \end{exercise}
 \begin{exercise}\label{exercise:contrapositive-squared-warmup}
-What is the contrapositive of \fbox{If $s$ is odd, then $s^2$ is odd}? You may assume the fact that an integer that is not odd is even.
+What is the contrapositive of \fbox{If $s$ is odd, then $s^2$ is odd}? You may assume the fact that an integer that is not odd is even, as found on page~\pageref{not-odd-is-even}.
 \end{exercise}
 \begin{exercise}
 Prove: If $a$ and $b$ are integers satisfying $2b^2=a^2$, then $a$ is even and $b$ is even. Hint: use Exercise~\ref{exercise:contrapositive-squared-warmup}.
