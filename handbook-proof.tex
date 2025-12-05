@@ -210,7 +210,7 @@ For day-to-day proofs, mathematicians do not think about induction from the form
 
 Designing any guide or text on mathematical proof leads to a discussion of sets first or propositions first. Sets can be introduced first from the computational viewpoint of algebra on sets, but would need to be revisited after propositions are discussed in order to understand a set like $\{x \in \mathbb{R} : x < 30 \text{ or } x \text{ divides } 25\}$, due to the use of the word ``or,'' among other issues. It would seem natural, then, to discuss propositions first, but then the set memberships in a statement such as $\forall x \in \mathbb{R}\, \exists y \in \mathbb{Z}\, [z > x]$ often get postponed, so students become first exposed to quantified statements such as $\forall x\, \exists y\, [z>x]$ which do not look like actual statements encountered in mathematics texts. We have adopted a bit of a \emph{both} first approach: Chapter 1 introduces just the bare necessities of both sets and propositions so that a statement like $\forall x \in \mathbb{R}\, \exists y \in \mathbb{Z}\, [z > x]$ never has to be introduced.
 
-The goal of Chapter~\ref{chapter:methods-of-proof} is to quickly get the reader to actual proofs. Section~\ref{section:basic-methods-of-proof} is organized in a non-traditional manner to achieve this goal. Students will find it confusing to discuss proving/using existentially-quantified statements and proving/using universally-quantified statements. Because the definitions of even and odd use existential quantifiers, the task of proving/using universally-quantified statements was postponed to the fifth subsection of Section~\ref{section:basic-methods-of-proof}.
+The goal of Chapter~\ref{chapter:methods-of-proof} is to quickly get the reader to actual proofs. Section~\ref{section:basic-methods-of-proof} is organized in a non-traditional manner to achieve this goal. Students will find it confusing to discuss proving existentially-quantified statements and using existentially-quantified statements, and proving universally-quantified statements and using universally-quantified statements. Because the definitions of even and odd use existential quantifiers, the rules of inference for universally-quantified statements was postponed to a later subsection of Section~\ref{section:basic-methods-of-proof}.
 
 Because proof is so different from students' computational courses, there are frequent warnings, language discussions, and discussions regarding habits. To prepare students for their subsequent proof-based mathematics course, the proofs in Sections~\ref{section:functions} and~\ref{section:cardinality} are particularly challenging. Some of the presentation in Section~\ref{section:cardinality} is perhaps a bit unusual: the more informal idea that countability should be thought of as enumerability is de-emphasized so that fairly challenging yet formal proofs can be practiced.
 
@@ -2052,7 +2052,7 @@ Answer the following questions:
 \end{enumerate}
 \end{exercise}
 
-\subsection{Proving/using conjunctions}\label{section:proving-using-conjunction}
+\subsection{Rules of inference for conjunctions}\label{section:proving-using-conjunction}
 
 We use the proposition $p \wedge q$ according to the following flowchart:
 \begin{bmethod}{Using a conjunction}{using-conjunction}
@@ -2109,7 +2109,7 @@ How should we read this? As soon as $p$ is established to be true and $q$ is als
 Suppose we knew ``$s$ has a dog.'' Suppose we also knew ``$t$ has a cat.'' Then we can conclude ``$s$ has a dog and $t$ has a cat.''
 \end{example}
 
-\subsection{Proving/using implications}\label{section:proving-using-implication}
+\subsection{Rules of inference for implications}\label{section:proving-using-implication}
 
 There are two main ways to use the implication $p \rightarrow q$. The first way of using $p \rightarrow q$ is called \defn{modus ponens}\index{modus ponens}:
 \begin{bmethod}{Using an implication (modus ponens)}{modus-ponens}
@@ -2429,7 +2429,7 @@ prove (in full sentences) the statement ``It rained.''
 \end{exercise}
 
 
-\subsection{Proving/using existentially-quantified statements}\label{section:proving-using-existential}
+\subsection{Rules of inference for existentially-quantified statements}\label{section:proving-using-existential}
 
 To use the existentially-quantified statement $\exists x \in U\,[P(x)]$, we introduce a new rule of inference:
 \begin{bmethod}{Using an existentially-quantified statement}{using-exists}
@@ -2571,7 +2571,7 @@ Of course, this is not the only possible proof of this theorem. Here is another 
 Let $a = -5$. Then $a \in \mathbb{R}$ because every integer is a real number. Because $a^2-10 = (-5)^2-10 = 25-10 = 15$ and $3a+30=3(-5)+30=15$, we have $a^2-10=3a+30$. 
 \end{proof}
 
-\subsection{Proving/using a fact by definition}\label{section:proving-using-definition}
+\subsection{Rules of inference for definitions}\label{section:proving-using-definition}
 
 Suppose we had a predicate $P(z)$, and using this predicate, suppose that a definition had previously been established that said \fbox{Definition: We say $z$ is a \defn{borogove} if $P(z)$.}
 
@@ -3168,9 +3168,7 @@ Prove: If $k$ is odd and $p$ is odd, then $kp$ is odd.\quad\quad\href{https://ww
 Prove: if $a$ divides $b$ and $b$ divides $c$, then $a$ divides $c$.
 \end{exercise}
 
-\subsection{Proving/using universally-quantified statements}\label{section:proving-using-forall}
-%Save proving/using ``for all'' statements until after integer-related proofs are done
-%Proving for all $x \in S$ (with mention of the $S$). This was a reminder to discuss the situation when there is \emph{now} a universe of discourse mentioned. In this text, we *always* have that situation.
+\subsection{Rules of inference for universally-quantified statements}\label{section:proving-using-forall}
 
 Let $P(x)$ be the predicate ``$x$ breathes.'' Recall that we use $\mathbb{H}$ denote the set of all [living] humans. Let us assume that $\forall x \in \mathbb{H}\,[P(x)]$ is true. (Actually, it probably doesn't need to be \emph{assumed}: it probably is true that every human has picked their boogers.) Let $y$ denote your math instructor. Then $y \in \mathbb{H}$. Given the fact $\forall x \in \mathbb{H}\,[P(x)]$ and given the fact $y \in \mathbb{H}$, what can we conclude? We can conclude that your math instructor breathes. In other words, we conclude $P(y)$.
 
@@ -3951,7 +3949,7 @@ Prove: If the Minesweeper configuration is as given in Figure~\ref{figure:minesw
 We started this chapter by discussing how one uses a conjunction, but did not discuss using a disjunction. Often, using a disjunction fits the pattern of a proof by cases. Some details are provided in the next section.
 
 
-\section{Proving/using disjunctions}
+\section{Rules of inference for disjunctions}
 
 To use $p \vee q$, if we knew $p \vee q$ and we knew $\neg p$, then we can conclude $q$. More generally, if we know $p_1 \vee p_2 \vee p_3$ and we knew $\neg p_1$ and we know $\neg p_2$, then we can conclude $p_3$.
 
@@ -3969,7 +3967,7 @@ Likewise, if we knew $q$ was true, we can conclude $p \vee q$.
 
 Typically, a bit more may be needed to prove $p \vee q$. To prove $p \vee q$, one can add in the assumption of $\neg p$ and then attempt to prove $q$. Alternately, one can add in the assumption of $\neg q$ and then attempt to prove $p$. If one approaches a proof of  $p \vee q$ by adding in the assumption of $\neg p$, this can be thought of as a proof by cases: either $p$ or $\neg p$. If $p$ holds, then $p \vee q$ is automatic. If $\neg p$ holds, then the provided proof of $(\neg p) \rightarrow q$ is the proof of the second case.
 
-\section{Proving/using biconditionals}
+\section{Rules of inference for biconditionals}
 
 Suppose you need to prove the biconditional $p \leftrightarrow q$. Since $p \leftrightarrow q$ is logically equivalent to $(p \rightarrow q) \wedge (q \rightarrow p)$, one can leave proving $p \leftrightarrow q$ to proving $p \rightarrow q$ and proving $q \rightarrow p$. The proof of $p \rightarrow q$ is often informally called the \defn{forward direction} with the proof of $q \rightarrow p$ called the \defn{reverse direction}. Of course, either or both implications can be proved by considering the contrapositive instead. That is, here are four possible methods for proving $p \leftrightarrow q$.
 \begin{itemize}
@@ -7343,7 +7341,7 @@ Let $G$ be a nonempty set together with a binary operation $\star$ on $G$.  We s
 \end{itemize}
 \end{definition}
 \begin{bwarning}{}{}
-For the identity and inverses portions of the definition, please pay careful attention to the order of quantifiers! Read carefully. Note that any proving/using of these statements MUST stay true to the quantifier order. (You know from Warning~\ref{warning:switch-quantifier-order} that you do not get the same meaning when you switch a ``for all'' and a ``there exists''.)
+For the identity and inverses portions of the definition, please pay careful attention to the order of quantifiers! Read carefully. Note that any proving any of these statements and using of these statements \emph{must} stay true to the quantifier order. (You know from Warning~\ref{warning:switch-quantifier-order} that you do not get the same meaning when you switch a ``for all'' and a ``there exists''.)
 \end{bwarning}
 
 \begin{remark}
