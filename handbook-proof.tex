@@ -2248,7 +2248,7 @@ Consider the implication ``If $a$ is odd and $b$ is odd, then $a+b$ is even.'' T
 
 We can now apply what we've learned to write our first complete proofs.
 
-\begin{example}
+\begin{example}\label{example:first-complete-proof}
 Use the following hypotheses
 \begin{itemize}
 \item H1: If Dave is not a physics major, then Steve is a chemistry major.
@@ -3567,11 +3567,11 @@ to prove: for all $c_1 \in C$, for all $c_2 \in C$, for all $b_1 \in B$, for all
 
 \section{Intermission: comments on proofs}
 
-By rereading the three proofs of Theorem~\ref{theorem:sum-of-evens} and the proof of Theorem~\ref{theorem:divides-difference}, notice each proof is written in complete sentences. A proof is a water-tight argument that starts from propositions which are assumptions and, following the rules of inference, convinces a reader of new propositions, eventually leading to a final proposition.
+By re-reading the three proofs of Theorem~\ref{theorem:sum-of-evens} and the proof of Theorem~\ref{theorem:divides-difference}, notice each proof is written in complete sentences. A proof is a water-tight argument that starts from propositions which are assumptions that we are allowed ot make and, following the rules of inference, convinces a reader of new propositions, eventually leading to a final proposition.
 
 In a previous math class such as algebra or calculus, you were probably not expected to write in complete sentences. However, this old style of writing mathematics, while it can convey all of the key logic involved in a computation, is too primitive as a method of writing to convince a reader of the type of facts (theorems) that are truly proved in upper-level mathematics. We need complete sentences.
 
-This type of writing, because it is new, will be challenging at first. You are encouraged to revisit this section and the previous sections in this chapter often, so that everything becomes more familiar. Chapter~\ref{chapter:methods-of-proof} is the core material of this handbook, and is the prerequisite to further chapters.
+Because it is new, this type of writing will be challenging at first. You are encouraged to revisit this section and the previous sections in this chapter often, so that everything becomes more familiar. Chapter~\ref{chapter:methods-of-proof} is the core material of this handbook, and is the prerequisite to further chapters.
 This section states many pieces of advice, tips, and expectations:
 
 \begin{bhabit}{}{}
@@ -3597,7 +3597,7 @@ For example, if $p$, $q$, $r$, and $s$ are all propositions, your sentences will
 \item Thus, $q$.
 \item Because $r$ and $s$, we conclude $q$.
 \end{itemize}
-It is understandable that those who feel comfortable with mathematical calculations as done in calculus might be squeamish at first regrading writing proofs. You might want to say, ``but I'm not a sentences-making person!'' Take heart in knowing that the sentences written for a proof are little more than propositions surrounding a few connecting words such as thus, because, since, therefore, we see that, hence, etc. For example, the proof of Theorem~\ref{theorem:sum-of-evens} had the sentence ``Since $a$ is even, there exists an integer $k$ such that $a=2k$.'' which is in the grammatical format of ``Since $p$, we have $q$.'' from our list above.
+It is understandable that those who feel comfortable with mathematical calculations as done in calculus might be squeamish at first regrading writing proofs. You might want to say, ``but I'm not a sentences-making person!'' Take heart in knowing that the sentences written for a proof are little more than propositions surrounding a few connecting words such as thus, because, since, therefore, we see that, hence, etc. For example, the proof of Theorem~\ref{theorem:sum-of-evens} had the sentence ``Since $a$ is even, there exists an integer $k$ such that $a=2k$.'' which is essentially in the grammatical format of ``Since $p$, we have $q$.'' from our list above.
 
 
 \begin{bhabit}{}{}
@@ -3609,32 +3609,38 @@ The consistency of thought you have trained yourself to do in deciding between t
 \begin{bhabit}{}{}
 The order of sentences matters.
 \end{bhabit}
-Though you may have built the flowchart for your proof by discovering things in a different order, when turning your flowchart into the sentences of a proof, think about what relies on what. Consider a box in the flowchart, and note that you can only convince the reader that the proposition in that box is true only after having introduced the contents of the boxes pointing into this box: the arrows of your diagram can be thought of like the prerequisites for various classes in a major.
+Though you may have built the flowchart for your proof by discovering things in a different order, when turning your flowchart into the sentences of a proof, think about which proposition relies on which proposition. Consider a box in the flowchart, and note that you can only convince the reader that the proposition in that box is true only after having introduced the contents of the boxes pointing into this box: the arrows of your diagram can be thought of like the prerequisites for various classes in a major.
 
 
 \begin{bhabit}{}{}
 Keep sentences short.
 \end{bhabit}
 You do not need to worry about overly flowery language. Try to communicate one idea (or maybe two ideas) in a sentence. Often, long sentences are trying to communicate too many things, and often, the things that are attempting to be discussed wouldn't even belong in consecutive sentences! Break up long sentences into smaller sentences. (Once you have it so that each sentence is communicating one idea, it is easier to also think about what order the sentences should appear.)
-
+Ideally, each sentence should have the reader learn one new bite-sized fact.
 
 \begin{bhabit}{}{}
 Don't be afraid of having lots of scratch work, though you'll probably never present your scratch work.
 \end{bhabit}
-Clarify your task, then build a flowchart organizing the argument of the proof. A flowchart of proof logic involves \emph{lots} of scratch work! Do not be shy about having scratch work! You may have become so accustomed to the calculations done in calculus that you forgot a time when you used a lot of scratch work. (Remember the first time you computed slopes of secant lines, there was a lot of work to write out!) A cleanly-written proof is nice, but often so nice that it hides the fact that there were probably a lot of dead ends, restarts, and so on.
+Clarify your task, then build a flowchart organizing the argument of the proof. A flowchart of proof logic involves \emph{lots} of scratch work! Do not be shy about having scratch work! You may have become so accustomed to the calculations done in calculus that you forgot a time when you had a lot of scratch work. (Remember the first time you computed slopes of secant lines, there was a lot of work to write out!) A cleanly-written proof is nice, but often so nice that it hides the fact that there were probably a lot of dead ends, restarts, and so on.
 
 
 \begin{bhabit}{}{}
 Build the pieces of the flowchart which you can. Then work on connecting pieces.
 \end{bhabit}
-Identifying what you need to prove (and looking up its flowchart) and identifying what you have not yet used (and looking up its flowchart). In our first example of a proof, we started with the first box and the box. Then we worked inward by creating the second box and the second-to-last box. Getting the main skeleton of the proof is half the battle!
-
+Identify what you need to prove (and look up its flowchart) and identify what you have not yet used (and look up its flowchart). 
+In Example~\ref{example:first-complete-proof} and Theorem~\ref{theorem:odd-plus-odd-is-even} (which are some of our first examples of proofs), 
+we started with one box (or multiple boxes) at the top, and one box at the bottom.
+Then we worked inward by creating the second box and the second-to-last box. Getting the main shape of the proof's flowchart will set you up for success!
 
 \begin{bhabit}{}{}
-Always keep track of whether you need to use a proposition or need to prove a proposition.
+Always keep track of whether you need to \emph{use} a proposition or need to \emph{prove} a proposition.
 \end{bhabit}
-For each type of proposition (conjunction, implication, existentially-quantified statement, universally-quantified statement, and so on), the flowchart templates for proving and using are different. If you need to use a statement but are attempting to prove that statement, things will not work out. Similarly, if you need to prove a statement but are attempting to use that statement, things will not work out.
+This is important because it will be impossible to use a proposition if you need to prove it, and it will similarly be impossible to use a proposition if you need to prove it.
 
+Why is that so? For each type of proposition (conjunction, implication, existentially-quantified statement, universally-quantified statement, and so on), the flowchart templates for proving and using are different. If you need to use a statement but are attempting to prove that statement, things will not work out. Similarly, if you need to prove a statement but are attempting to use that statement, things will not work out.
+
+As a friendly reminder, \emph{using} a proposition informally means this: we \emph{know} this sentence to be true, so what information can we extract from this sentence, perhaps by combining the information from this known sentence with other known sentences?
+Informally, \emph{proving} a proposition means this: we \emph{do not yet know} this sentence to be true, so what argument would we have to write (which follows the rules of inference, the standard for proving statements) to convince someone that the sentence we are looking at is true?
 
 \begin{bhabit}{}{}
 If you're stuck, build intuition from a concrete example.
@@ -3643,7 +3649,7 @@ As an example, let's say we were stuck at proving that the product of perfect sq
 
 Of course the proof of this universally-quantified statement is going to start with ``Let $r \in \mathbb{Z}$ be arbitrary and let $s \in \mathbb{Z}$ be arbitrary'' followed by a sentence such as ``Suppose $r$ and $s$ are perfect squares.'' Because $r$ is a perfect square, there exists an integer $x$ such that $r=x^2$. Similarly, there exists an integer $y$ such that $s=y^2$. If we feel stuck in proving that $rs$ is a perfect square, we should build intuition from an example.
 
-As our example, suppose $r=9$ and $s=25$. Then, the reason $r$ is a perfect square is that there exists an integer (namely $3$) such that $r=3^2$. Similarly, $s=5^2$. Connecting our example to the notation already introduced in our proof, $x=3$ and $y=5$. We need to prove $rs$ is a perfect square, and in our current example, that is the number $225$. When trying to prove $rs$ is a perfect square, need to prove that there exists $z \in \mathbb{Z}$ such that $rs=z^2$. Connecting to our example, we need to find an integer $z$ such that $225=z^2$. While $z$ needs to be $15$ in our specific example, how does this provide a hint for how we should define $z$ in our specific proof, only having access to $r$, $s$, $x$, and $y$? Notice that $15 = 3 \cdot 5$, so this suggests we should define $z$ to be $xy$. After checking, it seems this will work, so here is a complete proof:
+As our example, let's say we pick $r=9$ and $s=25$. Then, the reason $r$ is a perfect square is that there exists an integer (namely $3$) such that $r=3^2$. Similarly, $s=5^2$. Connecting our example to the notation already introduced in our proof, $x=3$ and $y=5$. We need to prove $rs$ is a perfect square, and in our current example, that is the number $225$. When trying to prove $rs$ is a perfect square, need to prove that there exists $z \in \mathbb{Z}$ such that $rs=z^2$. Connecting to our example, we need to find an integer $z$ such that $225=z^2$. While $z$ needs to be $15$ in our specific example, how does this provide a hint for how we should define $z$ in our specific proof, only having access to $r$, $s$, $x$, and $y$? Notice that $15 = 3 \cdot 5$, so this suggests we should define $z$ to be $xy$. After checking, it seems this will work, so here is a complete proof:
 
 Let $r \in \mathbb{Z}$ be arbitrary and let $s \in \mathbb{Z}$ be arbitrary. Suppose $r$ and $s$ are perfect squares. Because $r$ is a perfect square, there exists an integer $x$ such that $r=x^2$. Similarly, there exists an integer $y$ such that $s=y^2$. Let $z=xy$. Since the product of integers is an integer, $z \in \mathbb{Z}$. Then $rs = x^2 \cdot y^2 = (xy)^2 = z^2$. Since $z \in \mathbb{Z}$ and $rs=z^2$, we have proved that $rs$ is a perfect square.
 
@@ -3651,11 +3657,17 @@ Note that the example is not a proof. (The proof was the eight sentences of the 
 
 \begin{bhabit}{}{}
 The language used to state propositions differs from the language in proofs.
+
+At the beginning of the chapter, we gave an informal example, where the \emph{statement} to prove was ``Someone went to the kitchen and ate a cookie'' while the 
+while the \emph{proof} was someone showing the top of the cookie jar is no longer level, and showing the crumbs on the counter top.
 \end{bhabit}
 For example, to \emph{prove} a ``for all'' statement, your proof is going to contain text similar to ``Let $x \in A$ be arbitrary.'' However, keep in mind that the phrase ``For all $x \in A$, \dots'' is language used in \emph{stating} a proposition that you will prove, while ``Let \dots be arbitrary'' is very different language, and is used in \emph{proving} that statement.
 
 As another example, suppose the statement to prove is an implication. Then, you might be \emph{proving} the statement ``If $p$ then $q$'' but your proof of this will probably not focus on using the words ``if'' and ``then.'' Instead, your proof will say something like ``Suppose $p$ is true.'' The word ``suppose'' is \emph{not} going to appear when you state the proposition.
-
+\begin{remark}
+When proving ``If Marijke reads, then Matthijs sings'', the proof would start with ``Suppose Marijke reads'' but not ``Suppose if Marijke reads.'' Notice the difference is that the word ``if'' did not appear in the proof text.
+The text right \emph{after} the word ``if'' is what gets supposed/assumed.
+\end{remark}
 
 \begin{bhabit}{}{}
 Remember that using a proposition and proving a proposition are very different. %make an everyday example?
@@ -3667,7 +3679,7 @@ Remember that using a proposition and proving a proposition are very different. 
 \path [line] (assume-p) -- (q);
 \end{tikzpicture}
 \end{center}
-In the small flowchart above the proposition $a$ is being used, and the proposition $b$ is being proved. In fact, $a$ is used to prove $b$. On a very practical level, the methods used for proving and using an implication are very different, as seen from the very different looking flowcharts in Section~\ref{section:proving-using-implication}. Similarly, proving versus using a conjunction have very different flowcharts. Proving verses using an existentially-quantified statement have very different flowcharts. For each type of proposition, this occurs. You will waste time if you try to prove something that you should use. Similarly, you will waste time trying to use something that you should prove.
+In the small flowchart above the proposition $a$ is being used, and the proposition $b$ is being proved. In fact, $a$ is used to prove $b$. On a very practical level, the methods used for proving and using an implication are very different, as seen from the very different looking flowcharts in Section~\ref{section:proving-using-implication}. Similarly, proving versus using a conjunction have very different flowcharts. Proving verses using an existentially-quantified statement have very different flowcharts. For each type of proposition, this occurs: proving a proposition and using that proposition are completely different processes. You will waste time if you try to prove something that you should use. Similarly, you will waste time trying to use something that you should prove.
 
 \begin{bhabit}{Do not use a characterization as a definition}{characterization-for-definition}
 Do not use an ``alternate definition'' as a definition.
@@ -3675,14 +3687,15 @@ Do not use an ``alternate definition'' as a definition.
 Recall the definition of odd: an integer $m$ is odd if there exists an integer $s$ such that $m=2s+1$. While it turns out to be true that an integer $m$ is odd if and only if there exists an integer $k$ such that $m=2k-1$, do not use this as the definition. The fact that $m$ is odd if and only if there is an integer $k$ such that $m=2k-1$ is known as a \defn{characterization}\index{characterization} of being odd. A characterization should not replace the definition. (It is this characterization which we have called an ``alternate definition'' above.)
 
 Think of each definition given as the \emph{original} source material. 
-With each newly-introduced term, we have to start somewhere, and that is the definition. 
+With each newly-introduced term, we have to start somewhere, and that is the definition. We should all be referencing the same information. 
 When you are asked to recite a definition, do not provide a characterization instead.
 
 \begin{bhabit}{}{}
 Do not bother writing ``by definition'' all the time.
 \end{bhabit}
 
-Perhaps this is a matter of taste, but if you were required to write ``by definition'' each time you needed a definition in your proofs, you would likely need to write ``by definition'' at least once (if not two or three times) per sentence. This would be too much clutter to include this all the time. There may be some key points of your proof where you would like to use this, but even in those cases, you might want to say something like ``by definition of $\varphi$'' or state ``by definition of the normal subgroup.''
+Perhaps this is a matter of taste, but if you were required to write ``by definition'' each time you needed a definition in your proofs, you would likely need to write ``by definition'' at least once (if not two or three times) per sentence. This would be too much clutter to include this all the time. There may be some key points of your proof where you would like to use this, but even in those cases, you might want to say something like ``by definition of odd'' or state ``by definition of even.''
+However, most of the time, it is too much clutter to write ``by definition'' because definitions get applied so often in writing proofs.
 
 Part of minimizing the expectation of writing ``by definition'' all the time points out a rather important aspect of proofs. You will need to reference definitions a lot! (This is why you hear your math instructor say ``Know your definitions'' so often: it is an essential part of proof.)
 
