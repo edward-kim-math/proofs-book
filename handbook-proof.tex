@@ -1800,7 +1800,6 @@ In addition to the facts above, we will also use these facts:
 \item If an integer $s$ is not odd, then $s$ is even.
 \item If an integer $s$ is not even, then $s$ is odd.
 \end{itemize}
-%Finally, because it will help us explain an important concept in Section~\ref{section:proving-using-forall}, we will ``accept'' the following ``fact'': For all $p \in \mathbb{H}$, the person $p$ has picked their nose and has eaten their boogers. (It's probably true that every human $p$ has done this at one point in their lives, so it's not too far-fetched to accept this proposition.)
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -3170,7 +3169,11 @@ Prove: if $a$ divides $b$ and $b$ divides $c$, then $a$ divides $c$.
 
 \subsection{Rules of inference for universally-quantified statements}\label{section:proving-using-forall}
 
-Let $P(x)$ be the predicate ``$x$ breathes.'' Recall that we use $\mathbb{H}$ denote the set of all [living] humans. Let us assume that $\forall x \in \mathbb{H}\,[P(x)]$ is true. (Actually, it probably doesn't need to be \emph{assumed}: it probably is true that every human has picked their boogers.) Let $y$ denote your math instructor. Then $y \in \mathbb{H}$. Given the fact $\forall x \in \mathbb{H}\,[P(x)]$ and given the fact $y \in \mathbb{H}$, what can we conclude? We can conclude that your math instructor breathes. In other words, we conclude $P(y)$.
+Let $P(x)$ be the predicate ``$x$ has slept.'' Recall that we use $\mathbb{H}$ denote the set of all [living] humans. 
+Let us assume that $\forall x \in \mathbb{H}\,[P(x)]$ is true. (Actually, it probably doesn't need to be \emph{assumed}: 
+it is true that every human has slept.) Let $y$ denote your math instructor. Then $y \in \mathbb{H}$. (In other words, your math instructor is a human.)
+Given the fact $\forall x \in \mathbb{H}\,[P(x)]$ and given the fact $y \in \mathbb{H}$, what can we conclude? We can conclude that your math instructor has slept. 
+In other words, we conclude $P(y)$.
 
 Every time you have a universally-quantified statement which is true, as soon as you know you have an element $y$ in the universe of discourse which was mentioned, then you get a fact about the individual $y$. In a flowchart:
 \begin{bmethod}{Using a universally-quantified statement}{using-forall}
@@ -3191,48 +3194,104 @@ To use $\forall x \in U\,[P(x)]$, follow:
 \begin{bwarning}{}{}
 To use a universally-quantified statement, we emphasize that you must already have an element $y$ which was already known to be in $U$. This is why we stated the phrase ``was already established'' in the flowchart above. You cannot just say ``Let $y \in U$.''
 \end{bwarning}
-The flowchart presented in Method~\ref{method:using-forall} allows us to start with a general fact (``$P(x)$ holds for all $x \in U$'') and combined with knowing of an object $y$ in the universe of discourse (example: $y$ is known to belong to $U$) allows us to conclude that $P(y)$ holds. This takes us from a general fact to a specific fact about a specific individual named $y$. It is general to say, ``Everyone breathes'' and it is specific to say, ``Your math teacher breathes.'' There will be times in our proof we will need to be that specific, and this flow chart helps us do this.
+Recall that $p \to q$ cannot be used on its own. We saw that one way to use $p \to q$ is to also know $p$ is true.
+There is an analogy to this here: we cannot use $\forall x \in U[P(x)]$ on its own. In order to use $\forall x \in U[P(x)]$, we need to have something already established in the set $U$, 
+and that thing was labeled $y$ in Method~\ref{method:using-forall}.
+
+The flowchart presented in Method~\ref{method:using-forall} allows us to start with a general fact (``$P(x)$ holds for all $x \in U$'') and combined with 
+knowing of an object $y$ in the universe of discourse (example: $y$ is known to belong to $U$) allows us to conclude that $P(y)$ holds. 
+This takes us from a general fact to a specific fact about a specific individual named $y$. 
+It is general to say, ``Everyone has slept'' and it is specific to say, ``Your math teacher has slept.'' 
+There will be times in our proof we will need to be that specific, and this flowchart helps us do this.
 
 \begin{example}
 Suppose we know \fbox{$\forall v \in D [P(v)]$} is true. Suppose we also know \fbox{$s \in D$} is true. Then we can conclude \fbox{$P(s)$} is true. Notice that our conclusion does not have the ``for all'' symbol.
+
+Why does this work? Say that $D$ is the set of all dogs, and $P(v)$ is the predicate ``$v$ is cute.''
+Then $\forall v \in D[P(v)]$ in plain English is: every dog is cute.
+Let's say that we have ``Every dog is cute'' is true.
+Saying that we also know $s \in D$ is true is means to say that we know ``$s$ is a dog'' to be true.
+The logical way to combine ``Every dog is cute'' and ``$s$ is a dog'' is to conclude ``$s$ is cute'' which is exactly what was stated earlier to say $P(s)$.
 \end{example}
+
+
 \begin{example}
 Suppose we know \fbox{$\forall h \in L [P(h)]$} is true. Suppose we also know \fbox{$z \in E$} is true. Then we cannot conclude anything based on these two facts, because we need something in $L$ to use $\forall h \in L [P(h)]$.
+
+What happened? Say that $L$ is the set of all turtles, and $P(h)$ is the predicate ``$h$ eats chicken.''
+Then $\forall h \in L[P(h)]$ in plain English is ``Every turtle eats chicken'' or ``All turtles eat chicken.''
+Knowing $z \in E$ doesn't help, because $E$ is some other set that might not be related to $L$.
 \end{example}
 
 \begin{example}
 Suppose we know \fbox{for all $b \in C$, the manager gives $b$ a raise} is true. Suppose we also know \fbox{$m \in C$} is true. Then we can conclude \fbox{the manager gives $m$ a raise} is true. Notice that the words ``for all'' are not in the conclusion.
+
+Why does this work? Let's say that $C$ was the set of all Dallas-based employees.
+Then ``for all $b \in C$, the manager gives $b$ a raise'' translates to: every Dallas-based employee is given a raise by the manager.
+Knowing $m \in C$ means knowing that $m$ is a Dallas-based employee.
+The conclusion we should reach is that the manager gives $m$ a raise.
 \end{example}
+
+
 \begin{example}
 Suppose we know \fbox{for all $b \in C$, the manager gives $b$ a raise} is true. Suppose we also know \fbox{$b \in S$} is true. Then we cannot conclude anything based on these two facts, because we need something in $C$.
 \end{example}
+
+
 \begin{example}
 Suppose we know \fbox{for all $x \in S$, a delivery for $x$ is available} is true. Suppose we also know \fbox{$y \in S$} is true. Then we can conclude \fbox{a delivery for $y$ is available} is true. Notice that the words ``for all'' are not in the conclusion.
+
+Why does this work? Suppose that $S$ is the set of all geckos.
+Then ``for all $x \in S$, a delivery for $x$ is available'' translates into ``Every gecko has a delivery available''
+and $y \in S$ translates into ``$y$ is a gecko''
+so we can conclude: a delivery is available for $y$.
 \end{example}
+
+
 \begin{example}
-Suppose we know \fbox{for all $j \in J$, if $\pi > 2$, then Alex buys a bike from $j$}. Even though we know $\pi > 2$ is true, we can't really use \fbox{for all $j \in J$, if $\pi > 2$, then Alex buys a bike from $j$} yet, because it's stuck ``behind'' a `for all' statement. Say that we also knew $c \in J$. Then we could first conclude the implication \fbox{if $\pi > 2$, then Alex buys a bike from $c$} and by applying modus ponens, we further conclude \fbox{Alex buys a bike from $c$} is true.
+Suppose we know \fbox{for all $j \in J$, if $\pi > 2$, then Alex buys a bike from $j$}. Even though we know $\pi > 2$ is true, we can't really use \fbox{for all $j \in J$, if $\pi > 2$, then Alex buys a bike from $j$} yet, because it's stuck ``behind'' a `for all' statement. (We write this word ``behind'' informally: as an analogy, in the expression $a(b+c)^2$, we cannot distribute $a$ because of the exponent $2$. For another analogy, while we would call $j+k$ a sum, we wouldn't call $(j+k)(m+n)$ a sum, because this is a product, but then ``behind'' each of the factors of the product is a sum.) Say that we also knew $c \in J$. Then we could first conclude the implication \fbox{if $\pi > 2$, then Alex buys a bike from $c$} and by applying modus ponens, we further conclude \fbox{Alex buys a bike from $c$} is true.
 \end{example}
+
+
 \begin{example}
-Suppose we know \fbox{for all $m \in A$, there exists $r \in B$ such that $m$ gives $r$ money} is true. Suppose we also know \fbox{$z \in A$} is true. Then we can conclude \fbox{there exists $r \in B$ such that $z$ gives $r$ money} is true. From this conclusion, Method~\ref{method:using-exists} applies and further conclusions can be made.
+Suppose we know \fbox{for all $m \in A$, there exists $r \in B$ such that $m$ gives $r$ money} is true. Suppose we also know \fbox{$z \in A$} is true. Then we can conclude \fbox{there exists $r \in B$ such that $z$ gives $r$ money} is true. From this conclusion, Method~\ref{method:using-exists} applies and further conclusions can be made. (The big idea here is to take things one step at a time. Because we were able to conclude a statement that begins ``there exists'', we know now this existentially-quantified statement is true, and then follow the rule of inference for using an existentially-quantified statement as we has previously learned.)
 \end{example}
 
 \begin{example}
 If we know $\forall x \in G, xy=yx$ and we also know $z \in G$, then we can conclude $zy=yz$. In more detail, the predicate $P(x)$ is $xy=yx$. Since $z$ is already known to be in $G$, we can conclude $P(z)$, which is $zy=yz$.
 \end{example}
+
+
 \begin{example}
 If we know $\forall x \in G, xy=yx$ and we know $y \in G$, we can conclude $yy=yy$. Note we replaced all the $x$'s with $y$'s.
 \end{example}
+
+
 \begin{example}
 What can we conclude if we know $\forall x \in G, xy=yx$ when we also have $x \in G$? Here, the $x$'s are different in meaning. Since the $x$'s in $\forall x \in G, xy=yx$ are placeholder variables, it may help to replace the $x$'s with $u$'s, so that we can say we know $\forall u \in G, uy=yu$. Then with $\forall u \in G, uy=yu$, combined with the fact $x \in G$, we can conclude $xy=yx$.
 \end{example}
+
+
 \begin{example}
 What can we conclude if we know $\forall x \in G, xy=yx$ and we know $x \in K$? Nothing. The universally-quantified statement says that something is true for each member of the set $G$. However, the $x$ we know about is in $K$. Do not let the fact that both of these statements use $x$ cause confusion. In fact, the first statement can be restated as $\forall u \in G, uy=yu$ by replacing all the placeholder variables.
 \end{example}
+
+
 \begin{example}
 For a more stark example, if we know $\forall a \in B, a^{4}=1$ and we know that $c \in D$, then we can conclude nothing. Note that $\forall a \in B, a^{4}=1$ is the same statement as $\forall c \in B, c^{4}=1$. For the same reason that the $a$'s in $\forall a \in B, a^{4}=1$ are unrelated to the $c \in D$, the $c$'s in $\forall c \in B, c^{4}=1$ are unrelated to $c \in D$.
 \end{example}
 
 In writing proofs, some people like to use the phrase ``in particular\index{in particular}'' when using a universally-quantified statement.
+\begin{example}
+Let's look back to the motivating example for using a universally-quantified statement.
+That is, let's start from knowing to be true: for all $x \in \mathbb{H}$, $x$ has slept.
+From here, we could note that Desmond Tutu is a human. (That is, Desmond Tutu is an element of $\mathbb{H}$.)
+
+Then in our proof, we could write ``In particular, Desmond Tutu has slept'' in place of just writing ``Desmond Tutu has slept.'' What role do the words ``in particular'' have here?
+Think of this as trying to point out that we are looking at a particular human (or a specific human). The initial fact we start with was univerisal -- it was about \emph{all} humans, stating that \emph{all} humans have slept.
+The concluding sentence was to state a fact about \emph{one particular} human: we ended up pointing out that \emph{one specific} human (named Desmond Tutu) has slept.
+\end{example}
+
 \begin{example}
 To use the statement $\forall r \in \mathbb{R}\,\exists s \in \mathbb{Z}\,s>r$ we will need to have a real number. For example, let's have in mind the real number $\pi$. In the form of a flowchart, here's what we can conclude:
 \begin{center}
@@ -3257,7 +3316,7 @@ Let $V$ be the set of all mountains in the United States with an elevation above
 
 Let $U$ be the set of all squirrels in Russia. Let $P(x)$ the predicate ``$x$ has brown eyes.'' How would we prove a statement like $\forall x \in U\,[P(x)]$? Maybe ``prove'' is too strong of a word to use here, but how would we convince someone that $\forall x \in U\,[P(x)]$ is true? Could we approach this in the same way as the tall mountains in the United States? Probably not. There are probably too many squirrels in Russia. Instead, imagine that we ask the reader to select any Russian squirrel they like. (In order for us to refer to the squirrel they picked, we'll call that squirrel $r$, and we'll state this in words by writing, ``Let $r \in U$ be arbitrary.'') Note that $r$ is a single squirrel. Then, suppose we write a proof which convinced the reader that $P(r)$ is true, in other words, that $r$ has brown eyes.
 
-If we succeed in doing this, the reader should be convinced that $\forall x \in U\,[P(x)]$ is true. Now either the reader of our proof or an independent observer might say, ``But wait! The reader only picked one squirrel!'' The point is that the reader can go back and ``rewind the tape'' in the sense of Remark~\ref{remark:rewind-the-tape} and select a new squirrel: the reader goes back to the point in the proof which said ``Let $r \in U$ be arbitrary'' and selects a different squirrel to be $r$. Then, if the argument still applies and the reader sees that $P(r)$ is true, the reader can rewind again and select a new $r$. But if the reader does the thought experiment to see that no matter which $r \in U$ is selected, $P(r)$ is true, then the reader is now convinced that for \emph{all} $x$ in $U$, we have $P(x)$. This discussion leads to the following general method for proving a universally-quantified statement:
+If we succeed in doing this, the reader should be convinced that $\forall x \in U\,[P(x)]$ is true. Now either the reader of our proof or an independent observer might say, ``But wait! The reader only picked one squirrel!'' The point is that the reader can go back and ``rewind the video'' in the sense of Remark~\ref{remark:rewind-the-tape} and select a new squirrel: the reader goes back to the point in the proof which said ``Let $r \in U$ be arbitrary'' and selects a different squirrel to be $r$. Then, if the argument still applies and the reader sees that $P(r)$ is true, the reader can rewind again and select a new choice for $r$. But if the reader does the thought experiment to see that no matter which $r \in U$ is selected, $P(r)$ is true, then the reader is now convinced that for \emph{all} $x$ in $U$, we have $P(x)$. This discussion leads to the following general method for proving a universally-quantified statement:
 \begin{bmethod}{Proving a universally-quantified statement}{proving-forall}
 To prove $\forall x \in U\,[P(x)]$, follow:
 \begin{center}
@@ -3470,7 +3529,7 @@ It is understandable that those who feel comfortable with mathematical calculati
 \begin{bhabit}{}{}
 Remember that most of the hard work of a proof is in building the flowchart which is \emph{very} much using the same type of thinking you did when doing computational mathematics.
 \end{bhabit}
-The consistency of thought you have trained yourself to do in deciding between the Chain Rule versus the Quotient Rule has made you ready to build flowcharts of proof. Just as you can take the distributive law $a(b+c)=ab+ac$ to turn $5(a+b)$ into $5a+5b$, you can take the flow chart for modus ponens and see that if you already have $q \rightarrow s$ is true and you already have $q$ is true, you can conclude $s$ is true. Think of the ``variables'' you see in the flowcharts as propositions to substitute in, just the same as you need to substitute to use $a(b+c)=ab+ac$.
+The consistency of thought you have trained yourself to do in deciding between the Chain Rule versus the Quotient Rule has made you ready to build flowcharts of proof. Just as you can take the distributive law $a(b+c)=ab+ac$ to turn $5(a+b)$ into $5a+5b$, you can take the flowchart for modus ponens and see that if you already have $q \rightarrow s$ is true and you already have $q$ is true, you can conclude $s$ is true. Think of the ``variables'' you see in the flowcharts as propositions to substitute in, just the same as you need to substitute to use $a(b+c)=ab+ac$.
 
 
 \begin{bhabit}{}{}
