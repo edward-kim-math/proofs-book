@@ -3706,11 +3706,23 @@ The list above has many suggestions on things to work on, and it may take a whil
 
 \subsection{The word ``let''}
 
-We have used the word ``let'' in several different settings. We will discuss the various ways we have used the word ``let'' and provide a unified understanding of why the word is being used. There are three settings in our proofs where the word ``let'' has been used so far:
+We have written the word ``let'' in several different settings. We will discuss the various ways we have used the word ``let'' and provide a unified understanding of why the word is being written. 
+First, what does the ``let'' in a general sense do? When we say ``Let's go get ice cream'' this is a suggestion that we should all get ice cream.
+Something like this is said when we aren't currently having ice cream, but someone is making the suggestion that we \emph{should} go get ice cream.
+We will look at specific ways the word ``let'' gets written in proofs, but in general, the word ``let'' has that sense of \emph{suggestion}. 
+Having the word ``let'' in a proof suggests that the reader should ``imagine a certain situation.''
+There are three settings in our proofs where the word ``let'' has been used so far:
 \begin{enumerate}
 \item Using an existentially-quantified statement (Method~\ref{method:using-exists})
 
-Initially, when using an existentially-quantified statement, the flowchart suggested writing a sentence like ``Let $b \in U$ satisfying $P(b)$.'' However, by the time we got to shorter proofs of Theorem~\ref{theorem:sum-of-evens}, we saw ways to avoid writing in such a lengthy manner. This was included for completeness, but it means that we are really only down to the next two uses of the word ``let.''
+Initially, when using an existentially-quantified statement, the flowchart suggested writing a sentence like ``Let $b \in U$ satisfying $P(b)$.'' However, by the time we got to shorter proofs of Theorem~\ref{theorem:sum-of-evens}, we saw ways to avoid writing in such a lengthy manner. This was included for completeness, but it means that we are really only down to the next two ways of writing the word ``let.''
+
+Even if we won't typically write the word ``let'' in this setting anymore, we should still connect in to the recent discussion about how the word ``let'' is written to suggest a certain situation.
+When we write ``Let $b \in U$ satisfying $P(b)$,'' we are suggesting that the reader should imagine some object $b$ from the set $U$ which satisfies the property $P$. 
+To be more concrete, say that $U$ is the set of all wombats and that $P(x)$ is the predicate ``$x$ has blue fur.''
+Then writing ``Let $b \in U$ which satisfies $x$ has blue fur'' is written to the reader to mean this:
+Imagine that there is some wombat (which we will call $b$, since we don't know its name) which has blue fur.
+We are asking the reader to imagine that situation.
 
 \item Proving an existentially-quantified statement (Method~\ref{method:proving-exists})
 
@@ -3718,20 +3730,31 @@ To prove that there exists an $x \in U$ such that $P(x)$, the flowchart says to 
 
 Later, once you are comfortable with proving existentially-quantified statements, you may get to a point where you define an object as needed, but without naming it using a variable such as $c$. In this sense, it would be possible to say that you can avoid writing things like ``Let $t =r+s$'' but for now, it would be good practice to write things like ``Let $t=r+s$.''
 
+We again connect this version of writing ``let'' to the general idea of suggesting a situation.
+When we write ``Let $t=r+s$,'' we are suggesting that the reader should imagine an object $t$ which is defined to be the sum of $r$ and $s$. 
+In other words, we are asking the reader: though there is nothing called $t$ yet, imagine a world where there is a thing called $t$, and the thing about $t$ is that it is the value of $r+s$.
+
 \item Proving a universally-quantified statement (Method~\ref{method:proving-forall})
 
 To prove $\forall x \in U\, [P(x)]$, you must have a sentence such as ``Let $r \in U$ be arbitrary'' and then you would work towards proving $P(r)$. Writing ``Let $r \in U$ be arbitrary'' allows the reader to select any element of $U$ they want to, and their selection is referred to as $r$, so that you have a name by which to call the reader's selection from $U$.
 
-Note that there is no use of the word ``let'' when \emph{using} a universally-quantified statement.
+Let's connect this version of writing ``let'' to the general idea of suggesting a situation.
+When we write ``Let $r \in U$ be arbitrary,'' we are suggesting that the reader should imagine the situation where $r$ is an object from the set $U$.
+Now, how does this actually get implemented? In this situation, the reader selects from $U$ any object they wish, and continues reading the proof with their selected object being called $r$.
+(The reader selecting whichever object from $U$ that they wish is what is meant by the word ``arbitrary'' and because they got to freely select from $U$, the proof really addresses that a certain property $P$ will hold for all objects from $U$.)
+How do we suggest that the reader imagine the situation in which $r$ is an object that belongs to the set $U$? The reader gets to \emph{pick} the object from $U$.
+Finally, if the reader doesn't actually know of any specific object from $U$, they can still imagine hypothetically picking one, and read the rest of the proof that's written, and whenever the proof mentions $r$, they can validate the text, seeing if the argument being made applies to every object from $U$.
+
+Note that we do not write the word ``let'' when \emph{using} a universally-quantified statement.
 \end{enumerate}
 
-These are the three situations in which you would use ``let'' in a proof, though you can avoid the first of these three. Thus, two situations remain. What does ``let'' mean? We use the word ``let'' in a proof to refer to some object later. When writing ``Let $t=r+s$'' there was already an $r$ and an $s$ which were introduced in the proof, and their sum was useful later on in the proof, so it helped to call $r+s$ something, and we chose to call it $t$. Instead of writing ``Let $t=r+s$'' we could have written ``We define $t$ to be $r+s$.'' Then, $t$ is mentioned later on in the proof. Finally, if you write the sentence ``Let $r \in U$ be arbitrary'' then the reader may fix $r$ to be any element from the set $U$. Just as in the previous example where $t$ would be mentioned later on in the proof, here, $r$ will be mentioned later in the proof.
+These are the three situations in which you would write ``let'' in a proof, though you can avoid the first of these three. Thus, two situations remain. What does ``let'' mean? We write the word ``let'' in a proof to refer to some object later. When writing ``Let $t=r+s$'' there was already an $r$ and an $s$ which were introduced in the proof, and their sum was useful later on in the proof, so it helped to call $r+s$ something, and we chose to call it $t$. Instead of writing ``Let $t=r+s$'' we could have written ``We define $t$ to be $r+s$.'' Then, $t$ is mentioned later on in the proof. Finally, if you write the sentence ``Let $r \in U$ be arbitrary'' then the reader may fix $r$ to be any element from the set $U$. Just as in the previous example where $t$ would be mentioned later on in the proof, here, $r$ will be mentioned later in the proof.
 
-In both of these situations, the word ``let'' allows the proof writer to define things which will be useful later. There was a time in the past when you used ``let'' although it might have been implicit. When evaluating
+In both of these situations, the word ``let'' allows the proof writer to define things which will be useful later. There was a time in the past when you used ``let'' although it might have been implicit. When working on the integral
 \[ \int (1-\sin^2 x)^3 \cos x\,dx\]
-you had used substitution. While you may have just written \fbox{$u=\sin x$} in the past, this is really short for ``Let $u=\sin x$'' after which you ended up writing $u$ again when you wrote
-\[ \int (1-u)^3\,du.\]
-The word let should always be followed by variable that has not been used yet in your proof:
+you had performed substitution. While you may have just written \fbox{$u=\sin x$} in the past, this is really short for ``Let $u=\sin x$'' after which you ended up writing $u$ again when you wrote
+\[ \int (1-u^2)^3\,du.\]
+The word ``let'' should always be followed by a variable that has not been written yet in your proof:
 \begin{itemize}
 \item Ensure that the variable you are defining appears \emph{immediately} after the word ``let.'' 
 
@@ -3741,23 +3764,28 @@ Write ``Let $t=r+s$'' instead of writing ``Let $r+s=t$.'' We are introducing $t$
 
 Suppose, we are in the middle of a proof, where $a$, $b$, $c$, and $d$ are all real numbers which have already been defined. Then if a proof has the sentence ``Let $3a + b^5 + \ln(3+c^2) - \sin(m) = m^5 + d$,'' the reader would (probably) interpret this to mean that the writing is trying to define $m$. However, it is not readily apparent that there even is \emph{any} possible choice for $m$ where $3a + b^5 + \ln(3+c^2) - \sin(m) = m^5 + d$ is true. In other words, what if the equation $3a + b^5 + \ln(3+c^2) - \sin(m) = m^5 + d$ has no solution for $m$? Writing like this becomes a difficult way to define the variable $m$, and insisting on the new variable appearing immediately after the word ``let'' will avoid this situation.
 
-As a slightly different version of this, sometimes people will write ``Let $m$ be an integer such that $3a + b^5 + \ln(3+c^2) - \sin(m) = m^5 + d$.'' While this sentence follows the expectations written for the word ``let'' it has the same danger which was just mentioned. In fact, it is generally good to avoid writing a sentence in the form ``Let $m \in U$ be such that $P(m)$'' because this generally leads the reader to ask, ``Wait, is there even any $m \in U$ where $P(m)$ is true in the first place?'' The \emph{only} time to write this type of sentence is immediately after the reader has been convinced that $\exists z \in U\,[P(z)]$.
+As a slightly different version of this, sometimes people will write ``Let $m$ be an integer such that $3a + b^5 + \ln(3+c^2) - \sin(m) = m^5 + d$.'' While this sentence follows the expectations written for the word ``let'' it has the same danger which was just mentioned. In fact, it is generally good to avoid writing a sentence in the form ``Let $m \in U$ be such that $P(m)$'' because this generally leads the reader to ask, ``Wait, is there even any $m \in U$ where $P(m)$ is true in the first place?'' The \emph{only} time to write this type of sentence is immediately after you have convinced the reader that $\exists z \in U\,[P(z)]$ is true.
 
-\item Be sure that ``let'' is followed by an \emph{unused} variable.
+\item Be sure that ``let'' is followed by \emph{new} variable.
 
 Otherwise, you would be redefining the variable. If your proof at some point said ``Let $m=3k+4$'' then the same proof should not later have the sentence ``Let $m=3k+5$.'' The reader would think, ``Wait! Earlier you told me that $m$ would be defined to be $3k+4$. Now you're saying that $m$ should be defined to be $3k+5$? Which is it?''
 
-This would be redefining $m$. If you do need to define something to be $3k+5$, use a new variable.
+This would be redefining $m$. If you do need to define something to be $3k+5$, pick a new variable.
 \end{itemize}
 
 \begin{bwarning}{}{}
 While it is okay to write \fbox{Let $x = 7^2 + 3$} it is not okay to write \fbox{Let $x \in \mathbb{Z}$ such that $3x + 5 = 29-x^2$} (unless it comes immediately after an appropriate ``there exists'' statement) because there might not exist an integer $x$ which satisfies $3x + 5 = 29-x^2$.
 \end{bwarning}
 \begin{bwarning}{}{}
-As another example of this, it is incorrect to write ``Let $x$ be a real such that $x^2+49 = 3-2x$.'' Note that even among real numbers $x$, there is no solution to the equation $x^2+49 = 3-2x$. Thus, writing a sentence in this format (Let $x$ ... such that ...) is dangerous because you as the writer may feel you have established something and want the reader to move on to the next thing, but nothing was established because there might not exist such an $x$. This is why the format of using `let' is to have `let' followed by a new variable (say $x$) followed by an equal sign, followed by an expression that is already defined (and therefore doesn't mention $x$). For example, writing ``Let $x=u^2+3$'' is okay, provided $u$ already is established.
+As another example of this, it is incorrect to write ``Let $x$ be a real such that $x^2+49 = 3-2x$.'' Note that there is no integer $x$ that is a solution to the equation $x^2+49 = 3-2x$. 
+(Actually, there is no real number $x$ that is a solution to $x^3+49 = 3-2x$ either!)
+Thus, writing a sentence in this format (Let $x$ ... such that ...) is dangerous because you as the writer may feel you have established something and want the reader to move on to the next thing, but nothing was established because there might not exist such an $x$. This is why the format of using `let' is to have `let' followed by a new variable (say $x$) followed by an equal sign, followed by an expression that is already defined (and therefore doesn't mention $x$). For example, writing ``Let $x=u^2+3$'' is okay, provided $u$ already is established.
 \end{bwarning}
 
 Contrast this with Method~\ref{method:using-exists}: if you already know $\exists x \in U$ such that $P(x)$, then it is okay to write \fbox{Let $x \in U$ such that $P(x)$}.
+Writing ``Let $x \in U$ such that $P(x)$'' generally is ``asking too much'' in that there might not be something in $U$ which satisfies the predicate $P$.
+This is why only immediately after you have established that $\exists z \in U\,[P(z)]$ is true, is it okay to write ``Let $x \in U$ such that $P(x)$'' and that would be the only time this is okay.
+In all other circumstances, we cannot ask the reader to imagine an object $x$ from the set $U$ which satisfies the property $P$, because there might not be such an object.
 
 \subsection{Other concerns}
 
@@ -3775,11 +3803,19 @@ Be sure not to turn in scratch work as the proof. Your own process of discoverin
 
 \item Each sentence should be readily apparent to the reader.
 
-When proving the implication following Method~\ref{method:proving-implication-direct}, we would first suppose that $p$ is true. Then we eventually need to convince the reader that $q$ is true, but this might not occur right away. To indicate that this is where we are headed, we might include ``We will show that $q$ is true.'' A sentence of this kind is not strictly \emph{required}, but it helps the reader see where you are going in writing your proof. (In addition, while you are early in your proof-writing career, sentences like this help you on track of what you need to prove.)
+When proving the implication following Method~\ref{method:proving-implication-direct}, we would first suppose that $p$ is true. Then we eventually need to convince the reader that $q$ is true, but this might not occur right away. To indicate that this is where we are headed, we might include a sentence like one of the following:
+\begin{itemize}
+\item We will show that $q$ is true.
+\item We will prove that $q$ is true.
+\item We will show that $q$ is true.
+\item We want to show that $q$ is true.
+\item Our goal is to prove that $q$ is true.
+\end{itemize}
+A sentence of this kind is not strictly \emph{required}, but it helps the reader see where you are going in writing your proof. (In addition, while you are early in your proof-writing career, sentences like this help you on track of what you need to prove.)
 
-As an example, see the proof of Theorem~\ref{theorem:odd-plus-odd-is-even}. After starting by supposing that $a$ is odd and that $b$ is odd, the next sentence cannot be ``The integer $a+b$ is even'' because the reader would not be convinced at this point that $a+b$ is even. We wrote ``We want to prove $a+b$ is even'' which is another way of saying ``We will show that $a+b$ is even.'' This tells the reader that they should expect a sentence similar to ``The integer $a+b$ is even'' much later. (The words ``prove'' and ``show'' are synonymous in the context of writing proofs.)
+As an example, see the proof of Theorem~\ref{theorem:odd-plus-odd-is-even}. After starting by supposing that $a$ is odd and that $b$ is odd, the next sentence cannot be ``The integer $a+b$ is even'' because the reader would not be convinced at this point that $a+b$ is even. We wrote ``We want to prove $a+b$ is even'' which is another way of saying ``We will show that $a+b$ is even.'' This tells the reader that they should expect a sentence similar to ``The integer $a+b$ is even'' to appear later on in the proof, perhaps at the end. (The words ``prove'' and ``show'' are synonymous in the context of writing proofs.)
 
-The same can be said for Method~\ref{method:proving-forall}. You will start by writing a sentence such as ``Let $r \in U$ be arbitrary.'' Then, it will not usually be immediately clear to the reader that $P(r)$ is true. Convincing the reader of this might take several sentences. So instead of writing ``Therefore, $P(r)$'' (with the reader saying, ``I'm unconvinced that $P(r)$ is true'') you could write ``We will prove that $P(r)$ holds'' or something similar.
+The same can be said for Method~\ref{method:proving-forall}. You will start by writing a sentence such as ``Let $r \in U$ be arbitrary.'' Then, it will not usually be immediately clear to the reader that $P(r)$ is true. Convincing the reader of this might take several sentences. (In other words, in the moment, the reader might not be convinced that $P(r)$ is true.) So instead of writing ``Therefore, $P(r)$'' (with the reader saying, ``I'm unconvinced that $P(r)$ is true'') you could write ``We will prove that $P(r)$ holds'' or something similar.
 
 For example, see the proof of Theorem~\ref{theorem:forall-a-if-b-div-c}. The second sentence of the proof was ``We will prove that if $b$ divides $c$, then $b$ divides $ac$.'' which is the specific version of the generic sentence ``We will prove that $P(r)$ holds.'' The second-to-last sentence of the proof stated, ``The previous paragraph proved that if $b$ divides $c$, then $b$ divides $ac$.'' It is at that moment in the proof that the reader is \emph{finally} convinced that the implication is true. Between the second sentence and the second-to-last sentence is the proof of the implication.
 
@@ -3787,7 +3823,7 @@ When writing formal mathematics, it makes sense to write out complete phrases (s
 
 \item Recall (from Language Discussion~\ref{language:notation-placement}) that notation for an object follows immediately after the noun which describes the object.
 
-For example, write ``The maximum $M$ of the set $S$ is'' and continue the sentence. Do not use a comma before and after the $M$ by writing ``The maximum, $M$, of the set...''
+For example, write ``The maximum $M$ of the set $S$ is'' and continue the sentence. Do not write a comma before and after the $M$ by writing ``The maximum, $M$, of the set...''
 
 %\item exists in
 
@@ -3800,6 +3836,7 @@ In fact, think about using the phrases ``assumption'' and ``conclusion'' and ``i
 Because we often write ``For all $a,b \in \mathbb{R}$'' as short hand to mean ``For all $a \in \mathbb{R}$ and for all $b \in \mathbb{R}$'' having notation right before and after a comma may be a little ambiguous. Consider the sentence ``Since the integer $a$ divides $b$, $ac$  divides $br$.'' Reading the $b$ before the comma and the $ac$ after the comma may be confusing. Is the author suggesting that $a$ divides $b$ and that $a$ also divides $ac$? Certainly if the sentence said ``The integer $a$ divides $b$, $ac$'' then this would have to be the interpretation. However, based on the sentence structure, it appears that reader meant something else.
 
 Instead of writing ``Since the integer $a$ divides $b$, $ac$ divides $br$'' it is preferable include some text right after the comma: the sentence ``Since the integer $a$ divides $b$, the integer $ac$ divides $br$'' removes the ambiguity of notation immediately before and after the comma. Moreover, adding the phrase ``the integer'' before $ac$ helps clarify that $ac$ is an integer, following Language Discussion~\ref{language:notation-placement}. While the sentence is slightly longer, not only is the sentence clearer, there is also a benefit to the proof writer in being forced to think about ``What kind of thing is $ac$ anyway?''
+Writing in this manner helps the proof writer as well: it encourages honest thinking about what type of object is being discussed.
 
 \item Writing the word ``assume'' and the word ``suppose'' in a proof are essentially synonymous.
 
@@ -3819,7 +3856,9 @@ are four very different-looking tasks. For example, if you need to prove $\exist
 
 \section{Intermission: comments on definitions}\label{section:comments-on-definitions}
 
-You will need to reference definitions to be successful at proofs. Imagine trying to prove Theorem~\ref{theorem:odd-plus-odd-is-even} without having Definition~\ref{definition:odd}. It would be impossible. (People have tried to ignore the definitions while writing a proof of Theorem~\ref{theorem:sum-of-evens}. They end up writing things like ``Suppose $a$ is odd'' but then have no where to really go. While people then end up trying to write things like ``Thus, $a$ has a remainder of $1$ when divided by $2$,'' none of our methods of proof which we have described are helpful. By applying the definitions using the methods we have given, one is led to the useful intermediate conclusion of $\exists k \in \mathbb{Z}\,[a=2k+1]$. Then, Method~\ref{method:using-exists} can apply. The usefulness of this approach is that essentially every area in proof-based mathematics will require being familiar with Method~\ref{method:using-exists}, so even in what appears to be a very ``familiar'' statement in Theorem~\ref{theorem:odd-plus-odd-is-even} is a good place to practice referencing definitions and using the methods that we have presented in this chapter.
+You will need to reference definitions to be successful at proofs. Imagine trying to prove Theorem~\ref{theorem:odd-plus-odd-is-even} without having Definition~\ref{definition:odd}. It would be impossible. (People have tried to ignore the definitions while writing a proof of Theorem~\ref{theorem:sum-of-evens}. They end up writing things like ``Suppose $a$ is odd'' but then have no where to really go. While people then end up trying to write things like ``Thus, $a$ has a remainder of $1$ when divided by $2$,'' none of our methods of proof which we have described are helpful.
+Every mathematical statement that ever gets proved is written in the language of logical operations (not, and, or, if ... then..., if and only if, etc.), quantifiers (for all, there exists), and applying definitions.
+By applying the definition, one is led to the useful intermediate conclusion of $\exists k \in \mathbb{Z}\,[a=2k+1]$. Then, Method~\ref{method:using-exists} can apply. The usefulness of this approach is that essentially every area in proof-based mathematics will require being familiar with Method~\ref{method:using-exists}, so even in what appears to be a very ``familiar'' statement in Theorem~\ref{theorem:odd-plus-odd-is-even} is a good place to practice referencing definitions and using the methods that we have presented in this chapter.
 
 The new definitions introduced in this chapter (even, odd, divides) and the definitions you will see in the future are written from the perspective that the definitions in the previous chapter (conjunction, logically equivalent, implication, etc.) are the language foundation. 
 Every time you encounter a new definition, you should:
@@ -3850,9 +3889,9 @@ If your work in reading definitions has been thorough, then you will have more s
 \item Mid-length: A group $G$ is {\bf abelian} if $ab=ba$ for all $a,b \in G$.
 \item Compact: A group $G$ is {\bf abelian} if $\forall a,b \in G$, $ab=ba$.
 \end{itemize}
-The compact statement (example: the proposition $\forall a,b \in G$, $ab=ba$) or any logically equivalent statement is the has all the technical pieces of the definition, but we tend to expand this out a little (in the mid-length version) and present this as a working definition when communicating with fellow mathematicians. The mid-length statement should capture all the precision of the compact statement, but be more readable (can mix symbols and English). All of the definitions that we have provided (and will continue to provide in future sections) in boxes in this handbook are of the mid-length style, the typical style found in mathematics textbooks. The wordy statement is \emph{never} acceptable in written work, but is often the language used verbally, and should capture the essence (you should be able to use the wordy to help you remember the compact).
+The compact statement (example: the proposition $\forall a,b \in G$, $ab=ba$) or any logically equivalent statement is the has all the technical pieces of the definition, but we tend to expand this out a little (in the mid-length version) and present this as a working definition when communicating with fellow mathematicians. The mid-length statement should capture all the precision of the compact statement, but be more readable (can mix symbols and English). All of the definitions that we have provided (and will continue to provide in future sections) in boxes in this handbook are of the mid-length style, the typical style found in mathematics textbooks. The wordy statement is \emph{never} acceptable in written work, but is often the language used verbally, and should capture the essence (you should be able to use the wordy to help you remember the compact version).
 
-{\bf As a habit, with every definition encountered in Chapter~\ref{chapter:sets} and beyond, practice reading the formally-presented definition (likely of mid-length style) and write something wordy (to help serve as a memory hook), but also write something compact (because it will fit the methods of proof in this chapter better).}
+As a habit, with every definition encountered, practice reading the formally-presented definition (likely of mid-length style) and write something wordy (to help serve as a memory hook), but also write something compact (because it will fit the methods of proof in this chapter better).
 
 \item Check that you have ``set up'' information, either as its own earlier sentence or incorporated into the defining sentence. (Example: Let $S$ and $T$ be sets.)
 \item Does your definition make clear the part of speech? (noun, adjective, verb)
@@ -3870,11 +3909,21 @@ Do not be distracted by the \emph{names} of definitions, which sometimes lead st
 
 Recall Definition~\ref{definition:even} which states that an integer $n$ is even if there exists an integer $k$ such that $n=2k$. The text \fbox{there exists an integer $k$ such that $n=2k$} defines what it means that \fbox{integer $n$ is even}. The main thing to rely on is \fbox{there exists an integer $k$ such that $n=2k$}. ``Even'' is just a name.
 
-Later, in Definition~\ref{definition:onto}, you will learn the definition of the word \defn{onto}. Based on the word alone, it is tempting to say that \defn{onto} is a preposition (as in, ``they went up onto the ridge''). However, we will see that onto is an adjective. Treating \defn{onto} like a preposition would be dangerous, and is using our everyday English understanding of the word, which is a distraction.
+Later, in Definition~\ref{definition:onto}, you will learn the definition of the word \defn{onto}. Based on the word alone, it is tempting to say that \defn{onto} is a preposition. A preposition is a word that helps indicate location in everyday speech. 
+Examples of prepositions include are underlined in the following phrases:
+\begin{itemize}
+    \item the went up \underline{onto} the ridge
+    \item the cat is \underline{under} the table
+    \item the book is \underline{on} the shelf
+    \item the dog jumped \underline{over} the fence
+\end{itemize}
+However, we will see that onto is an adjective. Treating \defn{onto} like a preposition would be dangerous, and is using our everyday English understanding of the word, which is a distraction.
 
 Similarly, from second-semester calculus, there is no immediate reason why the definitions of ``convergent'' and ``absolutely convergent'' are connected at all. Sure, their \emph{naming} is similar, but if you look at the definitions of the two in any calculus book, you'll see that there's almost nothing similar about them in the defining text. The fact that the latter implies the former is settled due to the proof of a theorem.
 
 As another example, from third-semester calculus, if $D$ is a subset of the Cartesian plane, we discuss the definition of the \defn{boundary} of $D$, and whether $D$ is \defn{bounded} or not. While both words start with the same five letters, the two concepts are completely unrelated. Any attempt to connect the two (simply because the words sound similar) creates misconceptions in third-semester calculus! (In fact, \defn{boundary} is a noun, while \defn{bounded} is an adjective.)
+This happens in everyday language too: the words ``important'' and ``importing'' start with the same six letters, but have completely unrelated meanings.
+When learning new definitions, focus on the defining text, and do not be distracted by the names of the definitions.
 
 \section{Indirect proof}\label{section:indirect-proof}
 
