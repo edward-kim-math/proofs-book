@@ -3944,10 +3944,18 @@ To prove $p \rightarrow q$, one can prove its contrapositive $\neg q \rightarrow
 \begin{theorem}\label{theorem:s2-even-s-even}
 For all $s \in \mathbb{Z}$, if $s^2$ is even, then $s$ is even.
 \end{theorem}
-To start a proof, we would write ``Let $s \in \mathbb{Z}$ be arbitrary.'' Then we would need to prove if $s^2$ is even, then $s$ is even. Our usual way of proving this would be to suppose that $s^2$ is even. So, there would exist an integer $k$ such that $s^2=2k$. But then how would we ever express $s$? It seems awkward to square root both sides and have $s=\pm\sqrt{2k}$. Where would we go from here? It appears that a direct proof of the implication is awkward. Let us try an indirect proof (with the selection of $s \in \mathbb{Z}$ still arbitrary). Before starting the proof, recall from Section~\ref{section:examples-of-assumed-propositions} that an integer that is not odd is even, and that an integer that is not even is odd.
+To start a proof, we would write ``Let $s \in \mathbb{Z}$ be arbitrary.'' Then we would need to prove if $s^2$ is even, then $s$ is even. Our usual way of proving this would be to suppose that $s^2$ is even and then work to prove that $s$ is even. So, there would exist an integer $k$ such that $s^2=2k$. But then how would we ever express $s$? It seems awkward to square root both sides and have $s=\pm\sqrt{2k}$. Where would we go from here? It appears that a direct proof of the implication is awkward. Let us try an indirect proof (with the selection of $s \in \mathbb{Z}$ still arbitrary). Before starting the proof, recall from Section~\ref{section:examples-of-assumed-propositions} that an integer that is not odd is even, and that an integer that is not even is odd.
 \begin{proof}
 Let $s \in \mathbb{Z}$ be arbitrary. We wish to show that if $s^2$ is even, then $s$ is even. To prove this, suppose $s$ is not even. Then, due to Section~\ref{section:examples-of-assumed-propositions}, $s$ is odd. We wish to prove that $s^2$ is odd. Since $s$ is odd, there exists an integer $a$ such that $s=2a+1$. Let $b = 2a^2+2a$. Then $b$ is an integer, and $s^2=(2a+1)^2=4a^2+4a+1=2(2a^2+2a)+1=2b+1$. Since $s^2=2b+1$ and $b$ is an integer, $s^2$ is odd. 
 \end{proof}
+
+Please note that what is happening here is \emph{not} proving the contrapositive of ``For all $s \in \mathbb{Z}$, if $s^2$ is even, then $s$ is even.'' We shouldn't talk about a ``for all'' statement as having a contrapositive.
+Instead, we took our first step in proving a ``for all'' statement by writing ``Let $s \in \mathbb{Z}$ be arbitrary.'' Then, we needed to prove the implication ``if $s^2$ is even, then $s$ is even.'' 
+It is this \emph{implication} that we examined the contrapositive of.
+As an analogy, when simplifying $\frac{\frac{a}{b}}{\frac1c + \frac1d}$, we wouldn't say that we're going to multiply by the reciprocals of $\frac1c$ and $\frac1d$. Instead, we'd rewrite the expression as 
+$\frac{\frac{a}{b}}{\frac{d+c}{cd}}$, and then say that we'll multiply by the reciprocal of $\frac{d+c}{cd}$.
+The analogy here is that we should be careful in our language what thing we are taking the reciprocal \emph{of}.
+Similarly, we should be careful that when we are talking about contrapositive, we say that we're taking the contrapositive of an \emph{implication}, and not of a universally-quantified statement.
 
 If you need to prove an implication, always try a direct proof\index{direct proof}. However, if you get stuck in a direct proof, consider proving the contrapositive of the implication instead (which is called the \defn{indirect proof}\index{indirect proof}).
 
