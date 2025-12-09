@@ -4071,7 +4071,8 @@ When proving $p \to q$ by contradiction, you first assume $p$, and then because 
 
 \section{Proof by cases}\label{section:proof-by-cases}
 
-In the last section, we saw the method of proof by contradiction as one way forward when it seems like we are stuck in a proof. Another method that is useful in such ``sticky'' situations is a proof by cases.
+In the last section, we saw the method of proof by contradiction as one way forward when it seems like we are stuck in a proof. Proof by contradiction isn't the only last ditch method. 
+Another method to consider when we're stuck is a proof by cases.
 
 Suppose that one wishes to prove $p \rightarrow q$. The natural method is to assume $p$ first, then attempt to prove $q$. However, if you get stuck proving $q$, you might try to identify $k$ propositions, which we will name $h_1,h_2,\dots,h_k$, where $k \geq 2$. Typically, $k$ should be small: perhaps no more than $5$, ideally. The goal is to have propositions  $h_1,h_2,\dots,h_k$ where the following can be proved:
 \begin{itemize}
@@ -4084,9 +4085,10 @@ Suppose that one wishes to prove $p \rightarrow q$. The natural method is to ass
 \end{itemize}
 If all the proofs above are successful, then one can validly conclude that $q$ is true.
 
-Why does this work? The proof of $p \rightarrow (h_1 \vee h_2 \vee \dots \vee h_k)$ is the identification of the cases. For simplicity, let us consider a situation where $k=3$. That is, let us examine $p \rightarrow (h_1 \vee h_2 \vee h_3)$. This is saying that from $p$, one of three things must occur: either $h_1$ must be true, or $h_2$ must be true, or $h_3$ must be true. At least one of these three propositions must be true. In other words, we want to ensure that it is inevitable that at least one of $h_1$ or $h_2$ or $h_3$ are true. Then, no matter which of these three things are true, we will reach our destination. If $h_1$ is true, then we get to apply the proof that we present of $h_1 \rightarrow q$. If instead $h_2$ is true, then we apply the proof of $h_2 \rightarrow q$. If $h_3$ is true, then we apply the proof of $h_3 \rightarrow q$. Here we saw an example of $k=3$, which is a proof in three cases.
+Why does this work? The proof of $p \rightarrow (h_1 \vee h_2 \vee \dots \vee h_k)$ is the identification of the cases. For simplicity, let us consider a situation where $k=3$. That is, let us examine $p \rightarrow (h_1 \vee h_2 \vee h_3)$. 
+This is in the situation that $p$ is true, at least one of three things must occur: either $h_1$ must be true, or $h_2$ must be true, or $h_3$ must be true. At least one of these three propositions must be true. In other words, we want to ensure that it is inevitable that at least one of $h_1$ or $h_2$ or $h_3$ are true. Then, no matter which of these three things is true, we will reach our destination. If $h_1$ is true, then we get to apply the proof that we present of $h_1 \rightarrow q$. If instead $h_2$ is true, then we apply the proof of $h_2 \rightarrow q$. If $h_3$ is true, then we apply the proof of $h_3 \rightarrow q$. Here we saw an example of $k=3$, which is a proof in three cases.
 
-For a proof in four cases ($k=4$), we must identify four propositions $h_1,h_2,h_3,h_4$. The proof's author should first argue that $p \rightarrow (h_1 \vee h_2 \vee \vee h_3 \vee h_4)$ is true. Then there are four additional proofs to do, namely $h_1 \rightarrow q$ and $h_2 \rightarrow q$ and $h_3 \rightarrow q$ and $h_4 \rightarrow q$.
+For a proof in four cases ($k=4$), we must identify four propositions $h_1,h_2,h_3,h_4$. Then the person writing the proof should first argue that $p \rightarrow (h_1 \vee h_2 \vee \vee h_3 \vee h_4)$ is true. Then there are four additional proofs to do, namely $h_1 \rightarrow q$ and $h_2 \rightarrow q$ and $h_3 \rightarrow q$ and $h_4 \rightarrow q$.
 
 Let us consider the following example:
 \begin{theorem}
@@ -4096,11 +4098,11 @@ If the Minesweeper configuration is as given in Figure~\ref{figure:minesweeper01
 Assume we have the given mine configuration from Figure~\ref{figure:minesweeper01}.
 Because of the 3 below K, of the three cells J, K, and L, exactly two must be mines. That is, either J and K are mines with L safe, or J and L are mines with K safe, or K and L are mines with J safe. We break into three cases:
 \begin{itemize}
-\item If Cell J and Cell K are mines and Cell L is safe, then Cell M must be a mine so that the $2$ below Cell L has its second mine. Then the $1$ below Cell M has all its mines discovered, so Cell M is safe and Cell N is safe.
-\item If Cell J and Cell L are mines and Cell K is safe, then because of the 2 under Cell L, Cell M must be a mine. However, this case is impossible because the 1 below M is surrounded by mines at both Cell L and Cell M.
-\item If Cell K and Cell L are mines and Cell J is safe, then the 1 under Cell M has its mine located at Cell L, so Cell M and Cell N are both safe.
+\item Suppose Cell J and Cell K are mines and Cell L is safe. Then Cell M must be a mine so that the $2$ below Cell L has its second mine. Then the $1$ below Cell M has all its mines discovered, so Cell M is safe and Cell N is safe.
+\item Suppose Cell J and Cell L are mines and Cell K is safe. Then because of the 2 under Cell L, Cell M must be a mine. However, this case is impossible because the 1 below M is surrounded by mines at both Cell L and Cell M.
+\item Suppose Cell K and Cell L are mines and Cell J is safe. Then the 1 under Cell M has its mine located at Cell L, so Cell M and Cell N are both safe.
 \end{itemize}
-No matter which of the three cases occur, we can see that Cell N is safe.
+No matter what, we can see that Cell N is safe.
 \end{proof}
 In this example, $k=3$. Note that ``we have the given mine configuration from Figure~\ref{figure:minesweeper01}'' is $p$, following the notation from earlier. Let us identify the three situations:
 \begin{itemize}
@@ -4108,9 +4110,15 @@ In this example, $k=3$. Note that ``we have the given mine configuration from Fi
 \item $h_2$ is ``J and L are mines with K safe''
 \item $h_3$ is ``K and L are mines with J safe''
 \end{itemize}
-and our proof of $p \rightarrow (h_1 \vee h_2 \vee h_3)$ is embedded in the short sentence, ``Because of the 3 below K, of the three cells J, K, and L, exactly two must be mines.'' In the proof, after the sentence ``We break into three cases'' we have presented proofs of $h_1 \rightarrow q$ and $h_2 \rightarrow q$ and $h_3 \rightarrow q$. No matter what, we reach the conclusion of $q$, where $q$ is namely ``Cell N is safe.'' (One word about the second case, where K was assumed safe: it turned out that this was impossible, so while it seemed that we had three cases in the beginning, in retrospect, we only had two cases.)
+and our proof of $p \rightarrow (h_1 \vee h_2 \vee h_3)$ is embedded in the short sentence, ``Because of the 3 below K, of the three cells J, K, and L, exactly two must be mines.'' 
+In the proof, after the sentence ``We break into three cases'' we have presented proofs of $h_1 \rightarrow q$ and $h_2 \rightarrow q$ and $h_3 \rightarrow q$. 
+No matter what (and by this, we mean no matter whether it is $h_1$ that is true, or $h_2$ that is true, or $h_3$ that is true), we reach the conclusion of $q$, where $q$ is namely ``Cell N is safe.'' 
+(One word about the second case, where K was assumed safe: it turned out that this was impossible, so while it seemed that we had three cases in the beginning, in retrospect, we only had two cases.
+At the time of identifying the cases, we did not know that the second case was impossible, so we included it as a case. It is perfectly acceptable to have a case that turns out to be impossible.
+As an alternative view, you can say that our proof of $h_2 \rightarrow q$ was by examining the truth table for an implication: when the hypothesis of an implication is false, then the implication is true: since $h_2$ is false, 
+the implication $h_2 \rightarrow q$ is true.)
 
-The idea of proof by cases is to branch out from the situation of $p$ and look at one of a number ($h_1,\dots,h_k$) situations, at least one of which \emph{must} hold. Then, assuming each of these situations, we either determine that the situation was actually impossible (as we had in our second case above) or that we reach the conclusion that $q$ is true (as we did in cases one and three above).
+The idea of proof by cases is to branch out from the situation of $p$ and look at one of a number ($h_1,\dots,h_k$) situations, at least one of which \emph{must} hold. Then, assuming each of these situations individually, we either determine that the situation was actually impossible (as we had in our second case above) or that we reach the conclusion that $q$ is true (as we did in cases one and three above).
 
 Let us revisit Theorem~\ref{theorem:minesweeper01-V-safe-contradiction}, which we earlier proved by contradiction, and now provide a proof of the same theorem by cases. In this proof by cases, the proof of the first case is an embedded proof by cases.
 \begin{theorem}
@@ -4120,19 +4128,20 @@ If the Minesweeper configuration is as given in Figure~\ref{figure:minesweeper01
 Suppose we have the given mine configuration from Figure~\ref{figure:minesweeper01}.
 Because of the $1$ in row $1$ column $2$, either Cell P is a mine or Cell Q is a mine. We proceed by cases.
 \begin{itemize}
-\item In the first case, P is a mine. So Q is safe. Since P is a mine, the 2 in $(2,2)$ has all necessary mines, so R is safe. Then exactly one of S or T is a mine, due to the 2 in $(3,2)$. We proceed in two subcases:
+\item For the first case, suppose P is a mine. So Q is safe. Since P is a mine, the 2 in $(2,2)$ has all necessary mines, so R is safe. Then exactly one of S or T is a mine, due to the 2 in $(3,2)$. We proceed in two subcases:
 \begin{itemize}
-\item If S is a mine and T is safe, then U must be a mine for the third mine of the 3 located at $(4,3)$. Since the 1 to the right of U has all its mines, V must be safe.
-\item If T is a mine and S is safe, then U is safe because the 3 located at $(4,3)$ has all its mines.  In addition, the 1 to the right of U already has its mine at T, so V is safe.
+\item Suppose S is a mine and T is safe. Then U must be a mine for the third mine of the 3 located at $(4,3)$. Since the 1 to the right of U has all its mines, V must be safe.
+\item Suppose T is a mine and S is safe. Then U is safe because the 3 located at $(4,3)$ has all its mines.  In addition, the 1 to the right of U already has its mine at T, so V is safe.
 \end{itemize}
 In both subcases V is safe.
-\item In the second case, Q is a mine, so P is safe. Since Q is a mine, the 2 in $(3,2)$ has all necessary mines, so R, S, and T are all safe. Since T is safe, due to the 3, U is a mine. Since the 1 to the right of U has all its mines, V is safe.
+\item For the second case, suppose Q is a mine. So P is safe. Since Q is a mine, the 2 in $(3,2)$ has all necessary mines, so R, S, and T are all safe. Since T is safe, due to the 3, U is a mine. Since the 1 to the right of U has all its mines, V is safe.
 \end{itemize}
 In both cases, V is safe.
 \end{proof}
 Let us analyze the structure of this proof and see how it fits our framework. Following our notation from earlier, we have an initial hypothesis $p$ that ``we have the given mine configuration from Figure~\ref{figure:minesweeper01}'' and then identified two propositions, where $h_1$ was ``Cell P is a mine'' and $h_2$ was ``Cell Q is a mine.'' Our proof of $p \rightarrow (h_1 \vee h_2)$ is given in the sentence ``Because of the $1$ in row $1$ column $2$, either Cell P is a mine or Cell Q is a mine.''
+It is often the case that the proof of $p \rightarrow (h_1 \vee h_2 \vee \dots \vee h_k)$ is very short and done rather casually, as it is here.
 
-After the sentence ``We proceed by cases'' in the proof above, the proof presented a proof of $h_1 \rightarrow q$ and a proof of $h_2 \rightarrow q$, where $q$ was ``Cell V is safe.'' We postpone the discussion of the proof of $h_1 \rightarrow q$ momentarily. The proof of $h_2 \rightarrow q$ was the text that started with ``In the second case, Q is a mine, ...'' and ended with ``Since the 1 to the right of U has all its mines, V is safe.''
+After the sentence ``We proceed by cases'' in the proof above, we presented a proof of $h_1 \rightarrow q$ and a proof of $h_2 \rightarrow q$, where $q$ was ``Cell V is safe.'' We postpone the discussion of the proof of $h_1 \rightarrow q$ momentarily. The proof of $h_2 \rightarrow q$ was the text that started with ``In the second case, Q is a mine, ...'' and ended with ``Since the 1 to the right of U has all its mines, V is safe.''
 
 What about the proof of $h_1 \rightarrow q$? We proved this by cases. Here, the initial hypothesis was ``P is a mine'', though we may of course use our earlier initial hypothesis $p$ as well, which is how we immediately obtained the next sentence ``So Q is safe,'' and further along obtained the fact that R is safe as well. Within the proof, we identified two possible situations: let us call $i_1$ the situation of ``S is a mine an T is safe'' and call $i_2$ the situation ``T is a mine and S is safe.'' The proof that the initial hypothesis implies $(i_1 \vee i_2)$ is proved in the sentence ``Then exactly one of S or T is a mine, due to the 2 in $(3,2)$.'' The inner-indented items provide the proof of $i_1$ implies that V is safe and the proof of $i_2$ implies that V is safe.
 
@@ -4140,6 +4149,11 @@ What about the proof of $h_1 \rightarrow q$? We proved this by cases. Here, the 
 When proving by cases, it is important to state the case hypotheses $h_1,\dots,h_k$. It is important to explain why at least one case hypothesis holds. (That is, be sure to include an argument -- often very short -- that $p \rightarrow (h_1 \vee \dots \vee h_k)$ is true.) Otherwise, you run into the situation of having missing cases.
 \end{bwarning}
 When initially starting, you might identify propositions $h_1$, $h_2$, and $h_3$. However, if you have trouble proving $p \rightarrow (h_1 \vee h_2 \vee h_3)$, it might be because $p \rightarrow (h_1 \vee h_2 \vee h_3)$ is not true. Perhaps there is a ``missing case.'' Sometimes, by keeping $h_1$,$h_2$, and $h_3$ exactly as you thought of them, but also identifying a new proposition $h_4$, it is possible to prove $p \rightarrow (h_1 \vee h_2 \vee h_3 \vee h_4)$. When it is time to write your formal proof, imagine the immediately before writing ``We proceed in cases'' you would write the sentence ``Either $h_1$ or $h_2$ or $h_3$ or $h_4$.'' You want the reader of your proof to be convinced that ``Either $h_1$ or $h_2$ or $h_3$ or $h_4$'' is true.
+As an analogy, we might talk about a car that has reached an intersection, and argue that the car either turned left, turned right, or went straight. 
+However, perhaps we forgot the fourth option, namely, that the car made a U-turn.
+It is just an analogy, but we might have struggled to prove $p \to (h_1 \vee h_2 \vee h_3)$ because we forgot to include the fourth case $h_4$.
+In fact, it could be that $p \to (h_1 \vee h_2 \vee h_3)$ is false, and that $p \to (h_1 \vee h_2 \vee h_3 \vee h_4)$ is true.
+More informally, it is easy to erroneously assume that $p$ being true means that one of $h_1$, $h_2$, or $h_3$ must be true, but that we were missing a potential situation that could occur.
 
 \begin{bwarning}{The error of not reaching the required conclusion}{}
 If you have $k$ cases, beyond the proof of $p \rightarrow (h_1 \vee \dots \vee h_k)$, be sure to provide the $k$ proofs of the form $h_j \rightarrow q$. In particular, be sure to reach the conclusion $q$ in each case.
