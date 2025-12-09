@@ -4284,7 +4284,10 @@ After a characterization is known (through proof, or accepted as true for free),
 
 \section{Uniqueness}\label{section:uniqueness}
 
-Suppose $U$ is a set and $P(x)$ is a predicate. There are times when we will need to prove ``There exists a unique $b \in U$ such that $P(b)$.'' (Notice the inclusion of the new word ``unique'' here.) How does one prove \defn{uniqueness}\index{uniqueness}? Or more generally, how does one prove existence and uniqueness? The sentence in quotes is sometimes denoted by including an exclamation point as in: $\exists ! b \in U\,[P(b)]$.
+Suppose $U$ is a set and $P(x)$ is a predicate. There are times when we will need to prove ``There exists a unique $b \in U$ such that $P(b)$.'' (Notice the inclusion of the new word ``unique'' here.) 
+What does ``unique'' mean? Informally, this means that it (whatever it is) is the only one. In other words, there is exactly one object $b$ in the set $U$ that satisfies the property $P(b)$.
+
+How does one prove \defn{uniqueness}\index{uniqueness}? Or more generally, how does one prove existence and uniqueness? The sentence in quotes is sometimes denoted by including an exclamation point as in: $\exists ! b \in U\,[P(b)]$.
 \begin{example}
 We revisit Example~\ref{example:universal-city}. There exists a unique resident $x$ of Uruapan whose blood type is O+. (Namely, Finley is the only resident of Uruapan with blood type O+.)
 \end{example}
@@ -4308,7 +4311,10 @@ To prove existence, let $b=-3$. Then $2b+7=2(-3)+7=-6+7=1$. To prove uniqueness,
 By contrast, it would be impossible to prove that there exists a unique real number $b$ such that $b^2-3b=40$. Existence is true (see Theorem~\ref{theorem:existence-not-uniqueness}), but uniqueness is not true. (This is because $a=-5$ is a solution to $x^2-3x=40$ and $c=8$ is also a solution to $x^2-3x=40$.)
 
 \begin{remark}
-In English, ``a'' and ``and'' are indefinite articles, while ``the'' is the only definite article. An indefinite article is used when there is possibly uncertainly regarding how many objects there are, or if there is known to be only one, emphasizing that there's only one is unimportant. (Example: Here is an apple.) The word ``the'' is used the communicate that there's only one of a certain object. (Example: This is the [only] apple in the store.)
+The English language has three articles: ``a,'' ``an,'' and ``the.'' The words ``a'' and ``an'' are used interchangeably depending on whether the next word starts with a consonant sound or a vowel sound.
+The functional role of ``the'' is different from the roles of ``a'' and ``an.''
+
+In English, ``a'' and ``an'' are indefinite articles, while ``the'' is the only definite article. An indefinite article is used when there is possibly uncertainty regarding how many objects there are, or if there is known to be only one, emphasizing that there's only one is unimportant. (Example: Here is an apple.) The word ``the'' is used the communicate that there's only one of a certain object. (Example: This is the [only] apple in the store.)
 
 Now that we have discussed uniqueness, challenge yourself to pay attention to how mathematicians speak and write when using articles. While the use of definite versus indefinite articles is often a matter of taste for most definitions, you will begin to notice that the word ``the'' only makes certain appearances (especially in certain theorems and definitions) only after a uniqueness statement is proved.
 \end{remark}
@@ -4320,7 +4326,7 @@ Your previous math classes have offered small examples of many of the methods pr
 
 \item In algebra, you used the implication ``If $a=b$ then $a+c=b+c$.'' Actually, a more complete version of this has quantifiers: you used ``For all reals $a$, $b$, and $c$, if $a=b$, then $a+c=b+c$.'' This procedure was called ``adding $c$ to both sides'' in your algebra class. In fact, when you were asked to solve the equation $x-5=4$, the idea that $x$ was real was implied. To use the quantified statement (following Method~\ref{method:using-forall}, we'd consider $x-5$ to be the real $a$, have $b=4$, then use $c=5$. Then, since we have $a=b$ which is specifically $x-5=4$ for us, we could apply modus ponens (following Method~\ref{method:modus-ponens}) to get $a+c=b+c$ which in this example is $(x-5)+5=4+5$, and we are now well on our way to solving for $x$.
 
-\item Actually, a more complete statement is ``For all reals $a$, $b$, and $c$, we have $a=b$ if and only if $a+c=b+c$.'' The biconditional shows that adding $c$ to both sides is reversible. In contrast, ``For all reals $a$ and $b$, if $a=b$, then $a^2=b^2$'' is true, but trying to change the implication to a biconditional will not work. (It is possible to have $a^2=b^2$ with $a \not= b$.) This is why, when solving equations such as $\sqrt{x-3}=10$ which requires squaring both sides, students are admonished to check their solutions, because not every ``algebra move'' they apply is reversible.
+\item Actually, a more complete statement is ``For all reals $a$, $b$, and $c$, we have $a=b$ if and only if $a+c=b+c$.'' The biconditional shows that adding $c$ to both sides is reversible. In contrast, ``For all reals $a$ and $b$, if $a=b$, then $a^2=b^2$'' is true, but trying to change the implication to a biconditional will not work. (It is possible to have $a^2=b^2$ with $a \not= b$.) This is why, when solving equations such as $\sqrt{x-3}=10$ which requires squaring both sides, students are asked to check their solutions, because not every ``algebra move'' they apply is reversible.
 
 \item Also from algebra, the statement ``For all reals $a$ and $b$, if $ab=0$, then $a=0$ or $b=0$'' known as the Zero Product Property is used to solve an equation such as $x^2-x-6=0$, by first writing $(x-3)(x+2)=0$ and applying the statement using $a=x-3$ and $b=x+2$.
 
@@ -4328,17 +4334,41 @@ Your previous math classes have offered small examples of many of the methods pr
 
 \item In precalculus, verifying a trigonometric identity often involves using other trigonometric identities. Some trig identities get \emph{used} in the process of \emph{proving} one new trig identity.
 
-%\item Two-sided characterization in terms of one-sided limits
+We earlier gave the example of
+\begin{align*}
+\sec\theta - \cos\theta &= \frac{1}{\cos\theta} - \cos\theta \\
+&= \frac{1}{\cos\theta} - \frac{\cos\theta}{1} \\
+&= \frac{1}{\cos\theta} - \frac{\cos^2\theta}{\cos \theta} \\
+&= \frac{1 - \cos^2\theta}{\cos\theta} \\
+&= \frac{\sin^2\theta}{\cos\theta} \\
+&= \sin\theta \,\frac{\sin\theta}{\cos\theta} \\
+&= \sin\theta \tan\theta
+\end{align*}
+being the proof of the identity $\sec\theta - \cos\theta = \sin\theta \tan\theta$. In this proof:
+\begin{itemize}
+\item We turned $\sec\theta - \cos\theta$ into $\frac{1}{\cos\theta} - \cos\theta$ by using the identity $\sec \theta = \frac{1}{\cos\theta}$.
+\item We had some algebra steps, but then we turned $\frac{1 - \cos^2\theta}{\cos\theta}$ into $\frac{\sin^2\theta}{\cos\theta}$ by using the Pythagorean identity $\sin^2\theta + \cos^2\theta = 1$.
+\item In our last step, we turned $\frac{\sin^2\theta}{\cos\theta}$ into $\sin\theta \tan\theta$ by using the identity $\tan\theta = \frac{\sin\theta}{\cos\theta}$.
+\end{itemize}
+When we said ``by using the identity'' we do mean ``using'' here in the same sense we have been saying the word ``use'': that is, we have previous facts that we know to be true, and we are \emph{using} that information.
 
 \item In calculus, given a function $f$, students may be asked to prove that the function $f$ is continuous at the $x$-value $6$. This is typically done by verifying the three-part definition of continuity, an example of following Method~\ref{method:proving-borogove}.
 
-\item In calculus, students may be asked to show that a given function $f$ has a limit of $L$ as $x$ approaches a given number $c$ using the precise $\varepsilon$-$\delta$ definition of limit, which states the limit of the function $f$ as $x$ approaches $c$ is $L$ if for all $\varepsilon > 0$, there exists $\delta > 0$ such that if $0<|x-c|<\delta$, then $|f(x)-L|<\varepsilon$. In the process of verifying that the definition holds following Method~\ref{method:proving-borogove}, one ends up proving a universally-quantified statement, proving a (smaller) existentially-quantified statement, and (eventually) proving an implication.
+\item In calculus, students may be asked to show that a given function $f$ has a limit of $L$ as $x$ approaches a given number $c$ using the precise $\varepsilon$-$\delta$ definition of limit, 
+which states the limit of the function $f$ as $x$ approaches $c$ is $L$ if 
+\[\text{for all } \varepsilon > 0, \text{ there exists } \delta > 0 \text{ such that if } 0<|x-c|<\delta, \text{ then } |f(x)-L|<\varepsilon.\]
+In the process of verifying proving that this condition holds following Method~\ref{method:proving-borogove}, one ends up proving a universally-quantified statement, then proving a (smaller) existentially-quantified statement
+\[\text{there exists } \delta > 0 \text{ such that if } 0<|x-c|<\delta, \text{ then } |f(x)-L|<\varepsilon,\]
+and (eventually) proving the implication
+\[\text{if } 0<|x-c|<\delta, \text{ then } |f(x)-L|<\varepsilon.\]
+Notice that each of the three centerlined statements are sucessive shortenings of earlier statements: after processing the ``for all'' we deal with the ``there exists'' and after processing the ``there exists'' we have an implication.
+When it comes time to prove that implication, we will assume $0<|x-c|<\delta$ and then work to prove $|f(x)-L|<\varepsilon$.
 
-\item From calculus, the Squeeze Theorem states that if $\displaystyle \lim_{x \to c} f(x) = L$ and $\displaystyle \lim_{x \to c} h(x) = L$ and $f(x) \leq g(x) \leq h(x)$ for all $x$, then $\displaystyle \lim_{x \to c} g(x) =L$. To use the Squeeze Theorem, after verifying that the three requirements hold, the student applies modus ponens with the Squeeze Theorem to conclude a limit value for the function $g$.
+\item From calculus, the Squeeze Theorem states that if $\displaystyle \lim_{x \to c} f(x) = L$ and $\displaystyle \lim_{x \to c} h(x) = L$ and $f(x) \leq g(x) \leq h(x)$ for all $x$, then $\displaystyle \lim_{x \to c} g(x) =L$. To use the Squeeze Theorem, after verifying that the three requirements hold, we apply modus ponens with the Squeeze Theorem to conclude a limit value for the function $g$.
 
-\item From calculus, the Intermediate Value Theorem states that if $f$ is a function that is continuous on the interval $[a,b]$, then for all $y$ between $f(a)$ and $f(b)$, there exists $c$ in the interval $[a,b]$ such that $f(c)=y$. Students in calculus use this theorem by first verifying the given function $f$ is continuous on $[a,b]$. By modus ponens, a universally-quantified statement is true. After selecting (writer's choice) any $y$-value between $f(a)$ and $f(b)$, this universally-quantified statement is used following Method~\ref{method:using-forall}.
+\item From calculus, the Intermediate Value Theorem states that if $f$ is a function that is continuous on the interval $[a,b]$, then for all $y$ between $f(a)$ and $f(b)$, there exists $c$ in the interval $[a,b]$ such that $f(c)=y$. We use this theorem by first verifying the given function $f$ is continuous on $[a,b]$. By modus ponens, a universally-quantified statement is true. After selecting (writer's choice) any $y$-value between $f(a)$ and $f(b)$, this universally-quantified statement is used following Method~\ref{method:using-forall}.
 
-\item From calculus, Rolle's Theorem states that if $f$ is continuous on the interval $[a,b]$ and differentiable on the interval $(a,b)$ and $f(a)=f(b)$, then there exists $c$ in the interval $(a,b)$ such that $f'(c)=0$. To use Rolle's Theorem, students in calculus verify that a given function $f$ is continuous on $[a,b]$ and is differentiable on $(a,b)$ and that $f(a)$ equals $f(b)$. Then modus ponens allows the student to conclude that there exists $c \in (a,b)$ such that $f'(c)=0$. Using the Mean Value Theorem is similar.
+\item From calculus, Rolle's Theorem states that if $f$ is continuous on the interval $[a,b]$ and differentiable on the interval $(a,b)$ and $f(a)=f(b)$, then there exists $c$ in the interval $(a,b)$ such that $f'(c)=0$. To use Rolle's Theorem, students in calculus verify that a given function $f$ is continuous on $[a,b]$ and is differentiable on $(a,b)$ and that $f(a)$ equals $f(b)$. Then modus ponens allows us to conclude that there exists $c \in (a,b)$ such that $f'(c)=0$. Using the Mean Value Theorem is similar.
 
 \item Typically in a second-semester calculus course, students are expected to apply convergence tests for infinite series. An example is the $p$-series Test, which states that (a) if $p > 1$, then the $p$-series $\sum_{n=1}^\infty \frac{1}{n^p}$ converges and (b) if $p \leq 1$ then the $p$-series $\sum_{n=1}^\infty \frac{1}{n^p}$ diverges. Like any series convergence test, students are expected to verify the requirements of the test. (These happen to be the hypotheses of an implication statement.) Then, via modus ponens, the student may conclude that a series diverges or converges. For example, when considering $\sum_{n=1}^\infty \frac{1}{n^5}$, since $p >1$, modus ponens allows us to conclude (by the $p$-series Test) that $\sum_{n=1}^\infty \frac{1}{n^5}$ converges. 
 
@@ -4364,15 +4394,41 @@ Don't just add in extra assumptions just because it's convenient. If you add in 
 \end{bwarning}
 For example, when proving a statement that starts \fbox{For all $x \in A$, there exists $y \in B$} it is correct to assume $m \in A$, but it is tempting for people to then want to assume an arbitrary element $b \in B$, but this is not how a ``there exists'' statement is proved.
 
-Always, always, always keep track of what you need to use and what you need to prove. Revisit the content of this chapter (the most important chapter!) frequently, and convince yourself all the methods of using and proving here align with what each proposition means, and if you are unconvinced, consult with your instructor as soon as possible.
+Always keep track of what you need to use and what you need to prove. Revisit the content of this chapter (the most important chapter!) frequently, and convince yourself all the methods of using and proving here align with what each proposition means, and if you are unconvinced, consult with your instructor as soon as possible.
 
 There may be times when you have a fact you need to use, but you don't have the other accompanying fact to be able to use your proposition. (For example, you may know $p \to q$, but you don't know $p$ yet.) Then, don't use that as the reason to try to prove $p \to q$. If you know you need to use $p \to q$, perhaps you need to work on some other aspect of the proof, and then you'll get $p$ to pop up.
 
-When proving a ``there exists'' statement, use the set that's involved to give you hints. Recalling Method~\ref{method:proving-exists}, to prove $\exists x \in U\,[P(x)]$ you must start by defining a specific thing to take the place of $x$, which was named $c$ in the Method. Now, coming up with what you should define $c$ to be is challenging (and frustrating) at first. However, note that you later need to take what you defined $c$ to be and then prove that $c$ is in $U$. Use the fact that $U$ is a certain kind of set to help give you a hint for how to define $c$. That is, if $U$ is a set of rational numbers bigger than $100$, then you know that you must define $c$ to be a rational number bigger than $100$. (Look at what has already been established in the problem; do you have a rational number bigger than $100$ already established? If not, do you have a way to get a rational number bigger than $100$? For example, if you had a rational number $d$ that is bigger than $50$, then multplying this number by $2$ would give you a rational number bigger than $100$. In this case, defining $c=2d$ would allow you to get $c \in U$. This might not be the right thing to define $c$ to be, as it depends on the problem, but you can use what the set $U$ to help give you hints.) As another example, if $U$ is a set of matrices, then you know that you must define $c$ to be a matrix. 
+When proving a ``there exists'' statement, use the set that's involved to give you hints. Recalling Method~\ref{method:proving-exists}, to prove $\exists x \in U\,[P(x)]$ you must start by defining a specific thing to take the place of $x$, which was named $c$ in Method~\ref{method:proving-exists}. Now, coming up with what you should define $c$ to be is challenging (and frustrating) at first. However, note that you later need to take what you defined $c$ to be and then prove that $c$ is in $U$. Use the fact that $U$ is a certain kind of set to help give you a hint for how to define $c$. That is, if $U$ is a set of rational numbers bigger than $100$, then you know that you must define $c$ to be a rational number bigger than $100$. (Look at what has already been established in the problem; do you have a rational number bigger than $100$ already established? If not, do you have a way to get a rational number bigger than $100$? For example, if you had a rational number $d$ that is bigger than $50$, then multplying this number by $2$ would give you a rational number bigger than $100$. In this case, defining $c=2d$ would allow you to get $c \in U$. This might not be the right thing to define $c$ to be, as it depends on the problem, but you can use what the set $U$ to help give you hints.) As another example, if $U$ is a set of matrices, then you know that you must define $c$ to be a matrix. 
 
 Where do we go from here? In the next chapter, you will learn new definitions. Every section will build upon the last section, but each new definition will go back to using an implication, proving an implication, using a ``for all'' statement, proving a ``for all'' statement, and so on.
 
+Please note that it is important to be honest with yourself and go through the material of this chapter thoroughly before moving on.
+We saw a lot of methods, but we need to be sure to apply the correct method for using a proposition or for proving a proposition based on what kind of proposition we have.
+More importantly, it is important to apply the correct procedure \emph{beyond} memorization. I encourage you to think about what each type of proposition means, and through that, be truly convinced that each of our methods of proof work.
+This chapter that we are concluding is the most important chapter of the entire book. If you do not understand this chapter, then you will struggle with the rest of the book.
+I strongly advise against just ``going through the motions'' hoping that the rest of the content will be okay.
+If I can summarize what the next chapter is about, we introduce sets more carefully (and deal with special kinds of sets, and special kinds of those sets, and so on), 
+but what we will really be doing with these sets is applying the methods of proof frohm this chapter over and over.
+Trying to push forward without treating this chapter as important would be like a student trying to do calculus without understanding fractions.
+(If you want my opinion, it's not worth it: someone might not understand fractions yet, but I think understanding fractions is an achievable goal, and it makes sense to do before getting too far into calculus.)
+
 As we transition from the elementary proofs of this chapter to the more involved proofs of the next chapter, it will become especially important to take careful note of what you need to use and what you need to prove. (Anything that you are allowed to assume are things that you will eventually need to use.) It is highly recommended that you take a minute at the beginning of every proof to write down exactly what is being asked of you in the proof you are trying to construct. There is no benefit to rushing through a proof. Take your item, move methodically, and be patient with yourself.
+
+The real ``secret'' to success in this class really ends up being:
+\begin{itemize}
+\item Know how to use an ``and'' statement (and when to do this)
+\item Know how to prove an ``and'' statement (and when to do this)
+\item Know how to use an implication (and when to do this)
+\item Know how to prove an implication (and when to do this)
+\item Know how to use a ``for all'' statement (and when to do this)
+\item Know how to prove a ``for all'' statement (and when to do this)
+\item Know how to use a ``there exists'' statement (and when to do this)
+\item Know how to prove a ``there exists'' statement (and when to do this)
+\item Know how to use that a certain object satisfies a certain definition (and when to do this)
+\item Know how to prove that a certain object satisfies a certain definition (and when to do this)
+\end{itemize}
+The list above is truly the essence of proof-based mathematics. It is what will occur over and over in the upcoming chapter.
+We will get new kinds of objects that get discussed in propositions that we will prove and that we will use, but the new objects just serve as excuses of topics in which to practice these skills, and the skills in this list are ultimately the primary learning goals of a class on an introduction to proof-based mathematics.
 
 \begin{exercise}
 Student X has written \fbox{Let $y \in Y$ such that $y^2 - y = 0$ and $y=|y|$.} in their proof. Thoroughly explain why this type of sentence is problematic (unless it follows one specific format of sentence, which itself must be true.) % ASSESSMENT LOOP
