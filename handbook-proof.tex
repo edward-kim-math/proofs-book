@@ -3969,9 +3969,11 @@ Notice that to prove $p \to q$ using the indirect method, we end up assuming $\n
 
 \section{Proof by contradiction}\label{section:proof-by-contradiction}
 
-There are situations where the usual proof techniques do not lead to the required propositions. A new method -- proof by contradiction\index{contradiction}\index{proof by contradiction} -- offers another opportunity to prove certain statements by allowing the proof writer to add an additional assumption.
+There are situations where we might get stuck when sticking to the usual proof techniques.
+A new method -- proof by contradiction\index{contradiction}\index{proof by contradiction} -- offers another opportunity to prove certain statements by allowing the proof writer to add an additional assumption.
+The analogy isn't perfect, but think of this as similar to a rarely-applied integration technique.
 
-Suppose that we need to prove $q$. If we feel that we are stuck having used all the propositions we were allowed to assume, we might add a new assumption, namely $\neg q$.
+Suppose that we need to prove $q$. If we feel that we are stuck having used all the propositions we know to be true (previously proved, or allowable assumptions), we might add a new assumption, namely $\neg q$.
 \begin{bmethod}{Prove $q$ by contradiction}{contradiction-general}
 \begin{center}
 \begin{tikzpicture}
@@ -4018,7 +4020,9 @@ Suppose that we need to prove the implication $p \to q$. Following the method of
 Notice that to prove $p \to q$ by contradiction, we end up assuming $\neg q$. We \emph{never} assume $q$. (That is, never assume what you need to prove.) This mirrors the warnings mentioned as Warning~\ref{warning:dont-assume-q-indirect} and Warning~\ref{warning:dont-assume-q-general-contradiction}. In this warning as in the previous two warnings, we never assume the proposition $q$.
 \end{bwarning}
 
-As an example, let us visit the game of Minesweeper. A typical cell (those found in the middle of the Minesweeper board) is surrounded by 8 other cells. (The cells on the edge are surrounded by only five other cells, while the four corner cells are surrounded by only three other cells.) The ``raised'' cells are unknowns. The more ``indented'' cells are known. (Indented cells without a number are zeros: none of the 8 surrounding cells are mines.) The cells which have a red triangular flag are marked by the game player (usually by right-clicking) to indicate that these are mines.
+As an example, let us visit the game of Minesweeper. A typical cell (those found in the middle of the Minesweeper board) is surrounded by 8 other cells. (The cells on the edge are surrounded by only five other cells, while the four corner cells are surrounded by only three other cells.) The ``raised'' cells are unknowns. The more ``indented'' cells are known. (Indented cells without a number are zeros: none of the 8 surrounding cells are mines.) 
+The cells which have a red triangular flag are marked by the game player (usually by right-clicking) to indicate that these are mines.
+(In actual gameplay, the player might actually be wrong about declaring certain cells as being mines. However, in all the Minesweeper diagrams that we present, each spot that is marked as a mine truly is a mine.)
 
 To carefully understand, let us consider the example in Figure~\ref{figure:minesweeper01}. The cell labeled 2 to the right of Cell Y should have two mines. The cell to the upper right (with a 2), the cell to the right (with a 1), the cell to the lower right (blank, so a zero), and the cell below (the 1 to the right of Z) have all been cleared. The cell above the 2 is already marked as a mine. While that spot is ``technically not known", the person playing felt confident enough to mark that spot a mine. In addition, Cell X, Cell Y, and Cell Z are unknowns. For an example of the language of proof that can be used, let us consider the same example. The cell labeled 2 to the right of Cell Y should have two mines. Since there is already one marked mine, among the three cells Cell X, Cell Y, and Cell Z, exactly one of these is a mine.
 
